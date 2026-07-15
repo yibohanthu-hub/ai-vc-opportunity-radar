@@ -1,0 +1,12 @@
+{
+  "name": "ai-vc-opportunity-radar-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A portfolio prototype for VC AI opportunity and activity discovery.",
+  "scripts": {
+    "start": "node server.mjs",
+    "check": "node scripts/check-data.mjs",
+    "build": "node scripts/build-site.mjs",
+    "check:release": "npm run check && npm run build && node scripts/check-release.mjs"
+  }
+}

@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node server.mjs",
     "check": "node scripts/check-data.mjs",
+    "refresh:signals": "node scripts/refresh-live-signals.mjs",
+    "check:signals": "node scripts/check-live-signals.mjs",
     "build": "node scripts/build-site.mjs",
-    "check:release": "npm run check && npm run build && node scripts/check-release.mjs"
+    "check:release": "npm run check && npm run check:signals && npm run build && node scripts/check-release.mjs"
   }
 }

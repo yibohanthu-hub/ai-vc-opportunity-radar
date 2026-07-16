@@ -6,7 +6,7 @@ const root = fileURLToPath(new URL('..', import.meta.url));
 const dist = join(root, 'dist');
 const client = join(dist, 'client');
 const server = join(dist, 'server');
-const assets = ['index.html', 'app.js', 'data.js', 'styles.css', 'favicon.svg'];
+const assets = ['index.html', 'app.js', 'data.js', 'live-signals.js', 'styles.css', 'favicon.svg'];
 
 const workerSource = `export default {
   async fetch(request, env) {

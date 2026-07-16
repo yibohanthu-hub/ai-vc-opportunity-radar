@@ -1,0 +1,87 @@
+# 自有域名与自动更新部署运行手册
+
+## 目标架构
+
+```text
+36氪 / 量子位 RSS / 活动行中国大陆城市目录
+            ↓（每 6 小时）
+ GitHub Actions：采集、去重、字段校验
+            ↓（仅有变化时提交）
+        main 分支更新
+            ↓
+ GitHub Pages：构建并自动发布静态站点
+            ↓
+   radar.你的域名 → 公开访问
+```
+
+这条路径不依赖飞书，也不需要持续运行传统云服务器。站点本身为静态页面；采集脚本由 GitHub Actions 定时运行，更新后的 `live-signals.js` 随静态站点重新发布。
+
+## 已在仓库中准备好的内容
+
+- `.github/workflows/refresh-live-signals.yml`：每 6 小时第 17 分钟运行一次采集，只有 `live-signals.js` 变化时才提交。
+- `.github/workflows/deploy-pages.yml`：主分支更新后执行数据校验、构建，并发布 GitHub Pages。
+- `scripts/refresh-live-signals.mjs`：读取 36氪 RSS、量子位 RSS 与活动行北京 / 上海 / 深圳 AI 活动目录。
+- `scripts/check-live-signals.mjs`：拒绝缺来源、缺抓取时间或不符合“待核验”边界的生成文件。
+
+## 上线步骤
+
+### 1. 确定公开仓库
+
+建议仓库名：`ai-vc-opportunity-radar`。如果使用 GitHub Free，仓库应设为公开；GitHub Pages 对公开仓库可用。若坚持私有仓库，应先确认账户套餐支持私有仓库 Pages。
+
+### 2. 推送仓库并启用 Actions 权限
+
+在仓库 `Settings → Actions → General` 中，将 `Workflow permissions` 设为 **Read and write permissions**，这样采集工作流才能提交更新后的 `live-signals.js`。
+
+### 3. 启用 GitHub Pages
+
+在 `Settings → Pages` 中选择 **GitHub Actions** 作为发布来源。推送代码后，手动运行一次：
+
+1. `Refresh public AI signals`；
+2. `Deploy AI Opportunity Radar`。
+
+首次成功后，Pages 会给出一个临时 `github.io` 地址，供 DNS 配置前测试。
+
+### 4. 绑定自有域名
+
+推荐用一个清晰的子域名，例如：
+
+```text
+radar.你的主域名
+```
+
+先在 GitHub Pages 设置中填写该域名并保存，再到域名 DNS 管理后台添加：
+
+```text
+类型：CNAME
+主机记录：radar
+记录值：[你的 GitHub 用户名或组织].github.io
+```
+
+不要使用通配符 DNS。完成 DNS 生效后，在 GitHub Pages 中验证域名并开启 `Enforce HTTPS`。DNS 传播和证书签发可能需要一段时间。
+
+### 5. 上线后验收
+
+1. 访问 `https://radar.你的主域名/#/signals`；
+2. 页面显示最近成功抓取时间和每个来源的健康状态；
+3. GitHub Actions 手动运行后，确认 `live-signals.js` 有变化时会提交并触发部署；
+4. 从无痕窗口确认无需登录即可访问；
+5. 保留飞书链接仅作为备用 Demo 地址，不作为正式投递链接。
+
+## 运行边界与告警建议
+
+- GitHub 的定时工作流是尽力调度，不是秒级或金融级 SLA；页面以最近成功抓取时间为准。
+- 任一来源失败时，其他来源仍可更新，页面会显示部分来源异常；所有来源均失败时，脚本保留上一次成功队列而不覆盖为空数据。
+- 下一阶段再增加失败通知、来源适配器测试、字段级证据、人工审核状态和可配置的白名单/排除名单。
+
+## 需要域名持有者提供的内容
+
+1. 已购买的主域名，或授权购买一个域名；
+2. DNS 管理权限，或由持有者按上面的 CNAME 指令配置；
+3. 一个可用于公开 Pages 的 GitHub 仓库，或授权创建公开仓库。
+
+参考：
+
+- [GitHub Pages 自有域名配置](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
+- [GitHub Pages 域名验证](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages)
+- [GitHub Actions 定时触发](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows)

@@ -1,9 +1,17 @@
 (() => {
   const DATA = window.RADAR_DATA;
+  const LIVE = window.RADAR_LIVE_SIGNALS || {
+    generatedAt: null,
+    status: 'unavailable',
+    disclaimer: '实时线索数据尚未生成。',
+    sources: [],
+    projectCandidates: [],
+    eventCandidates: []
+  };
   const STORAGE_KEY = 'vc-opportunity-radar-demo-v1';
-  const SAMPLE_DATE = '2026-07-15';
-  const projectSeedToday = new Set(['spine-ai', 'raindrop', 'hamming-ai', 'vapi', 'rhizome-ai', 'broccoli-ai', 'manus', 'genspark']);
-  const eventSeedToday = new Set(['world-ai-week-2026', 'world-summit-ai', 'world-summit-ai-doha', 'neurips-2026', 'ai-for-good-2026', 'rise-of-ai-2026']);
+  const SAMPLE_DATE = '2026-07-16';
+  const projectSeedToday = new Set(['zhipu-ai', 'minimax', 'moonshot', 'stepfun', 'siliconflow', 'agibot', 'galbot', 'deepseek']);
+  const eventSeedToday = new Set(['waic-2026', 'waic-academic-2026', 'wrc-2026', 'cicai-2026', 'ai-interactive-film-game', 'embodied-robot-commercialization']);
 
   const initialState = {
     favorites: {},
@@ -20,7 +28,8 @@
   let toast = '';
   const ui = {
     project: { search: '', date: 'all', industry: '', region: '', stage: '', amount: 'all', bBefore: '', confidence: '', sort: 'score' },
-    event: { search: '', theme: '', type: '', location: '', mode: '', quality: '', discovery: '', time: 'all', sort: 'score' }
+    event: { search: '', theme: '', type: '', location: '', mode: '', quality: '', discovery: '', time: 'all', sort: 'score' },
+    signal: { search: '', kind: '', source: '' }
   };
 
   function loadState() {
@@ -42,7 +51,11 @@
   function isFavorite(type, id) { return Boolean(state.favorites[key(type, id)]); }
   function isIgnored(type, id) { return Boolean(state.ignored[key(type, id)]); }
   function isSelected(type, id) { return Boolean(state.selected[key(type, id)]); }
-  function entity(type, id) { return (type === 'project' ? DATA.projects : DATA.events).find(item => item.id === id); }
+  function liveCandidates() { return [...(LIVE.projectCandidates || []), ...(LIVE.eventCandidates || [])]; }
+  function entity(type, id) {
+    const collection = type === 'project' ? DATA.projects : type === 'event' ? DATA.events : liveCandidates();
+    return collection.find(item => item.id === id);
+  }
   function entityScore(item) { return Object.values(item.score).reduce((sum, value) => sum + value, 0); }
   function escapeHtml(value) {
     return String(value ?? '').replace(/[&<>'"]/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#039;', '"': '&quot;' })[char]);
@@ -88,26 +101,27 @@
   }
 
   function navLink(route, label, icon) {
-    const active = routeName() === route || (route === 'projects' && routeName() === 'project') || (route === 'events' && routeName() === 'event');
+    const active = routeName() === route || (route === 'projects' && routeName() === 'project') || (route === 'events' && routeName() === 'event') || (route === 'signals' && routeName() === 'signal');
     return `<button class="nav-link ${active ? 'active' : ''}" data-action="navigate" data-route="#/${route}"><span>${icon}</span>${label}</button>`;
   }
   function appShell(content) {
     return `<div class="shell">
       <aside class="sidebar">
         <button class="brand" data-action="navigate" data-route="#/dashboard"><span class="brand-glyph">◒</span><span><b>AI 机会雷达</b><small>创投机会发现</small></span></button>
-        <div class="nav-group"><p>工作台</p>${navLink('dashboard', '今日雷达', '⌂')}${navLink('projects', '创业项目', '◈')}${navLink('events', 'AI 活动', '◎')}${navLink('follow-ups', '收藏与跟进', '↗')}</div>
+        <div class="nav-group"><p>工作台</p>${navLink('dashboard', '今日雷达', '⌂')}${navLink('projects', '创业项目', '◈')}${navLink('events', 'AI 活动', '◎')}${navLink('signals', '实时待核验', '⌁')}${navLink('follow-ups', '收藏与跟进', '↗')}</div>
         <div class="nav-group nav-bottom"><p>产品说明</p>${navLink('method', 'Agent 方法与边界', '⌘')}</div>
-        <div class="sidebar-foot"><span class="pulse"></span>DEMO SNAPSHOT<br/><b>2026.07.15</b></div>
+        <div class="sidebar-foot"><span class="pulse"></span>中国大陆优先样本<br/><b>2026.07.16</b></div>
       </aside>
-      <main class="main"><header class="topbar"><div><span class="eyebrow">VC · AI SIGNAL DESK</span><h1>${pageTitle()}</h1></div><div class="topbar-tools"><button class="refresh-button" data-action="demo-refresh">↻ 更新样本</button></div></header>${content}</main>
-      <nav class="mobile-nav">${navLink('dashboard', '今日', '⌂')}${navLink('projects', '项目', '◈')}${navLink('events', '活动', '◎')}${navLink('follow-ups', '跟进', '↗')}</nav>
+      <main class="main"><header class="topbar"><div><span class="eyebrow">CN VC · AI SIGNAL DESK</span><h1>${pageTitle()}</h1></div><div class="topbar-tools"><button class="refresh-button" data-action="navigate" data-route="#/signals">⌁ 实时线索</button></div></header>${content}</main>
+      <nav class="mobile-nav">${navLink('dashboard', '今日', '⌂')}${navLink('projects', '项目', '◈')}${navLink('events', '活动', '◎')}${navLink('signals', '线索', '⌁')}${navLink('follow-ups', '跟进', '↗')}</nav>
       ${toast ? `<div class="toast">${escapeHtml(toast)}</div>` : ''}
     </div>`;
   }
   function pageTitle() {
     if (routeName() === 'projects' && routeEntityId()) return '项目详情';
     if (routeName() === 'events' && routeEntityId()) return '活动详情';
-    const names = { dashboard: '今日机会雷达', projects: '创业项目池', project: '项目详情', events: 'AI 活动雷达', event: '活动详情', 'follow-ups': '收藏与跟进', method: 'Agent 方法与边界' };
+    if (routeName() === 'signals' && routeEntityId()) return '线索核验';
+    const names = { dashboard: '今日机会雷达', projects: '创业项目池', project: '项目详情', events: 'AI 活动雷达', event: '活动详情', signals: '中国大陆实时待核验线索', signal: '线索核验', 'follow-ups': '收藏与跟进', method: 'Agent 方法与边界' };
     return names[routeName()] || 'AI 机会雷达';
   }
 
@@ -118,10 +132,11 @@
     const pending = Object.values(state.followups).filter(item => ['待研究', '待联系', '已联系'].includes(item)).length;
     const highProjects = DATA.projects.filter(item => item.confidence === '高').sort((a, b) => entityScore(b) - entityScore(a)).slice(0, 3);
     const highEvents = DATA.events.filter(item => item.quality === '高').sort((a, b) => entityScore(b) - entityScore(a)).slice(0, 3);
-    return `<section class="hero-card"><div><span class="eyebrow accent">早晚信息池 · ${SAMPLE_DATE}</span><h2>把公开信号变成可验证、<br/>可跟进的机会清单。</h2><p>不是替投资经理下结论。Agent 负责发现、整理、去重、解释和记录反馈；人保留判断与触达权。</p><div class="hero-actions"><button class="primary-button" data-action="navigate" data-route="#/projects">查看新增项目 <span>→</span></button><button class="secondary-button" data-action="navigate" data-route="#/events">查看 AI 活动</button></div></div><div class="hero-orbit"><div class="orbit-center">AI<br/><small>RADAR</small></div><i class="orbit-dot dot-1"></i><i class="orbit-dot dot-2"></i><i class="orbit-dot dot-3"></i></div></section>
+    const liveCount = liveCandidates().length;
+    return `<section class="hero-card"><div><span class="eyebrow accent">中国大陆公开信号队列 · ${liveTimestamp(LIVE.generatedAt)}</span><h2>把公开信号变成可验证、<br/>可跟进的机会清单。</h2><p>面向中国大陆 VC 场景。Agent 负责发现、整理、去重、解释和记录反馈；投资经理保留判断与触达权。</p><div class="hero-actions"><button class="primary-button" data-action="navigate" data-route="#/projects">查看新增项目 <span>→</span></button><button class="secondary-button" data-action="navigate" data-route="#/events">查看 AI 活动</button><button class="secondary-button" data-action="navigate" data-route="#/signals">待核验线索 ${liveCount} 条</button></div></div><div class="hero-orbit"><div class="orbit-center">AI<br/><small>RADAR</small></div><i class="orbit-dot dot-1"></i><i class="orbit-dot dot-2"></i><i class="orbit-dot dot-3"></i></div></section>
       <section class="stat-grid">
-        ${statCard('今日新增项目', projectsToday, '来自本地样本批次', '◈', '#7c5cff')}
-        ${statCard('今日新增活动', eventsToday, '近期与历史对照样本', '◎', '#22b8a7')}
+        ${statCard('今日新增项目', projectsToday, '中国大陆公开样本批次', '◈', '#7c5cff')}
+        ${statCard('今日新增活动', eventsToday, '中国大陆近期与历史对照', '◎', '#22b8a7')}
         ${statCard('已收藏', favorites, '跨项目与活动', '★', '#f0a93b')}
         ${statCard('待跟进', pending, '研究、联系或已联系', '↗', '#ec6a5c')}
       </section>
@@ -136,6 +151,54 @@
   }
   function miniEventList(items) {
     return `<article class="panel mini-list"><div class="panel-head"><h2>活动线索</h2><button class="text-button" data-action="navigate" data-route="#/events">全部 →</button></div>${items.map(item => `<button class="mini-item" data-action="navigate" data-route="#/events/${item.id}"><span class="mini-mark event-mark">◎</span><span><b>${escapeHtml(item.name)}</b><small>${escapeHtml(item.date)}</small></span><em>${entityScore(item)}/35</em></button>`).join('')}</article>`;
+  }
+
+  function liveTimestamp(value) {
+    if (!value || value === '未知') return '待首次同步';
+    const timestamp = Date.parse(value);
+    if (!Number.isFinite(timestamp)) return String(value);
+    return new Date(timestamp).toLocaleString('zh-CN', { hour12: false, month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' });
+  }
+  function signalIcon(item) { return item.kind === 'event' ? '◎' : '◈'; }
+  function signalKindLabel(item) { return item.kind === 'event' ? '中国大陆活动待核验' : '中国大陆项目 / 产品待核验'; }
+  function signalSources() { return [...new Set(liveCandidates().map(item => item.sourceName))]; }
+  function filteredSignals() {
+    const query = ui.signal.search.toLowerCase().trim();
+    return liveCandidates().filter(item => {
+      const haystack = [item.name, item.category, item.sourceName, item.summary, item.reasoning].join(' ').toLowerCase();
+      return (!query || haystack.includes(query)) && (!ui.signal.kind || item.kind === ui.signal.kind) && (!ui.signal.source || item.sourceName === ui.signal.source);
+    }).sort((a, b) => Date.parse(b.collectedAt) - Date.parse(a.collectedAt));
+  }
+  function signalFilters() {
+    return `<div class="filters signal-filters"><label class="search-box">⌕<input data-filter="signal" data-key="search" value="${escapeHtml(ui.signal.search)}" placeholder="搜索线索、来源或关键词" /></label>${selectFilter('signal', 'kind', '线索类型', ['project|项目 / 产品', 'event|AI 活动'], ui.signal.kind, true)}${selectFilter('signal', 'source', '公开来源', signalSources(), ui.signal.source)}<button class="clear-button" data-action="clear-filters" data-type="signal">清除</button></div>`;
+  }
+  function signalsPage() {
+    const signals = filteredSignals();
+    const healthySources = (LIVE.sources || []).filter(source => source.status === 'success').length;
+    const failedSources = (LIVE.sources || []).filter(source => source.status === 'error').length;
+    const statusText = LIVE.status === 'success' ? '本次抓取完整' : LIVE.status === 'partial' ? '部分来源暂不可用' : '尚未生成实时数据';
+    return `<section class="signal-overview"><div><span class="eyebrow accent">中国大陆公开源采集</span><h2>${liveCandidates().length} 条实时待核验线索</h2><p>最近抓取 ${escapeHtml(liveTimestamp(LIVE.generatedAt))}。队列优先收录中国大陆公开源：不自动补全公司、融资、联系人或活动质量；人工核验后才可进入正式信息池。</p></div><div class="signal-health"><b>${healthySources}/${(LIVE.sources || []).length}</b><span>来源正常</span><small>${escapeHtml(statusText)}${failedSources ? ` · ${failedSources} 个来源待恢复` : ''}</small></div></section><section class="source-run-list">${(LIVE.sources || []).map(source => `<a class="source-run ${source.status}" href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer"><span>${source.status === 'success' ? '✓' : '!'}</span><b>${escapeHtml(source.name)}</b><small>${source.status === 'success' ? `${source.records} 条候选` : '本次未获取'}</small></a>`).join('')}</section>${signalFilters()}<section class="list-stack" data-signal-results>${signals.length ? signals.map(signalCard).join('') : empty('没有符合条件的实时线索', '尝试清除筛选，或等待下一次后台采集。')}</section><section class="source-notice"><b>数据边界</b><span>${escapeHtml(LIVE.disclaimer || '实时信号只作为待核验候选。')}</span></section>`;
+  }
+  function signalCard(item) {
+    const isEvent = item.kind === 'event';
+    const score = entityScore(item);
+    const timeLabel = isEvent ? `活动日期：${item.eventMeta?.startDate || '未知'}` : `来源时间：${liveTimestamp(item.publishedAt)}`;
+    return `<article class="live-signal-card ${isIgnored('signal', item.id) ? 'is-ignored' : ''}"><div class="signal-main"><div class="card-kicker"><span class="entity-icon">${signalIcon(item)}</span>${chip(signalKindLabel(item))}<span class="confidence confidence-low">${escapeHtml(item.confidence)}</span></div><div class="card-title-row"><div><h2>${escapeHtml(item.name)}</h2><p>${escapeHtml(item.summary)}</p></div><div class="signal-score"><b>${score}</b><span>/ 25</span>${scoreBar(score, 25)}</div></div><div class="signal-meta"><span>${escapeHtml(timeLabel)}</span>${isEvent ? `<span>形式：${escapeHtml(item.eventMeta?.mode || '未知')}</span><span>地点：${escapeHtml(item.eventMeta?.location || '未知')}</span>` : ''}<span>抓取：${escapeHtml(liveTimestamp(item.collectedAt))}</span><span>来源：${escapeHtml(item.sourceName)}</span></div><div class="why-row"><b>为何入队</b><span>${escapeHtml(item.reasoning)}</span></div></div><div class="card-side">${actionButtons('signal', item.id)}${statusControl('signal', item.id)}${tagsMarkup('signal', item.id)}<button class="view-button" data-action="navigate" data-route="#/signals/${item.id}">查看来源与核验 <span>→</span></button></div></article>`;
+  }
+  function signalDetail(id) {
+    const item = entity('signal', id);
+    if (!item) return empty('未找到实时线索', '该线索可能已在下一次去重后从候选队列中消失。', '#/signals');
+    state.viewed[key('signal', id)] = new Date().toISOString(); persist();
+    const isEvent = item.kind === 'event';
+    const rows = [
+      ['队列类型', signalKindLabel(item)],
+      [isEvent ? '活动日期' : '来源发布时间', isEvent ? item.eventMeta?.startDate || '未知' : liveTimestamp(item.publishedAt)],
+      ['本次抓取时间', liveTimestamp(item.collectedAt)],
+      ['来源', item.sourceName],
+      ...(isEvent ? [['形式', item.eventMeta?.mode || '未知'], ['地点', item.eventMeta?.location || '未知'], ['主办方', item.eventMeta?.organizer || '未知']] : []),
+      ['自动摘要', item.summary]
+    ];
+    return `<button class="back-button" data-action="navigate" data-route="#/signals">← 返回实时线索</button><section class="detail-hero signal-detail"><div><div class="card-kicker">${chip(signalKindLabel(item))}<span class="confidence confidence-low">${escapeHtml(item.confidence)}</span></div><h2>${escapeHtml(item.name)}</h2><p>${escapeHtml(item.summary)}</p><div class="detail-actions">${actionButtons('signal', item.id)}${statusControl('signal', item.id)}${tagsMarkup('signal', item.id)}</div></div><div class="detail-score"><span>候选信号</span><b>${entityScore(item)}<small>/25</small></b>${scoreBar(entityScore(item), 25)}<p>不构成投资或参会建议</p></div></section><section class="detail-grid"><div class="detail-column"><article class="detail-panel"><div class="panel-head"><h2>采集记录</h2><span>字段缺失即保留未知</span></div>${detailRows(rows)}</article><article class="detail-panel"><div class="panel-head"><h2>来源证据</h2><span>公开、可打开</span></div><div class="source-list">${sourceLinks(item.sources)}</div><p class="muted-note">页面内不保存或推断非公开联系方式；后续动作前必须回到原始来源核验。</p></article></div><aside class="detail-column"><article class="analysis-panel"><span class="eyebrow accent">AGENT 入队说明</span><h2>为什么它没有直接进入正式信息池</h2>${bulletList([item.reasoning, '来源内容未自动等同于公司档案、融资事实或高价值活动。'], 'good-list')}<h3>待核验信息</h3>${bulletList(item.unknowns || [], 'warn-list')}<h3>建议下一步</h3>${bulletList([item.nextAction], 'question-list')}</article><article class="detail-panel score-panel"><div class="panel-head"><h2>候选优先级构成</h2><span>可解释规则</span></div>${scoreRows(item.score, { novelty: '信息新颖性', source: '来源可追溯性', relevance: 'AI 相关性', completeness: '字段完整度', followup: '核验价值' })}</article></aside></section>`;
   }
 
   function projectFilters() {
@@ -180,7 +243,7 @@
   }
   function projectsPage() {
     const list = filteredProjects();
-    return `<section class="page-intro"><div class="legend">${chip('◆ 高可信', 'confidence-high')}${chip('◇ 待验证', 'confidence-low')}<span data-project-count>共 ${DATA.projects.length} 条公开样本 · 当前 ${list.length} 条</span></div></section>${projectFilters()}<section class="list-stack" data-project-results>${list.length ? list.map(projectCard).join('') : empty('没有符合条件的项目', '尝试清除筛选或更换搜索词。')}</section>`;
+    return `<section class="page-intro"><div class="legend">${chip('◆ 高可信', 'confidence-high')}${chip('◇ 待验证', 'confidence-low')}<span data-project-count>共 ${DATA.projects.length} 条中国大陆优先公开样本 · 当前 ${list.length} 条</span></div></section>${projectFilters()}<section class="list-stack" data-project-results>${list.length ? list.map(projectCard).join('') : empty('没有符合条件的项目', '尝试清除筛选或更换搜索词。')}</section>`;
   }
   function projectCard(item) {
     const score = entityScore(item);
@@ -216,7 +279,7 @@
 
   function eventsPage() {
     const list = filteredEvents();
-    return `<section class="page-intro"><div class="legend">${chip('● 高价值', 'quality-high')}${chip('● 低优先级', 'quality-low')}<span data-event-count>共 ${DATA.events.length} 条公开样本 · 当前 ${list.length} 条</span></div></section>${eventFilters()}<section class="event-grid" data-event-results>${list.length ? list.map(eventCard).join('') : empty('没有符合条件的活动', '尝试清除筛选或更换搜索词。')}</section>`;
+    return `<section class="page-intro"><div class="legend">${chip('● 高价值', 'quality-high')}${chip('● 低优先级', 'quality-low')}<span data-event-count>共 ${DATA.events.length} 条中国大陆优先公开样本 · 当前 ${list.length} 条</span></div></section>${eventFilters()}<section class="event-grid" data-event-results>${list.length ? list.map(eventCard).join('') : empty('没有符合条件的活动', '尝试清除筛选或更换搜索词。')}</section>`;
   }
   function eventCard(item) {
     const score = entityScore(item);
@@ -233,18 +296,25 @@
   function followupsPage() {
     const projects = DATA.projects.filter(item => isFavorite('project', item.id) || followup('project', item.id) !== '未处理' || tagList('project', item.id).length);
     const events = DATA.events.filter(item => isFavorite('event', item.id) || followup('event', item.id) !== '未处理' || tagList('event', item.id).length);
+    const signals = liveCandidates().filter(item => isFavorite('signal', item.id) || followup('signal', item.id) !== '未处理' || tagList('signal', item.id).length);
     const viewedCount = Object.keys(state.viewed).length;
-    return `<section class="followup-hero"><div><span class="eyebrow accent">可执行清单</span><h2>把感兴趣的线索收拢，<br/>再决定是否触达。</h2><p>本页只提供公开来源入口和下一步行动建议，不自动联系创始人，也不发送任何消息。</p></div><div class="followup-summary"><div><b>${projects.length + events.length}</b><span>已整理线索</span></div><div><b>${viewedCount}</b><span>已查看记录</span></div></div></section><section class="batch-toolbar"><div><b>批量整理</b><span data-selection-count>${Object.keys(state.selected).length} 条已选择</span></div><div><label class="select-wrap compact"><select data-action="batch-status"><option value="">设置跟进状态…</option>${['待研究', '待联系', '已联系', '暂停', '未处理'].map(item => `<option value="${item}">${item}</option>`).join('')}</select></label><button class="secondary-button compact" data-action="batch-tag">添加标签</button><button class="clear-button" data-action="clear-selection">取消选择</button></div></section><section class="followup-sections"><div><div class="section-head inline"><div><span class="eyebrow">收藏项目</span><h2>项目</h2></div><button class="text-button" data-action="navigate" data-route="#/projects">继续发现 →</button></div>${projects.length ? `<div class="followup-list">${projects.map(item => followupRow('project', item)).join('')}</div>` : empty('还没有整理任何项目', '在项目卡片中收藏、加标签或设置跟进状态后，它们会出现在这里。', '#/projects')}</div><div><div class="section-head inline"><div><span class="eyebrow">收藏活动</span><h2>活动</h2></div><button class="text-button" data-action="navigate" data-route="#/events">继续发现 →</button></div>${events.length ? `<div class="followup-list">${events.map(item => followupRow('event', item)).join('')}</div>` : empty('还没有整理任何活动', '在活动卡片中收藏、加标签或设置跟进状态后，它们会出现在这里。', '#/events')}</div></section><section class="behavior-panel"><span class="eyebrow">为第二阶段准备的行为信号</span><h2>已记录 ${state.behavior.length} 次交互</h2><p>记录了查看、收藏、忽略、标签、筛选、更新与跟进状态。本 Demo 不训练模型；后续可解释推荐示例：<b>“你最近收藏了 3 个 Agent 基础设施项目，因此推荐这条线索。”</b></p></section>`;
+    return `<section class="followup-hero"><div><span class="eyebrow accent">可执行清单</span><h2>把感兴趣的线索收拢，<br/>再决定是否触达。</h2><p>本页只提供公开来源入口和下一步行动建议，不自动联系创始人，也不发送任何消息。</p></div><div class="followup-summary"><div><b>${projects.length + events.length + signals.length}</b><span>已整理线索</span></div><div><b>${viewedCount}</b><span>已查看记录</span></div></div></section><section class="batch-toolbar"><div><b>批量整理</b><span data-selection-count>${Object.keys(state.selected).length} 条已选择</span></div><div><label class="select-wrap compact"><select data-action="batch-status"><option value="">设置跟进状态…</option>${['待研究', '待联系', '已联系', '暂停', '未处理'].map(item => `<option value="${item}">${item}</option>`).join('')}</select></label><button class="secondary-button compact" data-action="batch-tag">添加标签</button><button class="clear-button" data-action="clear-selection">取消选择</button></div></section><section class="followup-sections"><div><div class="section-head inline"><div><span class="eyebrow">收藏项目</span><h2>项目</h2></div><button class="text-button" data-action="navigate" data-route="#/projects">继续发现 →</button></div>${projects.length ? `<div class="followup-list">${projects.map(item => followupRow('project', item)).join('')}</div>` : empty('还没有整理任何项目', '在项目卡片中收藏、加标签或设置跟进状态后，它们会出现在这里。', '#/projects')}</div><div><div class="section-head inline"><div><span class="eyebrow">收藏活动</span><h2>活动</h2></div><button class="text-button" data-action="navigate" data-route="#/events">继续发现 →</button></div>${events.length ? `<div class="followup-list">${events.map(item => followupRow('event', item)).join('')}</div>` : empty('还没有整理任何活动', '在活动卡片中收藏、加标签或设置跟进状态后，它们会出现在这里。', '#/events')}</div><div><div class="section-head inline"><div><span class="eyebrow">实时待核验</span><h2>公开信号</h2></div><button class="text-button" data-action="navigate" data-route="#/signals">继续核验 →</button></div>${signals.length ? `<div class="followup-list">${signals.map(item => followupRow('signal', item)).join('')}</div>` : empty('还没有整理任何实时线索', '在实时待核验队列中收藏、加标签或设置跟进状态后，它们会出现在这里。', '#/signals')}</div></section><section class="behavior-panel"><span class="eyebrow">为第二阶段准备的行为信号</span><h2>已记录 ${state.behavior.length} 次交互</h2><p>记录了查看、收藏、忽略、标签、筛选、更新与跟进状态。本 Demo 不训练模型；后续可解释推荐示例：<b>“你最近收藏了 3 个 Agent 基础设施项目，因此推荐这条线索。”</b></p></section>`;
   }
   function followupRow(type, item) {
-    const label = type === 'project' ? item.subSector : item.theme;
+    const label = type === 'project' ? item.subSector : type === 'event' ? item.theme : item.category;
     const lastViewed = state.viewed[key(type, item.id)] ? new Date(state.viewed[key(type, item.id)]).toLocaleString('zh-CN', { hour12: false }) : '未查看';
     const action = type === 'project' ? (item.verifyQuestions[0] || '打开公开来源核验') : item.nextAction;
-    return `<article class="followup-row"><label class="check-wrap"><input type="checkbox" data-action="select" data-type="${type}" data-id="${item.id}" ${isSelected(type, item.id) ? 'checked' : ''}/><span></span></label><span class="row-icon">${type === 'project' ? '◈' : '◎'}</span><div class="row-main"><button data-action="navigate" data-route="#/${type === 'project' ? 'projects' : 'events'}/${item.id}"><b>${escapeHtml(item.name)}</b><small>${escapeHtml(label)}</small></button><div>${tagsMarkup(type, item.id)}</div></div><div class="row-meta"><small>最近查看</small><span>${escapeHtml(lastViewed)}</span></div><div class="row-meta"><small>下一步行动</small><span>${escapeHtml(action)}</span></div>${statusControl(type, item.id)}<button class="source-mini" data-action="open-source" data-type="${type}" data-id="${item.id}">来源 ↗</button></article>`;
+    const route = type === 'project' ? 'projects' : type === 'event' ? 'events' : 'signals';
+    const icon = type === 'project' ? '◈' : type === 'event' ? '◎' : '⌁';
+    return `<article class="followup-row"><label class="check-wrap"><input type="checkbox" data-action="select" data-type="${type}" data-id="${item.id}" ${isSelected(type, item.id) ? 'checked' : ''}/><span></span></label><span class="row-icon">${icon}</span><div class="row-main"><button data-action="navigate" data-route="#/${route}/${item.id}"><b>${escapeHtml(item.name)}</b><small>${escapeHtml(label)}</small></button><div>${tagsMarkup(type, item.id)}</div></div><div class="row-meta"><small>最近查看</small><span>${escapeHtml(lastViewed)}</span></div><div class="row-meta"><small>下一步行动</small><span>${escapeHtml(action)}</span></div>${statusControl(type, item.id)}<button class="source-mini" data-action="open-source" data-type="${type}" data-id="${item.id}">来源 ↗</button></article>`;
+  }
+
+  function methodPageLegacy() {
+    return `<section class="method-hero"><span class="eyebrow accent">PRODUCT NOTE · V1</span><h2>让“信息多”变成<br/>“可验证、可行动”。</h2><p>本 Demo 不是生产级投研系统，也不替代 VC 投资经理的判断。它展示一条从公开信息到人工验证、再到跟进管理的 AI 产品工作流。</p></section><section class="method-flow"><article><span>01</span><h2>收集</h2><p>从有限代表性公开来源读取项目和活动；每条记录保留来源链接、写入时间与来源类型。</p></article><i>→</i><article><span>02</span><h2>规范化</h2><p>统一名称、赛道、地区、融资字段和活动元数据。找不到的字段显示“未知 / 待核验”。</p></article><i>→</i><article><span>03</span><h2>去重与初筛</h2><p>将实体、来源和描述合并；按新颖性、来源、完整度、相关性等规则得到可解释优先级。</p></article><i>→</i><article><span>04</span><h2>人类判断</h2><p>投资经理查看证据、选择收藏或忽略、添加标签和跟进状态。系统不做自动联系。</p></article></section><section class="detail-grid method-grid"><div class="detail-column"><article class="detail-panel"><div class="panel-head"><h2>为什么不只用普通搜索</h2></div>${bulletList(['普通搜索返回页面；本产品将项目、人物、融资、活动和来源整理为可筛选实体。', '普通搜索的结果顺序不解释投研相关性；本产品展示排序构成、待验证问题和不确定性。', '普通搜索不会积累团队的收藏、忽略、标签和跟进行为；本产品把这些操作变成下一阶段推荐的可解释信号。'], 'good-list')}</article><article class="detail-panel"><div class="panel-head"><h2>当前已实现</h2></div>${bulletList(['项目与活动双模块、详情页、来源链接、可信度和待核验状态。', '按行业、地区、B 轮以前可能性、活动类型、质量和时间等筛选；可解释排序。', '收藏、忽略、标签、跟进状态、最近查看和批量整理，均使用浏览器本地存储。', '“更新样本”清楚标示为本地 Demo 刷新，不伪装成实时爬虫。'], 'good-list')}</article></div><div class="detail-column"><article class="detail-panel"><div class="panel-head"><h2>当前限制</h2></div>${bulletList(['不是全天候联网采集；样本来自有限公开来源，打开前和行动前仍需核验。', '未实现跨来源自动实体消歧、新闻级更新、组织权限或真实 CRM / 邮件集成。', '质量分数是规则样例，不使用隐藏黑箱模型，不构成投资、法律或联系建议。'], 'warn-list')}</article><article class="detail-panel"><div class="panel-head"><h2>第二阶段</h2></div>${bulletList(['接入合规公开源与人工审核队列，增加抓取时间、版本与字段级证据。', '基于查看、收藏、忽略、标签和跟进状态提供可解释的主动推荐。', '与 CRM、日历和团队协作连接，但保留“人批准后才执行”的动作边界。'], 'question-list')}</article></div></section><section class="source-notice"><b>样本数据说明</b><span>项目来源主要为公司官网与 Y Combinator 公开档案；活动来源主要为官方活动页。所有无法确认的信息均保留“未知 / 待核验”。</span></section>`;
   }
 
   function methodPage() {
-    return `<section class="method-hero"><span class="eyebrow accent">PRODUCT NOTE · V1</span><h2>让“信息多”变成<br/>“可验证、可行动”。</h2><p>本 Demo 不是生产级投研系统，也不替代 VC 投资经理的判断。它展示一条从公开信息到人工验证、再到跟进管理的 AI 产品工作流。</p></section><section class="method-flow"><article><span>01</span><h2>收集</h2><p>从有限代表性公开来源读取项目和活动；每条记录保留来源链接、写入时间与来源类型。</p></article><i>→</i><article><span>02</span><h2>规范化</h2><p>统一名称、赛道、地区、融资字段和活动元数据。找不到的字段显示“未知 / 待核验”。</p></article><i>→</i><article><span>03</span><h2>去重与初筛</h2><p>将实体、来源和描述合并；按新颖性、来源、完整度、相关性等规则得到可解释优先级。</p></article><i>→</i><article><span>04</span><h2>人类判断</h2><p>投资经理查看证据、选择收藏或忽略、添加标签和跟进状态。系统不做自动联系。</p></article></section><section class="detail-grid method-grid"><div class="detail-column"><article class="detail-panel"><div class="panel-head"><h2>为什么不只用普通搜索</h2></div>${bulletList(['普通搜索返回页面；本产品将项目、人物、融资、活动和来源整理为可筛选实体。', '普通搜索的结果顺序不解释投研相关性；本产品展示排序构成、待验证问题和不确定性。', '普通搜索不会积累团队的收藏、忽略、标签和跟进行为；本产品把这些操作变成下一阶段推荐的可解释信号。'], 'good-list')}</article><article class="detail-panel"><div class="panel-head"><h2>当前已实现</h2></div>${bulletList(['项目与活动双模块、详情页、来源链接、可信度和待核验状态。', '按行业、地区、B 轮以前可能性、活动类型、质量和时间等筛选；可解释排序。', '收藏、忽略、标签、跟进状态、最近查看和批量整理，均使用浏览器本地存储。', '“更新样本”清楚标示为本地 Demo 刷新，不伪装成实时爬虫。'], 'good-list')}</article></div><div class="detail-column"><article class="detail-panel"><div class="panel-head"><h2>当前限制</h2></div>${bulletList(['不是全天候联网采集；样本来自有限公开来源，打开前和行动前仍需核验。', '未实现跨来源自动实体消歧、新闻级更新、组织权限或真实 CRM / 邮件集成。', '质量分数是规则样例，不使用隐藏黑箱模型，不构成投资、法律或联系建议。'], 'warn-list')}</article><article class="detail-panel"><div class="panel-head"><h2>第二阶段</h2></div>${bulletList(['接入合规公开源与人工审核队列，增加抓取时间、版本与字段级证据。', '基于查看、收藏、忽略、标签和跟进状态提供可解释的主动推荐。', '与 CRM、日历和团队协作连接，但保留“人批准后才执行”的动作边界。'], 'question-list')}</article></div></section><section class="source-notice"><b>样本数据说明</b><span>项目来源主要为公司官网与 Y Combinator 公开档案；活动来源主要为官方活动页。所有无法确认的信息均保留“未知 / 待核验”。</span></section>`;
+    return `<section class="method-hero"><span class="eyebrow accent">PRODUCT NOTE · V1.1</span><h2>让“信息多”变成<br/>“可验证、可行动”。</h2><p>本 Demo 面向中国大陆 VC 场景，不替代投资经理判断。它将真实公开信号与已核验样本分层：Agent 先收集、规范化、去重和解释；人再决定是否核验、收藏或跟进。</p></section><section class="method-flow"><article><span>01</span><h2>公开收集</h2><p>定时读取中国大陆公开 RSS 与活动目录；只采集少量代表性来源，并记录每个来源本次是否成功。</p></article><i>→</i><article><span>02</span><h2>待核验队列</h2><p>实时新闻和活动先进入候选池。缺失公司、融资、嘉宾或联系人时保持“未知”，不会被自动补造。</p></article><i>→</i><article><span>03</span><h2>去重与初筛</h2><p>按标题与来源链接去重；用公开来源、AI 相关性、完整度和核验价值形成可解释优先级。</p></article><i>→</i><article><span>04</span><h2>人类判断</h2><p>投资经理查看原始证据，收藏、忽略、加标签或设置跟进状态。系统不自动联系任何人。</p></article></section><section class="detail-grid method-grid"><div class="detail-column"><article class="detail-panel"><div class="panel-head"><h2>为什么不只用普通搜索</h2></div>${bulletList(['普通搜索返回页面；本产品将候选线索、已核验项目、活动和来源整理为可筛选的工作队列。', '普通搜索的结果顺序不解释投研相关性；本产品展示入队理由、来源健康状态、待验证问题和不确定性。', '普通搜索不会积累团队的收藏、忽略、标签和跟进行为；本产品把这些操作变成下一阶段推荐的可解释信号。'], 'good-list')}</article><article class="detail-panel"><div class="panel-head"><h2>当前已实现</h2></div>${bulletList(['23 个中国大陆优先项目、21 个中国大陆优先活动，均保留来源链接、可信度和待核验状态。', '公开源采集脚本：36氪 RSS、量子位 RSS，以及活动行北京、上海、深圳 AI 活动目录。', '候选线索去重、抓取时间、来源健康状态、可解释入队理由与收藏/跟进闭环。', '收藏、忽略、标签、跟进状态、最近查看和批量整理，均使用浏览器本地存储。'], 'good-list')}</article></div><div class="detail-column"><article class="detail-panel"><div class="panel-head"><h2>当前限制</h2></div>${bulletList(['实时队列是中国大陆公开信息候选，不等于已完成公司、融资、活动质量或联系人核验。', '当前公开 Demo 是静态发布版本；要让线上内容按时更新，需要将已完成的采集脚本接到 CI 定时任务和自动部署。', '未实现跨来源实体消歧、组织权限或真实 CRM / 邮件集成；质量分数不是投资建议。'], 'warn-list')}</article><article class="detail-panel"><div class="panel-head"><h2>下一步部署</h2></div>${bulletList(['使用 GitHub Actions 每 6 小时运行中国大陆公开源采集，发生变化才提交新的实时队列文件。', '将静态站点接到自有域名和 Git 推送自动部署；不需要单独维护传统云服务器。', '后续再接入合规数据源与人工审核，逐步将高质量线索提升为正式项目 / 活动记录。'], 'question-list')}</article></div></section><section class="source-notice"><b>实时数据说明</b><span>中国大陆公开 RSS 与活动目录只用于候选线索发现。每条线索保留原始来源和抓取时间；没有证据的字段明确显示“未知 / 待核验”。</span></section>`;
   }
 
   function renderPage() {
@@ -252,10 +322,12 @@
     if (name === 'dashboard') return dashboard();
     if (name === 'projects') return routeEntityId() ? projectDetail(routeEntityId()) : projectsPage();
     if (name === 'events') return routeEntityId() ? eventDetail(routeEntityId()) : eventsPage();
+    if (name === 'signals') return routeEntityId() ? signalDetail(routeEntityId()) : signalsPage();
     if (name === 'follow-ups') return followupsPage();
     if (name === 'method') return methodPage();
     if (name === 'project') return projectDetail(routeEntityId());
     if (name === 'event') return eventDetail(routeEntityId());
+    if (name === 'signal') return signalDetail(routeEntityId());
     return dashboard();
   }
   function render() { document.getElementById('app').innerHTML = appShell(renderPage()); }
@@ -295,11 +367,7 @@
       render();
       return;
     }
-    if (action === 'demo-refresh') {
-      state.lastRefresh = `2026-07-15 ${new Date().toLocaleTimeString('zh-CN', { hour12: false, hour: '2-digit', minute: '2-digit' })} · 演示刷新`;
-      record('demo_refresh', 'system', 'local-sample'); persist(); setToast('已重算本地 Demo 样本；未访问外部网站'); return;
-    }
-    if (action === 'clear-filters') { ui[type] = type === 'project' ? { search: '', date: 'all', industry: '', region: '', stage: '', amount: 'all', bBefore: '', confidence: '', sort: 'score' } : { search: '', theme: '', type: '', location: '', mode: '', quality: '', discovery: '', time: 'all', sort: 'score' }; record('clear_filters', type, 'all'); render(); return; }
+    if (action === 'clear-filters') { ui[type] = type === 'project' ? { search: '', date: 'all', industry: '', region: '', stage: '', amount: 'all', bBefore: '', confidence: '', sort: 'score' } : type === 'event' ? { search: '', theme: '', type: '', location: '', mode: '', quality: '', discovery: '', time: 'all', sort: 'score' } : { search: '', kind: '', source: '' }; record('clear_filters', type, 'all'); render(); return; }
     if (action === 'batch-tag') {
       const label = window.prompt('给已选择线索添加标签');
       if (label && label.trim()) {
@@ -320,14 +388,20 @@
       const list = filteredProjects();
       const count = document.querySelector('[data-project-count]');
       const results = document.querySelector('[data-project-results]');
-      if (count) count.textContent = `共 ${DATA.projects.length} 条公开样本 · 当前 ${list.length} 条`;
+      if (count) count.textContent = `共 ${DATA.projects.length} 条中国大陆优先公开样本 · 当前 ${list.length} 条`;
       if (results) results.innerHTML = list.length ? list.map(projectCard).join('') : empty('没有符合条件的项目', '尝试清除筛选或更换搜索词。');
+      return;
+    }
+    if (type === 'signal') {
+      const list = filteredSignals();
+      const results = document.querySelector('[data-signal-results]');
+      if (results) results.innerHTML = list.length ? list.map(signalCard).join('') : empty('没有符合条件的实时线索', '尝试清除筛选，或等待下一次后台采集。');
       return;
     }
     const list = filteredEvents();
     const count = document.querySelector('[data-event-count]');
     const results = document.querySelector('[data-event-results]');
-    if (count) count.textContent = `共 ${DATA.events.length} 条公开样本 · 当前 ${list.length} 条`;
+    if (count) count.textContent = `共 ${DATA.events.length} 条中国大陆优先公开样本 · 当前 ${list.length} 条`;
     if (results) results.innerHTML = list.length ? list.map(eventCard).join('') : empty('没有符合条件的活动', '尝试清除筛选或更换搜索词。');
   }
   document.getElementById('app').addEventListener('input', event => {
@@ -356,7 +430,7 @@
       Object.keys(state.selected).forEach(itemKey => { state.followups[itemKey] = input.value; }); record('batch_status', 'system', 'selection', { status: input.value }); persist(); setToast(`已批量设为“${input.value}”`); return;
     }
   });
-  window.addEventListener('hashchange', () => { const [name, id] = routeParts(); if ((name === 'projects' || name === 'events') && id) record('view', name === 'projects' ? 'project' : 'event', id); render(); });
+  window.addEventListener('hashchange', () => { const [name, id] = routeParts(); if ((name === 'projects' || name === 'events' || name === 'signals') && id) record('view', name === 'projects' ? 'project' : name === 'events' ? 'event' : 'signal', id); render(); });
   if (!location.hash) location.hash = '#/dashboard';
   render();
 })();

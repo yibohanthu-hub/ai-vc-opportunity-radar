@@ -3,3 +3,14 @@ dist/
 .DS_Store
 .wrangler/
 .playwright-cli/
+
+# Local-only release bundles and verification artifacts
+output/release/
+output/submission/
+output/playwright/live-signal-queue.png
+tmp/
+
+# Never publish local runtime credentials
+.env
+.env.*
+!.env.example

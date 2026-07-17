@@ -41,6 +41,7 @@ npm run check:signals
 | 主分支发布工作流 | 通过 | [Deploy AI Opportunity Radar #29579973294](https://github.com/yibohanthu-hub/ai-vc-opportunity-radar/actions/runs/29579973294) 成功。 |
 | 定时策略 | 已启用 | GitHub Actions UTC `17 */6 * * *`；对应北京时间约 02:17、08:17、14:17、20:17。调度为尽力而为，不承诺精确到分钟。 |
 | 公网结果核验 | 通过（HTTP） | 2026-07-17 21:28（北京时间）从自有域名打开活动页，显示“共 36 条国内优先公开样本”；`data.js` 同时可读取新增项目 `coddie-ai` 与活动 `ai-hangzhou-2026`。 |
+| AI 创新产品作品集入口公网验证 | 通过（HTTP） | 2026-07-17 22:05（北京时间）从自有域名打开 `#/portfolio`，验证 0→1、Agent、物理 AI 场景、评估边界与 Demo 跳转可用；无浏览器控制台错误。 |
 | HTTPS | 待 GitHub Pages 证书签发 | 域名 CNAME 与 HTTP 已生效；当前证书尚未覆盖 `www.aivcradar.online`，不能伪装为 HTTPS 已完成。 |
 
 ## 3. 功能验证
@@ -79,6 +80,7 @@ npm run check:signals
 - `output/playwright/v1.5-public-events.png`
 - `output/playwright/v1.6-portfolio.png`
 - `output/playwright/v1.6-portfolio-mobile.png`
+- `output/playwright/v1.6-public-portfolio.png`
 
 ## 4. 异常处理与失败案例
 

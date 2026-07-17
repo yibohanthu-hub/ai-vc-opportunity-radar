@@ -2,7 +2,7 @@
 (function () {
   window.RADAR_LIVE_SIGNALS = {
   "version": 2,
-  "generatedAt": "2026-07-17T12:50:24.638Z",
+  "generatedAt": "2026-07-17T14:05:36.682Z",
   "status": "success",
   "disclaimer": "实时队列以国内公开来源为优先，只收录待核验候选。未知字段保持未知；必须打开原始来源并由投资经理核验后，才能进入正式项目 / 活动信息池。",
   "sources": [
@@ -11,7 +11,7 @@
       "name": "InfoQ 中文（国内 AI / 创业 / 产品新闻）",
       "url": "https://www.infoq.cn/feed",
       "status": "success",
-      "fetchedAt": "2026-07-17T12:50:24.638Z",
+      "fetchedAt": "2026-07-17T14:05:36.682Z",
       "records": 0
     },
     {
@@ -19,7 +19,7 @@
       "name": "量子位 RSS（国内 AI 新闻）",
       "url": "https://www.qbitai.com/feed",
       "status": "success",
-      "fetchedAt": "2026-07-17T12:50:24.638Z",
+      "fetchedAt": "2026-07-17T14:05:36.682Z",
       "records": 2
     },
     {
@@ -27,7 +27,7 @@
       "name": "36氪融资快报（公开融资 / 创业线索）",
       "url": "https://pitchhub.36kr.com/financing-flash",
       "status": "success",
-      "fetchedAt": "2026-07-17T12:50:24.638Z",
+      "fetchedAt": "2026-07-17T14:05:36.682Z",
       "records": 10
     },
     {
@@ -35,7 +35,7 @@
       "name": "活动行：北京 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E5%8C%97%E4%BA%AC&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-07-17T12:50:24.638Z",
+      "fetchedAt": "2026-07-17T14:05:36.682Z",
       "records": 2
     },
     {
@@ -43,7 +43,7 @@
       "name": "活动行：上海 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E4%B8%8A%E6%B5%B7&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-07-17T12:50:24.638Z",
+      "fetchedAt": "2026-07-17T14:05:36.682Z",
       "records": 4
     },
     {
@@ -51,7 +51,7 @@
       "name": "活动行：深圳 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E6%B7%B1%E5%9C%B3&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-07-17T12:50:24.638Z",
+      "fetchedAt": "2026-07-17T14:05:36.682Z",
       "records": 3
     },
     {
@@ -59,7 +59,7 @@
       "name": "活动行：杭州 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E6%9D%AD%E5%B7%9E&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-07-17T12:50:24.638Z",
+      "fetchedAt": "2026-07-17T14:05:36.682Z",
       "records": 3
     },
     {
@@ -67,7 +67,7 @@
       "name": "活动行：广州 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E5%B9%BF%E5%B7%9E&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-07-17T12:50:24.638Z",
+      "fetchedAt": "2026-07-17T14:05:36.682Z",
       "records": 0
     },
     {
@@ -75,7 +75,7 @@
       "name": "活动行：成都 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E6%88%90%E9%83%BD&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-07-17T12:50:24.638Z",
+      "fetchedAt": "2026-07-17T14:05:36.682Z",
       "records": 2
     }
   ],
@@ -89,7 +89,7 @@
       "sourceUrl": "https://www.qbitai.com/feed",
       "url": "https://www.qbitai.com/2026/07/453084.html",
       "publishedAt": "2026-07-17T10:17:23.000Z",
-      "collectedAt": "2026-07-17T12:50:24.638Z",
+      "collectedAt": "2026-07-17T14:05:36.682Z",
       "stageHint": "阶段待核验",
       "earlyStage": false,
       "summary": "来源未提供可用摘要；请打开原始链接核验主体、融资与产品信息。",
@@ -125,7 +125,7 @@
       "sourceUrl": "https://www.qbitai.com/feed",
       "url": "https://www.qbitai.com/2026/07/452942.html",
       "publishedAt": "2026-07-17T09:20:14.000Z",
-      "collectedAt": "2026-07-17T12:50:24.638Z",
+      "collectedAt": "2026-07-17T14:05:36.682Z",
       "stageHint": "阶段待核验",
       "earlyStage": false,
       "summary": "采用非Transformer架构“Mobius”，不做泛化通用问答",
@@ -160,8 +160,8 @@
       "sourceName": "36氪融资快报（公开融资 / 创业线索）",
       "sourceUrl": "https://pitchhub.36kr.com/financing-flash",
       "url": "https://36kr.com/p/3899081603483525",
-      "publishedAt": "10小时前",
-      "collectedAt": "2026-07-17T12:50:24.638Z",
+      "publishedAt": "12小时前",
+      "collectedAt": "2026-07-17T14:05:36.682Z",
       "stageHint": "阶段待核验",
       "earlyStage": false,
       "summary": "在JEPA理论体系基础上进一步延伸。",
@@ -196,8 +196,8 @@
       "sourceName": "36氪融资快报（公开融资 / 创业线索）",
       "sourceUrl": "https://pitchhub.36kr.com/financing-flash",
       "url": "https://36kr.com/p/3899057634363266",
-      "publishedAt": "11小时前",
-      "collectedAt": "2026-07-17T12:50:24.638Z",
+      "publishedAt": "12小时前",
+      "collectedAt": "2026-07-17T14:05:36.682Z",
       "stageHint": "阶段待核验",
       "earlyStage": false,
       "summary": "“自由执行任务”能力是未来行业竞争关键",
@@ -232,8 +232,8 @@
       "sourceName": "36氪融资快报（公开融资 / 创业线索）",
       "sourceUrl": "https://pitchhub.36kr.com/financing-flash",
       "url": "https://36kr.com/p/3898370289846153",
-      "publishedAt": "12小时前",
-      "collectedAt": "2026-07-17T12:50:24.638Z",
+      "publishedAt": "14小时前",
+      "collectedAt": "2026-07-17T14:05:36.682Z",
       "stageHint": "种子轮",
       "earlyStage": true,
       "summary": "角色不是静态prompt，而是一个会持续生长的数字生命。",
@@ -269,7 +269,7 @@
       "sourceUrl": "https://pitchhub.36kr.com/financing-flash",
       "url": "https://36kr.com/p/3895721094842249",
       "publishedAt": "昨天",
-      "collectedAt": "2026-07-17T12:50:24.638Z",
+      "collectedAt": "2026-07-17T14:05:36.682Z",
       "stageHint": "阶段待核验",
       "earlyStage": false,
       "summary": "从非车规到车规，从测试走向规模化",
@@ -305,7 +305,7 @@
       "sourceUrl": "https://pitchhub.36kr.com/financing-flash",
       "url": "https://36kr.com/newsflashes/3896750928775041",
       "publishedAt": "2026-07-15",
-      "collectedAt": "2026-07-17T12:50:24.638Z",
+      "collectedAt": "2026-07-17T14:05:36.682Z",
       "stageHint": "B轮",
       "earlyStage": false,
       "summary": "36氪获悉，近日，“问天量子”完成B轮融资，获得6亿元资金注入，新进投资方包括海南晴澜、海南量启、淄博汇富齐嘉等多家机构。此次融资资金将主要用于核心技术的规模化商用、量子随机数芯片的量产扩能，以及面向人工智能时代的量子AI融合产品研发。",
@@ -341,7 +341,7 @@
       "sourceUrl": "https://pitchhub.36kr.com/financing-flash",
       "url": "https://36kr.com/newsflashes/3896612236265095",
       "publishedAt": "2026-07-15",
-      "collectedAt": "2026-07-17T12:50:24.638Z",
+      "collectedAt": "2026-07-17T14:05:36.682Z",
       "stageHint": "阶段待核验",
       "earlyStage": false,
       "summary": "36氪获悉，面壁智能已完成新一轮融资，投资方包括国家级基金、央企、汽车制造商等各类产业方、财务投资人等。至此，面壁智能2026上半年累计融资金额超50亿元，估值超200亿元，一跃成为端侧智能领域公开估值最大的独角兽企业。面壁智能专注于将原生端侧大模型技术转化为标准化产品，在具身、汽车、手机、低空、民航等核心赛道落地，未来还将拓展至工业、家居、特种领域等。",
@@ -377,7 +377,7 @@
       "sourceUrl": "https://pitchhub.36kr.com/financing-flash",
       "url": "https://36kr.com/newsflashes/3896356363814530",
       "publishedAt": "2026-07-15",
-      "collectedAt": "2026-07-17T12:50:24.638Z",
+      "collectedAt": "2026-07-17T14:05:36.682Z",
       "stageHint": "天使轮",
       "earlyStage": true,
       "summary": "近日，具身智能企业“灵巧智能”（DexRobot）宣布完成数亿元A轮融资，本轮由上海电气战略投资，产业资本与财务资本持续加码。2026年内，公司已先后完成天使轮及A轮两轮融资，融资资金将重点用于灵巧操作全栈技术研发、核心产品迭代、教育/电力/工业三大场景落地及产业生态建设。此外，上海电气旗下上海机电与灵巧智能同步成立两家合资公司——灵机壹动与灵机智联，总注册资本超亿元，分别聚焦核心零部件量产与工业场景解决方案，标志着公司从技术研发迈入产业规模化交付阶段。",
@@ -413,7 +413,7 @@
       "sourceUrl": "https://pitchhub.36kr.com/financing-flash",
       "url": "https://36kr.com/p/3896298534520705",
       "publishedAt": "2026-07-15",
-      "collectedAt": "2026-07-17T12:50:24.638Z",
+      "collectedAt": "2026-07-17T14:05:36.682Z",
       "stageHint": "种子轮",
       "earlyStage": true,
       "summary": "产品已落地首单交付。",
@@ -449,7 +449,7 @@
       "sourceUrl": "https://pitchhub.36kr.com/financing-flash",
       "url": "https://36kr.com/newsflashes/3894938156465413",
       "publishedAt": "2026-07-14",
-      "collectedAt": "2026-07-17T12:50:24.638Z",
+      "collectedAt": "2026-07-17T14:05:36.682Z",
       "stageHint": "A+轮",
       "earlyStage": true,
       "summary": "36氪获悉，近日，“新奇机器人”宣布完成A+轮融资。这是新奇机器人自2025年底启动首轮市场化融资以来，半年内完成的第三轮融资。本轮融资完成后，新奇机器人的投资人阵容涵盖经纬创投、沃赋创投、云晖资本、厚雪资本、Synstellation Capital等市场化投资机构，智元机器人、福然德等产业投资方，以及建发新兴投资、吴中金控、雉荟投资、宁波天使等国有背景资本。",
@@ -485,7 +485,7 @@
       "sourceUrl": "https://pitchhub.36kr.com/financing-flash",
       "url": "https://36kr.com/p/3894898001181572",
       "publishedAt": "2026-07-14",
-      "collectedAt": "2026-07-17T12:50:24.638Z",
+      "collectedAt": "2026-07-17T14:05:36.682Z",
       "stageHint": "种子轮",
       "earlyStage": true,
       "summary": "推动量子计算能力从实验环境走向真实场景，成为未来产业研发体系的新型计算基础设施。",
@@ -515,46 +515,6 @@
   ],
   "eventCandidates": [
     {
-      "id": "live-event-1tovguz",
-      "kind": "event",
-      "name": "AI引爆营销—纯公益分享",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：北京 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E5%8C%97%E4%BA%AC&tag=AI",
-      "url": "https://www.huodongxing.com/event/4869998006000",
-      "publishedAt": "07/25 周六 14:00（活动行列表页，年份待核验）",
-      "collectedAt": "2026-07-17T12:50:24.638Z",
-      "summary": "活动行 北京 AI 公开目录收录。主办方：锦上AIOPC创业孵化平台；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "07/25 周六 14:00（活动行列表页，年份待核验）",
-        "location": "北京丰台",
-        "mode": "线下 / 待核验",
-        "organizer": "锦上AIOPC创业孵化平台"
-      },
-      "sources": [
-        {
-          "title": "活动行：北京 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/4869998006000",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      }
-    },
-    {
       "id": "live-event-1346qhn",
       "kind": "event",
       "name": "AI之后，应用如何增长？ ----非游出海实践闭门分享",
@@ -563,7 +523,7 @@
       "sourceUrl": "https://www.huodongxing.com/events?city=%E5%8C%97%E4%BA%AC&tag=AI",
       "url": "https://www.huodongxing.com/event/9868437057000",
       "publishedAt": "07/23 周四 14:00（活动行列表页，年份待核验）",
-      "collectedAt": "2026-07-17T12:50:24.638Z",
+      "collectedAt": "2026-07-17T14:05:36.682Z",
       "summary": "活动行 北京 AI 公开目录收录。主办方：麦炽；具体议程、嘉宾与项目展示需打开活动页核验。",
       "confidence": "待核验",
       "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
@@ -595,6 +555,46 @@
       }
     },
     {
+      "id": "live-event-1tovguz",
+      "kind": "event",
+      "name": "AI引爆营销—纯公益分享",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：北京 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E5%8C%97%E4%BA%AC&tag=AI",
+      "url": "https://www.huodongxing.com/event/4869998006000",
+      "publishedAt": "07/25 周六 14:00（活动行列表页，年份待核验）",
+      "collectedAt": "2026-07-17T14:05:36.682Z",
+      "summary": "活动行 北京 AI 公开目录收录。主办方：锦上AIOPC创业孵化平台；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "07/25 周六 14:00（活动行列表页，年份待核验）",
+        "location": "北京丰台",
+        "mode": "线下 / 待核验",
+        "organizer": "锦上AIOPC创业孵化平台"
+      },
+      "sources": [
+        {
+          "title": "活动行：北京 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/4869998006000",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      }
+    },
+    {
       "id": "live-event-rofnbv",
       "kind": "event",
       "name": "AI产业出海峰会",
@@ -603,7 +603,7 @@
       "sourceUrl": "https://www.huodongxing.com/events?city=%E4%B8%8A%E6%B5%B7&tag=AI",
       "url": "https://www.huodongxing.com/event/2865826950400",
       "publishedAt": "07/30 周四 14:00（活动行列表页，年份待核验）",
-      "collectedAt": "2026-07-17T12:50:24.638Z",
+      "collectedAt": "2026-07-17T14:05:36.682Z",
       "summary": "活动行 上海 AI 公开目录收录。主办方：扬帆出海；具体议程、嘉宾与项目展示需打开活动页核验。",
       "confidence": "待核验",
       "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
@@ -643,7 +643,7 @@
       "sourceUrl": "https://www.huodongxing.com/events?city=%E4%B8%8A%E6%B5%B7&tag=AI",
       "url": "https://www.huodongxing.com/event/1869961296600",
       "publishedAt": "07/21 周二 14:00（活动行列表页，年份待核验）",
-      "collectedAt": "2026-07-17T12:50:24.638Z",
+      "collectedAt": "2026-07-17T14:05:36.682Z",
       "summary": "活动行 上海 AI 公开目录收录。主办方：司马阅；具体议程、嘉宾与项目展示需打开活动页核验。",
       "confidence": "待核验",
       "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
@@ -683,7 +683,7 @@
       "sourceUrl": "https://www.huodongxing.com/events?city=%E4%B8%8A%E6%B5%B7&tag=AI",
       "url": "https://www.huodongxing.com/event/2869421440200",
       "publishedAt": "07/31 周五 13:00（活动行列表页，年份待核验）",
-      "collectedAt": "2026-07-17T12:50:24.638Z",
+      "collectedAt": "2026-07-17T14:05:36.682Z",
       "summary": "活动行 上海 AI 公开目录收录。主办方：动点科技 TechNode；具体议程、嘉宾与项目展示需打开活动页核验。",
       "confidence": "待核验",
       "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
@@ -723,7 +723,7 @@
       "sourceUrl": "https://www.huodongxing.com/events?city=%E4%B8%8A%E6%B5%B7&tag=AI",
       "url": "https://www.huodongxing.com/event/8869251381200",
       "publishedAt": "07/20 周一 18:00（活动行列表页，年份待核验）",
-      "collectedAt": "2026-07-17T12:50:24.638Z",
+      "collectedAt": "2026-07-17T14:05:36.682Z",
       "summary": "活动行 上海 AI 公开目录收录。主办方：NexusTech；具体议程、嘉宾与项目展示需打开活动页核验。",
       "confidence": "待核验",
       "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
@@ -763,7 +763,7 @@
       "sourceUrl": "https://www.huodongxing.com/events?city=%E6%B7%B1%E5%9C%B3&tag=AI",
       "url": "https://www.huodongxing.com/event/5859922218300",
       "publishedAt": "08/26 周三 ~ 08/28 周五（活动行列表页，年份待核验）",
-      "collectedAt": "2026-07-17T12:50:24.638Z",
+      "collectedAt": "2026-07-17T14:05:36.682Z",
       "summary": "活动行 深圳 AI 公开目录收录。主办方：世界人工智能与物联网创新联盟（WAIA）；具体议程、嘉宾与项目展示需打开活动页核验。",
       "confidence": "待核验",
       "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
@@ -803,7 +803,7 @@
       "sourceUrl": "https://www.huodongxing.com/events?city=%E6%B7%B1%E5%9C%B3&tag=AI",
       "url": "https://www.huodongxing.com/event/4868530661300",
       "publishedAt": "07/22 周三 14:30（活动行列表页，年份待核验）",
-      "collectedAt": "2026-07-17T12:50:24.638Z",
+      "collectedAt": "2026-07-17T14:05:36.682Z",
       "summary": "活动行 深圳 AI 公开目录收录。主办方：蜗牛工场；具体议程、嘉宾与项目展示需打开活动页核验。",
       "confidence": "待核验",
       "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
@@ -843,7 +843,7 @@
       "sourceUrl": "https://www.huodongxing.com/events?city=%E6%B7%B1%E5%9C%B3&tag=AI",
       "url": "https://www.huodongxing.com/event/7862775396900",
       "publishedAt": "08/04 周二 ~ 08/05 周三（活动行列表页，年份待核验）",
-      "collectedAt": "2026-07-17T12:50:24.638Z",
+      "collectedAt": "2026-07-17T14:05:36.682Z",
       "summary": "活动行 深圳 AI 公开目录收录。主办方：TikTok 卖家门户网TKFFF；具体议程、嘉宾与项目展示需打开活动页核验。",
       "confidence": "待核验",
       "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
@@ -883,7 +883,7 @@
       "sourceUrl": "https://www.huodongxing.com/events?city=%E6%9D%AD%E5%B7%9E&tag=AI",
       "url": "https://www.huodongxing.com/event/2868441463100",
       "publishedAt": "07/30 周四 13:30（活动行列表页，年份待核验）",
-      "collectedAt": "2026-07-17T12:50:24.638Z",
+      "collectedAt": "2026-07-17T14:05:36.682Z",
       "summary": "活动行 杭州 AI 公开目录收录。主办方：网易智企；具体议程、嘉宾与项目展示需打开活动页核验。",
       "confidence": "待核验",
       "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
@@ -915,16 +915,16 @@
       }
     },
     {
-      "id": "live-event-18o0ucy",
+      "id": "live-event-l5g7z1",
       "kind": "event",
-      "name": "2026 GAIC 全球人工智能大会 —— 杭州峰会",
+      "name": "AI短剧出海精品沙龙 · 从内容量产到全球盈利的实战闭环",
       "category": "国内 AI 活动待核验",
       "sourceName": "活动行：杭州 AI 活动目录",
       "sourceUrl": "https://www.huodongxing.com/events?city=%E6%9D%AD%E5%B7%9E&tag=AI",
-      "url": "https://www.huodongxing.com/event/6863961882300",
-      "publishedAt": "10/22 周四 ~ 10/23 周五（活动行列表页，年份待核验）",
-      "collectedAt": "2026-07-17T12:50:24.638Z",
-      "summary": "活动行 杭州 AI 公开目录收录。主办方：全球人工智能大会GAIC组委会；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "url": "https://www.huodongxing.com/event/6870007552711",
+      "publishedAt": "08/18 周二 13:00（活动行列表页，年份待核验）",
+      "collectedAt": "2026-07-17T14:05:36.682Z",
+      "summary": "活动行 杭州 AI 公开目录收录。主办方：游戏客栈隋新岩；具体议程、嘉宾与项目展示需打开活动页核验。",
       "confidence": "待核验",
       "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
       "unknowns": [
@@ -934,15 +934,15 @@
       ],
       "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
       "eventMeta": {
-        "startDate": "10/22 周四 ~ 10/23 周五（活动行列表页，年份待核验）",
+        "startDate": "08/18 周二 13:00（活动行列表页，年份待核验）",
         "location": "浙江杭州",
         "mode": "线下 / 待核验",
-        "organizer": "全球人工智能大会GAIC组委会"
+        "organizer": "游戏客栈隋新岩"
       },
       "sources": [
         {
           "title": "活动行：杭州 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/6863961882300",
+          "url": "https://www.huodongxing.com/event/6870007552711",
           "type": "公开活动目录"
         }
       ],
@@ -963,7 +963,7 @@
       "sourceUrl": "https://www.huodongxing.com/events?city=%E6%88%90%E9%83%BD&tag=AI",
       "url": "https://www.huodongxing.com/event/9869674477200",
       "publishedAt": "07/22 周三 14:00（活动行列表页，年份待核验）",
-      "collectedAt": "2026-07-17T12:50:24.638Z",
+      "collectedAt": "2026-07-17T14:05:36.682Z",
       "summary": "活动行 成都 AI 公开目录收录。主办方：外贸牛牛；具体议程、嘉宾与项目展示需打开活动页核验。",
       "confidence": "待核验",
       "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
@@ -1003,7 +1003,7 @@
       "sourceUrl": "https://www.huodongxing.com/events?city=%E6%88%90%E9%83%BD&tag=AI",
       "url": "https://www.huodongxing.com/event/1868452013100",
       "publishedAt": "后天 14:00（活动行列表页，年份待核验）",
-      "collectedAt": "2026-07-17T12:50:24.638Z",
+      "collectedAt": "2026-07-17T14:05:36.682Z",
       "summary": "活动行 成都 AI 公开目录收录。主办方：123X Labs；具体议程、嘉宾与项目展示需打开活动页核验。",
       "confidence": "待核验",
       "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",

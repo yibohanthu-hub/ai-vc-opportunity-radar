@@ -38,6 +38,46 @@
     ...item
   });
 
+  // Public financing reports are useful for finding very early teams, but they
+  // are not a substitute for a company dossier. This helper keeps those records
+  // visibly in the formal pool while retaining their source boundary and manual
+  // review requirement instead of filling gaps with guesses.
+  const earlyFundingProject = (item) => project({
+    industry: '具身智能',
+    subSector: '早期融资 / 待核验',
+    location: '国内（公开融资报道；待主体核验）',
+    description: '来自公开融资报道的国内早期 AI 项目线索；产品、主体与商业化信息需要进一步核验。',
+    product: '待以公司、投资方或客户公开材料进一步核验。',
+    targetCustomers: '目标客户与应用场景：待核验。',
+    aiApproach: '技术路线以当前公开融资报道为线索，需回到公司或投资方材料验证。',
+    founders: '未知（当前公开报道未完整披露）',
+    founderBackground: '未知（需以公司、投资方或可信采访核验）',
+    foundedAt: '未知（早期融资披露；主体成立时间待核验）',
+    stage: '待核验',
+    amount: '未知',
+    valuation: '未知',
+    lastFunding: '未知',
+    bBefore: '待核验',
+    earlyStageSignal: true,
+    fullDescription: '本条记录来自公开融资报道，用于扩展早期项目发现范围。只有来源明确披露的信息被写入；团队、主体、融资条款、客户与产品能力均需要进一步交叉验证。',
+    commercial: '公开报道可能提及试点或订单；合同、收入、客户与交付深度均待人工核验。',
+    competitors: '同赛道国内与全球 AI / 机器人 / 软件解决方案；具体竞品格局需人工研究。',
+    publicContacts: [{ label: '公开融资报道 / 原始来源', url: item.url }],
+    sources: [source(item.sourceTitle || '公开融资报道', item.url, item.sourceType || '公开融资报道')],
+    discoveredAt: '2026-07-17 20:10',
+    informationUpdatedAt: capturedAt,
+    sourceUpdate: '2026-07-17 以公开融资报道整理；仅保留可见披露，所有关键事实在行动前需人工交叉核验。',
+    confidence: '中',
+    needsManualReview: true,
+    confidenceNote: '当前记录以公开融资报道为单一或主要线索，不能自动等同于已完成主体、融资或商业化事实审计。',
+    score: { novelty: 5, source: 4, completeness: 3, relevance: 5, stage: 5, followup: 5 },
+    why: ['近期公开披露早期融资或成立时间较短，可作为国内 AI 项目发现与人工研究入口。', '技术主题、融资节奏和真实场景验证均可形成下一步可解释的问题清单。'],
+    uncertainties: ['公司主体、完整团队、融资条款、估值与公开联系入口可能未在当前来源完整披露。', '媒体报道的产品、客户、订单或性能描述需要公司、投资方或客户材料交叉验证。'],
+    verifyQuestions: ['公司主体、成立时间、核心团队和当前融资状态能否由公司或投资方公开材料确认？', '最优先产品、目标客户与试点/订单是否有可复核证据？', '与现有替代方案相比，技术、交付成本与客户 ROI 的差异是什么？'],
+    relatedEvents: ['waic-2026', 'wrc-2026'],
+    ...item
+  });
+
   const event = (item) => ({
     location: '国内（以官方活动页为准）',
     mode: '线下 / 待官方页面核验',
@@ -301,6 +341,97 @@
         why: ['成立不足一年、早期融资且产品场景聚焦，符合早期应用型 AI 项目的发现目标。', '内容电商 Agent 可以围绕任务完成率、成本、转化、平台依赖和客户留存形成具体验证。'],
         uncertainties: ['公司主体、官网、完整团队、融资条款和投资方未被当前公司材料证实。', '媒体提及的产品能力、客户效果与商业化指标均需要独立证据。'],
         verifyQuestions: ['Moras 是否已公开可用，核心用户是谁，付费和留存数据如何？', 'Agent 在平台规则、内容质量和账户安全约束下的真实完成率如何？', '与通用视频生成工具和人工运营团队相比，单位产出成本和转化提升是否可复现？'], relatedEvents: ['ai-comic-export', 'ai-interactive-film-game', 'enterprise-ai-collab']
+      }),
+      earlyFundingProject({
+        id: 'wujie-dynamics', name: '无界动力', industry: '具身智能', subSector: '通用具身大脑 / 世界模型', location: '北京（公开融资报道）',
+        description: '公开报道披露其面向工业制造和商业服务场景研发具身通用大脑与世界模型。', product: 'MWA™ 具身通用大脑及相关机器人系统（以公开报道为准）。', targetCustomers: '工业制造、商业服务与需要通用操作机器人的产业客户。', aiApproach: '隐空间世界模型与强化学习路径（公开融资报道）。', url: 'https://news.pedaily.cn/202606/565576.shtml',
+        stage: '天使轮（2026-06；公开融资报道）', amount: '超 2 亿美元（公开融资报道）', lastFunding: '2026-06-26（公开融资报道）', bBefore: '是（天使轮已披露）',
+        sourceTitle: '投资界：无界动力完成超 2 亿美元天使轮融资', founders: '未知（当前来源未完整披露）', founderBackground: '未知（待公司或投资方材料核验）。',
+        why: ['天使轮阶段即披露世界模型与真实场景交付方向，适合核验“大额融资—产品能力—订单”是否一致。', '具身通用大脑的跨场景泛化、数据闭环与交付节奏可形成具体尽调问题。'], relatedEvents: ['wrc-2026', 'waic-2026', 'embodied-robot-commercialization']
+      }),
+      earlyFundingProject({
+        id: 'cas-yukun', name: '中科煜坤', industry: '具身智能', subSector: '时空智能 / 机器人世界模型', location: '北京（公开融资报道）',
+        description: '中科院自动化所孵化的时空智能创业团队，面向机器人与复杂物理场景。', product: '多模态通用时空智能基础模型及“感知—理解—预测—决策”技术体系。', targetCustomers: '机器人、智能设备与复杂物理场景的产品和产业团队。', aiApproach: '多模态推理、三维计算机视觉、世界模型与行动模型（公开融资报道）。', url: 'https://news.pedaily.cn/202606/565681.shtml',
+        foundedAt: '未知（高校 / 研究机构孵化，主体成立时间待核验）', stage: '种子轮（2026-06；公开融资报道）', amount: '千万元级人民币（公开融资报道）', lastFunding: '2026-06-30（公开融资报道）', bBefore: '是（种子轮已披露）',
+        sourceTitle: '投资界：中科煜坤完成千万元级种子轮融资', founders: '吴毅红（创立；公开融资报道）', founderBackground: '中国科学院自动化研究所研究员、机器人视觉团队负责人（公开融资报道）。',
+        why: ['科研转化、种子融资与明确的机器人时空智能产品方向同时出现。', '数据来源、端侧协同和从研究成果到客户交付的路径需要早期验证。'], relatedEvents: ['wrc-2026', 'waic-2026', 'ceai-2026']
+      }),
+      earlyFundingProject({
+        id: 'neowa-robotics', name: '纽娲机器人（NeoWa Robotics）', industry: '具身智能', subSector: '世界通行模型 / 机器人导航', location: '国内（公开融资报道；具体主体待核验）',
+        description: '公开报道披露其为不同机器人本体提供真实环境中的自主移动、导航与交互能力。', product: '世界通行模型（WTM）、SimWeaver 物理仿真器与相关具行智能系统。', targetCustomers: '物流、园区、文旅及需要机器人自主通行能力的产业客户。', aiApproach: '显式三维与物理规律驱动的世界模型、仿真数据和机器人导航闭环（公开融资报道）。', url: 'https://news.pedaily.cn/202606/565682.shtml',
+        stage: '天使轮（2026-06；公开融资报道）', amount: '5,000 万元人民币（公开融资报道）', lastFunding: '2026-06-30（公开融资报道）', bBefore: '是（种子轮与天使轮已披露）',
+        sourceTitle: '投资界：纽娲机器人完成 5,000 万元天使轮融资', founders: '杨睿刚（创始人；公开融资报道）', founderBackground: '公开报道提及百度 Apollo 与嬴彻科技经历；个人履历待公司资料复核。',
+        why: ['三个月内连续完成种子和天使融资，且聚焦机器人“到达与通行”这一具体问题。', '仿真数据、无图导航和真实部署之间能形成可验证的技术与商业闭环。'], relatedEvents: ['wrc-2026', 'embodied-robot-commercialization', 'waic-2026']
+      }),
+      earlyFundingProject({
+        id: 'shunheng-intelligence', name: '瞬恒智能', industry: '具身智能', subSector: '灵巧操作 / 视触觉感知', location: '国内（公开融资报道；主体待核验）',
+        description: '聚焦机器人灵巧精细操作、多模态感知与数据闭环的早期具身智能团队。', product: '具身智能“小脑”模型、视触觉感知与灵巧操作相关技术。', targetCustomers: '需要机器人精细操作能力的制造、服务与机器人本体合作方。', aiApproach: '灵巧操作算法、多模态感知、触觉与数据平台（公开融资报道）。', url: 'https://news.pedaily.cn/202603/561592.shtml',
+        stage: '天使轮、天使+轮、天使++轮（2026-03；公开融资报道）', amount: '未知（当前来源未披露具体总额）', lastFunding: '2026-03-11（公开融资报道）', bBefore: '是（天使系列融资已披露）',
+        sourceTitle: '投资界：瞬恒智能连续完成三轮早期融资',
+        why: ['连续早期融资与灵巧操作方向形成高新颖性信号，但不应将融资节奏替代技术或交付验证。', '可从触觉数据、成功率、场景迁移和客户试点四方面建立核验清单。'], relatedEvents: ['wrc-2026', 'embodied-robot-commercialization', 'ceai-2026']
+      }),
+      earlyFundingProject({
+        id: 'chengwu-robotics', name: '乘物机器人', industry: '具身智能', subSector: '工业具身智能 / 垂类 VLA', location: '深圳（36氪公开报道）',
+        description: '工业具身智能技术与产品解决方案团队，公开报道披露其已有工业场景落地。', product: '工业场景软硬件、数据采集、模型训练、场景部署与维护，以及垂类 VLA 研发。', targetCustomers: '制造业与需要工业机器人解决方案的客户。', aiApproach: '空间感知、强化学习、世界模型与工业垂类 VLA（36氪公开报道）。', url: 'https://36kr.com/p/3831135917107075',
+        foundedAt: '2025 年（36氪公开报道）', stage: '天使轮（2026-05；36氪公开报道）', amount: '未披露', lastFunding: '2026-05-30（36氪公开报道）', bBefore: '是（天使轮已披露）',
+        sourceTitle: '36氪：乘物机器人完成天使轮融资', founders: '黄金龙、单玉虎（36氪公开报道）', founderBackground: '公开报道提及机器人全栈研发与产业化背景；需以公司资料核验。',
+        why: ['成立时间较短、已披露天使融资和工业落地线索，适合验证产品化速度。', '应重点区分项目制集成收入与可复制的模型 / 产品能力。'], relatedEvents: ['wrc-2026', 'embodied-robot-commercialization', 'waic-2026']
+      }),
+      earlyFundingProject({
+        id: 'lexiang-technology', name: '乐享科技（元点 Zeroth）', industry: '具身智能', subSector: '家庭具身智能 / 机器人', location: '苏州（公开融资报道）',
+        description: '家庭具身智能团队，公开报道披露其发布“元点 Zeroth”品牌并完成 Pre-A 融资。', product: '家庭协作、陪伴与大人形等具身智能机器人产品线（以公开报道为准）。', targetCustomers: '家庭场景用户与相关渠道、服务合作方。', aiApproach: '具身通用模型、VLA、关节模组与机械臂等全栈技术方向（公开融资报道）。', url: 'https://news.pedaily.cn/202607/565774.shtml',
+        foundedAt: '约 2025 年初（“成立仅一年半”公开报道；待主体核验）', stage: 'Pre-A 轮（2026-07；公开融资报道）', amount: '近 5 亿元人民币（公开融资报道）', lastFunding: '2026-07-02（公开融资报道）', bBefore: '是（Pre-A 已披露）',
+        sourceTitle: '投资界：乐享科技完成近 5 亿元 Pre-A 轮融资',
+        why: ['家庭具身智能有明确产品形态与快速融资节奏，但也需要更严格区分预售、订单和规模化交付。', '可围绕消费场景成本、可靠性、售后和真实留存设计验证问题。'], relatedEvents: ['wrc-2026', 'waic-2026', 'embodied-robot-commercialization']
+      }),
+      earlyFundingProject({
+        id: 'physis-ai', name: '逆矩阵（Physis）', industry: 'AI 基础设施', subSector: '物理 AI / 通用世界基座模型', location: '北京（公开融资报道）',
+        description: '面向工业、具身智能、物理仿真与科学预测场景的通用世界基座模型团队。', product: '通用世界基座模型与面向物理 AI 场景的底层认知引擎。', targetCustomers: '工业、机器人、物理仿真与科学计算相关团队。', aiApproach: '通用世界模型、物理规律理解与跨场景预测（公开融资报道）。', url: 'https://news.pedaily.cn/202606/565318.shtml',
+        stage: '种子++轮（2026-06；公开融资报道）', amount: '超 1 亿美元（公开融资报道）', lastFunding: '2026-06-17（公开融资报道）', bBefore: '是（种子++轮已披露）',
+        sourceTitle: '投资界：逆矩阵完成超亿美元种子++轮融资',
+        why: ['种子阶段即押注通用世界模型，具备高技术不确定性和高核验价值。', '应验证数据闭环、模型评测、具体场景部署与资本密集度之间的关系。'], relatedEvents: ['waic-2026', 'waic-academic-2026', 'wrc-2026']
+      }),
+      earlyFundingProject({
+        id: 'xingyuan-zhi', name: '星源智', industry: '具身智能', subSector: '具身大脑 / 交互世界模型', location: '国内（北京智源研究院孵化；主体待核验）',
+        description: '智源研究院孵化的具身大脑团队，公开报道提及成立十个月后完成多轮融资。', product: '具身交互世界模型与具身大脑相关能力（公开报道）。', targetCustomers: '机器人本体、具身智能与产业场景合作方。', aiApproach: '具身交互世界模型与产业化应用（公开融资报道）。', url: 'https://news.pedaily.cn/202606/564798.shtml',
+        foundedAt: '约 2025-08（“成立十个月”公开报道推算；待主体登记核验）', stage: '新一轮融资（2026-06；轮次待核验）', amount: '累计约 10 亿元人民币（公开报道）', lastFunding: '2026-06-03（公开报道）', bBefore: '待核验',
+        sourceTitle: '投资界：星源智成立十个月融资 10 亿',
+        why: ['成立时间较短、研究机构孵化与具身大脑主题叠加，适合纳入高优先级研究队列。', '需特别核验主体、融资轮次、技术独立性与真实场景商业化，而不是只看资金规模。'], relatedEvents: ['waic-2026', 'wrc-2026', 'baai-2026']
+      }),
+      earlyFundingProject({
+        id: 'beta-infinity', name: '贝塔无限（Beta Infinity）', industry: '具身智能', subSector: '消费级具身智能 / 物理 Agent', location: '国内（公开融资报道；主体待核验）',
+        description: '消费级通用具身智能团队，公开报道披露其自 2026 年 3 月开始运营。', product: '消费级具身智能物理 Agent 与终端产品。', targetCustomers: '消费级机器人用户与相关渠道、生态合作方。', aiApproach: '通用具身智能与物理 Agent（公开融资报道）。', url: 'https://news.pedaily.cn/202605/564100.shtml',
+        foundedAt: '2026-03（公开融资报道：开始运营）', stage: '种子 / 种子+轮（2026-05；公开融资报道）', amount: '数亿元人民币（公开融资报道）', lastFunding: '2026-05-20（公开融资报道）', bBefore: '是（种子系列已披露）',
+        sourceTitle: '投资界：贝塔无限连续完成种子轮、种子+轮融资',
+        why: ['运营时间很短且已披露种子系列融资，是“刚出现的团队”典型发现对象。', '消费级具身智能需要用产品可靠性、成本、渠道和复购等硬指标交叉验证。'], relatedEvents: ['wrc-2026', 'waic-2026', 'embodied-robot-commercialization']
+      }),
+      earlyFundingProject({
+        id: 'fuan-intelligence', name: '复鞍智能', industry: 'AI for Science', subSector: '材料 AI / 科研智能体', location: '上海（公开融资报道）',
+        description: '复旦科创孵化的 AI for Science 团队，聚焦材料研发与高质量数据集、算法创新。', product: '面向材料研发的 AI 数据、算法与科研智能化能力（公开融资报道）。', targetCustomers: '材料研发、检测与需要缩短研发周期的产业客户。', aiApproach: 'AI for Science、数据集与材料研发算法（公开融资报道）。', url: 'https://news.pedaily.cn/202605/563872.shtml',
+        stage: '种子轮（2026-05；公开融资报道）', amount: '数千万元人民币（公开融资报道）', lastFunding: '2026-05-14（公开融资报道）', bBefore: '是（种子轮已披露）',
+        sourceTitle: '投资界：复鞍智能完成种子轮融资',
+        why: ['高校孵化、材料 AI 与种子融资三类早期信号同时出现。', '需要验证数据闭环、实验验证、客户导入周期与科研服务产品化边界。'], relatedEvents: ['waic-2026', 'cicai-2026', 'gdec-2026']
+      }),
+      earlyFundingProject({
+        id: 'zhuizhi-engineering', name: '追知工科', industry: 'AI 应用', subSector: '垂域工业智能体 / 工艺机器人', location: '上海（36氪公开报道）',
+        description: '上海交大成果转化与上海人工智能研究院战略孵化的工业智能体团队。', product: 'WOLIF Industrial Agent、工业大脑与工艺小脑控制体系。', targetCustomers: '航空、新能源、汽车、3C 与其他高精度制造场景客户。', aiApproach: '材料机理、传感、工业控制和智能体闭环结合（36氪公开报道）。', url: 'https://36kr.com/p/3896298534520705',
+        foundedAt: '2024-02（36氪公开报道）', stage: '种子轮（2026-07；36氪公开报道）', amount: '数千万元人民币（36氪公开报道）', lastFunding: '2026-07-15（36氪公开报道）', bBefore: '是（种子轮已披露）',
+        sourceTitle: '36氪：追知工科获数千万元种子轮融资', founders: '袁琳（创始人；36氪公开报道）', founderBackground: '公开报道提及非夕科技、ABB 中国等经历；需以本人或公司资料核验。',
+        why: ['工业智能体选择打磨、焊接等明确工艺切口，适合从首单、订单和交付复制性验证。', '能展示“模型能力”如何转化为制造业工艺控制与持续数据闭环。'], relatedEvents: ['waic-2026', 'wrc-2026', 'enterprise-ai-collab']
+      }),
+      earlyFundingProject({
+        id: 'quantum-leap', name: '幻码跃迁', industry: 'AI 基础设施', subSector: '量子计算 × AI / 量子软件', location: '上海（36氪公开报道）',
+        description: '聚焦量子计算与 AI 融合的系统级软件和应用解决方案团队。', product: '量子计算软件栈、算法应用与 AI 驱动研发工具 / 智能体平台。', targetCustomers: '量子硬件厂商、开发者与金融、材料、生物医药等产业研发团队。', aiApproach: '量子软件栈、量子 AI、AI 驱动算法与编译优化（36氪公开报道）。', url: 'https://36kr.com/p/3894898001181572',
+        stage: '种子轮（2026-07；36氪公开报道）', amount: '数千万元人民币（36氪公开报道）', lastFunding: '2026-07-14（36氪公开报道）', bBefore: '是（种子轮已披露）',
+        sourceTitle: '36氪：幻码跃迁完成数千万元种子轮融资', founders: '幺宏顺（CEO；36氪公开报道）', founderBackground: '公开报道提及百度量子计算研究所等经历；个人履历待公司资料复核。',
+        why: ['种子融资与“量子 × AI”基础设施主题为前沿技术筛选提供了清晰样本。', '可围绕量子硬件兼容性、产品可用性、客户场景和技术路线成熟度进行核验。'], relatedEvents: ['waic-2026', 'waic-academic-2026', 'cicai-2026']
+      }),
+      earlyFundingProject({
+        id: 'roboparty', name: 'RoboParty（萝博派对）', industry: '具身智能', subSector: '开源人形机器人 / 全栈平台', location: '国内（公开融资报道；主体待核验）',
+        description: '开源具身全栈平台，公开报道披露其具备人形机器人本体、控制、SDK 与开发者生态方向。', product: 'Open Body、Party OS、开源双足人形机器人与相关开发工具。', targetCustomers: '机器人开发者、研究实验室、模型团队与制造、能源等产业客户。', aiApproach: '运动控制、强化学习、VLA、世界模型与 Agent + Skills 架构（36氪公开报道）。', url: 'https://36kr.com/p/3896298378331264',
+        foundedAt: '约 2025 年（“成立一年多”公开报道；待主体登记核验）', stage: '天使++轮与 Pre-A 轮（2026-07；36氪公开报道）', amount: '近 5 亿元人民币（36氪公开报道）', lastFunding: '2026-07-15（36氪公开报道）', bBefore: '是（Pre-A 已披露）',
+        sourceTitle: '36氪：RoboParty 完成天使++轮和 Pre-A 轮融资',
+        why: ['成立时间较短且同时强调开源、本体、控制和开发者生态，技术与商业假设边界鲜明。', '应重点验证量产一致性、开源生态活跃度、数据闭环和产业订单。'], relatedEvents: ['wrc-2026', 'waic-2026', 'embodied-robot-commercialization']
       }),
       project({
         id: 'smartmore', name: '思谋科技', industry: 'AI 应用', subSector: '工业视觉 / 智能制造', location: '国内（以公司公开主体信息为准）',

@@ -10,11 +10,12 @@
 | --- | --- | --- |
 | [InfoQ 中文 RSS](https://www.infoq.cn/feed) | 国内 AI、创业、融资、产品新闻候选 | 仅以 AI、创业/产品、国内主体或场景关键词入队；上市公司、泛市场新闻和活动报道会被排除。 |
 | [量子位 RSS](https://www.qbitai.com/feed) | 国内 AI 产品与技术新闻候选 | 只进入待核验队列；公司主体、融资和所在地不从标题推断。 |
+| [36 氪融资快报](https://pitchhub.36kr.com/financing-flash) | 国内优先的公开融资、创业和产品线索 | 低频、只读公开列表页；仅提取标题、摘要、可见时间和原始链接。标题 / 摘要中的种子、天使、Pre-A 等仅作“阶段线索”，不自动确认融资事实或主体信息。 |
 | [活动行：北京 AI 活动](https://www.huodongxing.com/events?city=%E5%8C%97%E4%BA%AC&tag=AI) | 北京公开 AI 活动候选 | 只读取公开列表中的名称、日期文本、地点、主办方与原始链接。 |
 | [活动行：上海 AI 活动](https://www.huodongxing.com/events?city=%E4%B8%8A%E6%B5%B7&tag=AI) | 上海公开 AI 活动候选 | 同上。 |
 | [活动行：深圳 AI 活动](https://www.huodongxing.com/events?city=%E6%B7%B1%E5%9C%B3&tag=AI) | 深圳公开 AI 活动候选 | 同上。 |
 
-采集遵守低频、只读、公开源原则：每次运行每个来源只请求一次，单次最多写入 18 条项目 / 产品候选和 18 条活动候选。活动行列表页的年份、嘉宾、报名状态与现场机制仍标为待核验。
+采集遵守低频、只读、公开源原则：每次运行每个来源只请求一次，单次最多写入 30 条项目 / 产品候选和 18 条活动候选。活动行列表页的年份、嘉宾、报名状态与现场机制仍标为待核验；36 氪标题 / 摘要中的融资信息同样不会被直接升级为正式项目事实。
 
 ## 早期项目发现渠道与采纳规则
 
@@ -32,12 +33,13 @@
 
 ## 正式项目样本来源
 
-28 个国内优先样本都保留至少一个公开入口。前 23 个为公司官网优先样本；新增 5 个为成立时间较短的早期项目，融资或成立字段均附来源和待核验说明。代表性来源包括：
+41 个国内优先样本都保留至少一个公开入口。其中 18 个带有种子、天使、Pre-A 或成立时间较短等早期信号；相关融资或成立字段均附来源和待核验说明。项目页会将这类已整理项目与每次定时抓取的实时候选分层显示。代表性来源包括：
 
 - [智谱](https://www.zhipuai.cn/)、[MiniMax](https://www.minimaxi.com/)、[月之暗面](https://www.moonshot.cn/)、[百川智能](https://www.baichuan-ai.com/)、[零一万物](https://www.lingyiwanwu.com/)、[阶跃星辰](https://www.stepfun.com/)、[面壁智能](https://www.modelbest.cn/)、[生数科技](https://www.shengshu-ai.com/)
 - [硅基流动](https://siliconflow.cn/)、[DeepWisdom](https://deepwisdom.ai/)、[DeepSeek](https://www.deepseek.com/)、[轻舟智航](https://www.qcraft.ai/)
 - [智元机器人](https://www.agibot.com/)、[银河通用](https://www.galbot.com/)、[逐际动力](https://www.limxdynamics.com/)、[星尘智能](https://www.astribot.com/)、[加速进化](https://www.boosterobotics.com/)、[松延动力](https://www.noetixrobotics.com/)、[元象 XVERSE](https://www.xverse.cn/)、[帕西尼感知科技](https://www.pasini.com/)、[Rokid](https://www.rokid.com/)、[LiblibAI](https://www.liblib.art/)、[思谋科技](https://www.smartmore.com/)
 - 早期项目： [新智具身官方融资公告](https://www.neoteai.com/news/148.html)、[维泛智能（北京大学 AI 创业营）](https://sie.pku.edu.cn/xwgg/xwdt/74cf931e6f1c43278b070528e5ba7633.htm)、[新研智材官网](https://synmatai.cn/)、[Manifold AI 官网](https://www.manifoldai.cn/)、[攀峰智能融资报道](https://36kr.com/p/3768320373441281)。其中媒体披露的成立时间、融资与主体信息会在详情页保持“待人工核验”提示。
+- 新增早期融资样本： [无界动力](https://news.pedaily.cn/202606/565576.shtml)、[中科煜坤](https://news.pedaily.cn/202606/565681.shtml)、[纽娲机器人](https://news.pedaily.cn/202606/565682.shtml)、[乘物机器人](https://36kr.com/p/3831135917107075)、[追知工科](https://36kr.com/p/3896298534520705)、[幻码跃迁](https://36kr.com/p/3894898001181572) 与 [RoboParty](https://36kr.com/p/3896298378331264)。这些资料以公开融资报道为主要证据，不能替代公司或投资方确认。
 
 公司官网用于确认“公开存在的产品 / 技术方向”，不自动证明融资金额、估值、创始团队、收入或联系方式。因此这些字段无证据时明确保留“未知 / 待核验”。
 

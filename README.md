@@ -25,10 +25,11 @@ npm start
 - 收藏/忽略/标签/跟进/最近查看/批量整理；行为记录为第二阶段个性化推荐做准备。
 - 实时待核验队列：从 InfoQ 中文、量子位与活动行北京 / 上海 / 深圳 AI 目录实际采集，显示抓取时间、来源状态、入队理由、原始链接和未知字段。
 - `npm run refresh:signals` 可立即更新队列；`npm run check:signals` 验证其来源和字段边界。
-- GitHub Actions 定时采集与静态部署配置已就绪；连接仓库、启用 Pages 并绑定自有域名后即可上线自动更新版本。
+- GitHub Actions 已上线：每 6 小时采集一次公开信号，校验后将刷新后的静态站点发布到 GitHub Pages；手动端到端验证已通过。
 
 ## 发布与投递
 
+- 公开仓库：[yibohanthu-hub/ai-vc-opportunity-radar](https://github.com/yibohanthu-hub/ai-vc-opportunity-radar)。自有域名为 `www.aivcradar.online`；GitHub Pages 正在为该域名签发 HTTPS 证书，签发完成前可通过 HTTP 访问。
 - `npm run check:release` 会同时检查样本数据、生成可部署静态版本，并验证线上版本需要的入口文件与链接预览图。
 - `public/og.png` 是投递链接在邮件、聊天工具和作品集页中的预览封面；发布时会自动替换为实际站点域名。
 - 推荐投递材料和使用说明见 [投递交付说明](docs/submission-guide.md)；自有域名与自动更新上线步骤见 [部署运行手册](docs/deployment-runbook.md)。

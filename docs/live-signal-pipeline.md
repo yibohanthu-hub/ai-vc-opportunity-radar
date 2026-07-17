@@ -48,19 +48,19 @@ npm run check:signals
 
 ## 定时更新与公开部署
 
-仓库包含两个可直接启用的工作流：
+公开仓库已启用并完成端到端验证的两个工作流：
 
 - `.github/workflows/refresh-live-signals.yml`：每 6 小时的第 17 分钟运行；只有队列变化时才提交 `live-signals.js`。
 - `.github/workflows/deploy-pages.yml`：每次主分支有新提交时验证、构建并部署静态站点到 GitHub Pages。
 
 GitHub Actions 的 `schedule` 是尽力按时，不应被当作金融级 SLA；调度高峰时可能延迟。页面显示最近一次成功抓取时间和每个来源的状态，而不是伪装成实时秒级数据。
 
-## 上线前仍需的外部动作
+## 当前部署状态
 
-1. 将本仓库推送到用户拥有的 GitHub 仓库；
-2. 在仓库设置中允许 GitHub Actions 具有 `contents: write` 权限，以便定时任务提交新的队列；
-3. 在 Pages 设置中选择 **GitHub Actions** 作为部署源；
-4. 如需要品牌网址，再将自有域名 CNAME 到静态托管平台。
+1. 代码已推送到公开仓库：[yibohanthu-hub/ai-vc-opportunity-radar](https://github.com/yibohanthu-hub/ai-vc-opportunity-radar)；
+2. Actions 已授予 `contents: write`，用于提交刷新后的 `live-signals.js`；
+3. GitHub Pages 已切换为 **GitHub Actions** 发布源；
+4. 自有域名 `www.aivcradar.online` 已绑定到 Pages。HTTPS 由 GitHub Pages 自动签发，签发状态需要在对外投递前再次检查。
 
 这条路径不需要购买或维护传统云服务器。以后若增加登录、团队协作、数据库、自动化审批或更高频采集，再引入 Serverless、队列和数据库。
 

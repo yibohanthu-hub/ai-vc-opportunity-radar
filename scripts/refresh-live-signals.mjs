@@ -17,7 +17,7 @@ const outputPath = join(root, 'live-signals.js');
 const timeoutMs = 15_000;
 const userAgent = 'AI-Opportunity-Radar-Demo/1.1 (China-mainland public-signal intake; contact: portfolio-demo)';
 const sourceUrls = {
-  kr36: 'https://36kr.com/feed',
+  infoq: 'https://www.infoq.cn/feed',
   qbitai: 'https://www.qbitai.com/feed',
   huodongxing: [
     { id: 'huodongxing-beijing', city: '北京', url: 'https://www.huodongxing.com/events?city=%E5%8C%97%E4%BA%AC&tag=AI' },
@@ -234,13 +234,13 @@ async function runSource({ id, name, url, loader, target }) {
 }
 
 await runSource({
-  id: '36kr-rss',
-  name: '36氪 RSS（中国大陆创业 / 产品新闻）',
-  url: sourceUrls.kr36,
+  id: 'infoq-rss',
+  name: 'InfoQ 中文（中国大陆 AI / 创业 / 产品新闻）',
+  url: sourceUrls.infoq,
   target: 'project',
-  loader: async () => parseRss(await request('36氪 RSS', sourceUrls.kr36))
+  loader: async () => parseRss(await request('InfoQ 中文 RSS', sourceUrls.infoq))
     .filter(isMainlandProjectCandidate)
-    .map(item => projectSignal({ ...item, sourceName: '36氪 RSS（中国大陆创业 / 产品新闻）', sourceUrl: sourceUrls.kr36, sourceWeight: 4, collectedAt }))
+    .map(item => projectSignal({ ...item, sourceName: 'InfoQ 中文（中国大陆 AI / 创业 / 产品新闻）', sourceUrl: sourceUrls.infoq, sourceWeight: 4, collectedAt }))
 });
 
 await runSource({

@@ -157,7 +157,7 @@ def build_pdf():
     story += [Spacer(1, 4 * mm), flow, Spacer(1, 9 * mm), p("三个关键取舍", "h2", styles)]
     decisions = [
         [p("信息池优先", "card_title", styles), p("不直接给“应投 / 不应投”。Agent 先收集、整理、解释；投资经理保留最终判断。", "card_body", styles)],
-        [p("分层真实数据优先", "card_title", styles), p("23 个中国大陆优先项目 + 21 个活动作为已整理样本；36氪、量子位和活动行的新信号先进入待核验队列。", "card_body", styles)],
+        [p("分层真实数据优先", "card_title", styles), p("23 个中国大陆优先项目 + 21 个活动作为已整理样本；InfoQ 中文、量子位和活动行的新信号先进入待核验队列。", "card_body", styles)],
         [p("未知优先于猜测", "card_title", styles), p("融资、估值、创始人背景和联系方式没被当前来源确认时，明确显示“未知 / 待核验”。", "card_body", styles)],
     ]
     decision_table = Table(decisions, colWidths=[37 * mm, A4[0] - 36 * mm - 37 * mm])
@@ -166,7 +166,7 @@ def build_pdf():
 
     # Page 3
     story += [p("03 / Agent 工作流与可解释排序", "h1", styles)]
-    process = Table([[p("公开候选", "card_title", styles), p("实体与字段", "card_title", styles), p("去重与可信度", "card_title", styles), p("可解释初筛", "card_title", styles), p("人工反馈", "card_title", styles)], [p("36氪 / 量子位 RSS / 活动行目录", "card_body", styles), p("候选项目 / 产品 / 活动与来源", "card_body", styles), p("标题与来源链接去重；缺字段显式保留", "card_body", styles), p("理由、不确定性、验证问题", "card_body", styles), p("收藏、忽略、标签、跟进", "card_body", styles)]], colWidths=[(A4[0] - 36 * mm) / 5] * 5)
+    process = Table([[p("公开候选", "card_title", styles), p("实体与字段", "card_title", styles), p("去重与可信度", "card_title", styles), p("可解释初筛", "card_title", styles), p("人工反馈", "card_title", styles)], [p("InfoQ 中文 / 量子位 RSS / 活动行目录", "card_body", styles), p("候选项目 / 产品 / 活动与来源", "card_body", styles), p("标题与来源链接去重；缺字段显式保留", "card_body", styles), p("理由、不确定性、验证问题", "card_body", styles), p("收藏、忽略、标签、跟进", "card_body", styles)]], colWidths=[(A4[0] - 36 * mm) / 5] * 5)
     process.setStyle(TableStyle([( "BACKGROUND", (0,0), (-1,0), TEAL_SOFT), ("BOX", (0,0), (-1,-1), .6, LINE), ("INNERGRID", (0,0), (-1,-1), .5, LINE), ("VALIGN", (0,0), (-1,-1), "TOP"), ("LEFTPADDING", (0,0), (-1,-1), 7), ("RIGHTPADDING", (0,0), (-1,-1), 7), ("TOPPADDING", (0,0), (-1,-1), 9), ("BOTTOMPADDING", (0,0), (-1,-1), 9)]))
     story += [process, Spacer(1, 8 * mm), p("项目字段", "h2", styles), p("名称、行业/细分、产品、目标客户、AI 用法、团队、融资字段、B 轮以前可能性、商业化线索、竞争替代、来源、更新时间、可信度、公开联系入口、关注理由、不确定性和验证问题。", "body", styles), p("活动字段", "h2", styles), p("时间、地点、形式、主办方、主题、嘉宾与质量状态、参与人群、投资人价值、项目发现可能性、来源、活动质量与下一步行动。", "body", styles)]
     score_table = Table([[p("项目排序", "card_title", styles), p("活动排序", "card_title", styles)], [p("新颖性 · 来源可信度 · 信息完整度 · AI 相关性 · 早期阶段线索 · 跟进价值", "card_body", styles), p("主题质量 · 嘉宾质量 · 交流形式 · 投资人价值 · 项目发现可能性 · 来源可信度 · 时间紧迫性", "card_body", styles)]], colWidths=[col, col])

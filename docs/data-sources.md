@@ -8,7 +8,7 @@
 
 | 来源 | 用途 | 接入边界 |
 | --- | --- | --- |
-| [36氪 RSS](https://36kr.com/feed) | 中国大陆创业、融资、产品新闻候选 | 仅以 AI、创业/产品、中国大陆主体或场景关键词入队；上市公司、泛市场新闻和活动报道会被排除。 |
+| [InfoQ 中文 RSS](https://www.infoq.cn/feed) | 中国大陆 AI、创业、融资、产品新闻候选 | 仅以 AI、创业/产品、中国大陆主体或场景关键词入队；上市公司、泛市场新闻和活动报道会被排除。 |
 | [量子位 RSS](https://www.qbitai.com/feed) | 中国大陆 AI 产品与技术新闻候选 | 只进入待核验队列；公司主体、融资和所在地不从标题推断。 |
 | [活动行：北京 AI 活动](https://www.huodongxing.com/events?city=%E5%8C%97%E4%BA%AC&tag=AI) | 北京公开 AI 活动候选 | 只读取公开列表中的名称、日期文本、地点、主办方与原始链接。 |
 | [活动行：上海 AI 活动](https://www.huodongxing.com/events?city=%E4%B8%8A%E6%B5%B7&tag=AI) | 上海公开 AI 活动候选 | 同上。 |

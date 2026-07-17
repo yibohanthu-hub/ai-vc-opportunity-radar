@@ -1,4 +1,4 @@
-name: Refresh China-mainland public AI signals
+name: Refresh domestic public AI signals
 
 on:
   workflow_dispatch:

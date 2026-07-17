@@ -126,7 +126,7 @@ def build_pdf():
 
     # Page 1
     story += [
-        p("CHINA-MAINLAND VC · AI PRODUCT PORTFOLIO", "kicker", styles),
+        p("DOMESTIC VC · AI PRODUCT PORTFOLIO", "kicker", styles),
         p("AI Opportunity Radar", "title", styles),
         p("把公开信号变成可验证、可跟进的机会清单", "subtitle", styles),
     ]
@@ -140,14 +140,14 @@ def build_pdf():
         ("BOTTOMPADDING", (0, 0), (-1, -1), 12),
     ]))
     story += [quote, Spacer(1, 11 * mm), p("01 / 真实业务问题", "h1", styles)]
-    story += [p("中国大陆 VC 投资经理每天在新闻、创始人网络、活动邀约、数据库和聊天记录之间切换。真正的难题不是“找不到项目”，而是难以持续判断：哪些公开信号值得点开、信息是否可信、来源在哪里、下一步该验证什么。", "body", styles)]
-    grid = Table([[card("投资人场景", "早晚打开一次，先看中国大陆新项目，再看 AI 活动；先读摘要，后核验证据。", styles, col), card("产品目标", "把分散网页整理为中国大陆优先、可筛选实体、可解释理由和可执行的跟进清单。", styles, col)], [card("我的职责", "独立完成产品定义、字段、公开样本、公开源采集、规则、交互、前端实现和浏览器验证。", styles, col), card("刻意不做", "不把新闻标题伪装成完整投研档案；不搭登录、复杂数据库或自动触达。把重心放在可体验闭环与可信边界。", styles, col)]], colWidths=[col, col], hAlign="LEFT")
+    story += [p("国内 VC 投资经理每天在新闻、创始人网络、活动邀约、数据库和聊天记录之间切换。真正的难题不是“找不到项目”，而是难以持续判断：哪些公开信号值得点开、信息是否可信、来源在哪里、下一步该验证什么。", "body", styles)]
+    grid = Table([[card("投资人场景", "早晚打开一次，先看国内新项目，再看 AI 活动；先读摘要，后核验证据。", styles, col), card("产品目标", "把分散网页整理为国内优先、可筛选实体、可解释理由和可执行的跟进清单。", styles, col)], [card("我的职责", "独立完成产品定义、字段、公开样本、公开源采集、规则、交互、前端实现和浏览器验证。", styles, col), card("刻意不做", "不把新闻标题伪装成完整投研档案；不搭登录、复杂数据库或自动触达。把重心放在可体验闭环与可信边界。", styles, col)]], colWidths=[col, col], hAlign="LEFT")
     grid.setStyle(TableStyle([("VALIGN", (0, 0), (-1, -1), "TOP"), ("BOTTOMPADDING", (0, 0), (-1, -1), 7), ("RIGHTPADDING", (0, 0), (0, -1), 10)]))
     story += [Spacer(1, 3 * mm), grid, Spacer(1, 7 * mm), p("结果：一个可运行的 Web Demo，覆盖项目、活动、来源、解释、反馈与跟进六个环节。", "small", styles), PageBreak()]
 
     # Page 2
     story += [p("02 / 产品取舍与使用流程", "h1", styles)]
-    story += [p("我把 V1.1 定义为“可信信息池 + 实时待核验队列”，而不是“AI 投资推荐器”。这既符合投资判断的风险边界，也让产品能先解决高频、可验证的工作。", "body", styles)]
+    story += [p("我把 V1.2 定义为“可信信息池 + 实时待核验队列”，而不是“AI 投资推荐器”。这既符合投资判断的风险边界，也让产品能先解决高频、可验证的工作。", "body", styles)]
     flow = Table([[p("Dashboard", "card_title", styles), p("项目列表", "card_title", styles), p("项目详情", "card_title", styles), p("活动雷达", "card_title", styles), p("收藏跟进", "card_title", styles)], [p("早晚更新、数量、状态", "card_body", styles), p("摘要、筛选、排序理由", "card_body", styles), p("来源、风险、验证问题", "card_body", styles), p("价值判断、低优先级识别", "card_body", styles), p("标签、状态、批量整理", "card_body", styles)]], colWidths=[(A4[0] - 36 * mm) / 5] * 5)
     flow.setStyle(TableStyle([
         ("BACKGROUND", (0, 0), (-1, 0), colors.white), ("BACKGROUND", (0, 1), (-1, 1), colors.HexColor("#FCFCFD")),
@@ -157,7 +157,7 @@ def build_pdf():
     story += [Spacer(1, 4 * mm), flow, Spacer(1, 9 * mm), p("三个关键取舍", "h2", styles)]
     decisions = [
         [p("信息池优先", "card_title", styles), p("不直接给“应投 / 不应投”。Agent 先收集、整理、解释；投资经理保留最终判断。", "card_body", styles)],
-        [p("分层真实数据优先", "card_title", styles), p("23 个中国大陆优先项目 + 21 个活动作为已整理样本；InfoQ 中文、量子位和活动行的新信号先进入待核验队列。", "card_body", styles)],
+        [p("分层真实数据优先", "card_title", styles), p("28 个国内优先项目（含 5 个早期项目）+ 21 个活动作为已整理样本；InfoQ 中文、量子位和活动行的新信号先进入待核验队列。", "card_body", styles)],
         [p("未知优先于猜测", "card_title", styles), p("融资、估值、创始人背景和联系方式没被当前来源确认时，明确显示“未知 / 待核验”。", "card_body", styles)],
     ]
     decision_table = Table(decisions, colWidths=[37 * mm, A4[0] - 36 * mm - 37 * mm])
@@ -175,10 +175,10 @@ def build_pdf():
 
     # Page 4
     story += [p("04 / 验证、失败案例与下一步", "h1", styles)]
-    evidence = Table([[p("23", "title", styles), p("21", "title", styles), p("3", "title", styles), p("6", "title", styles)], [p("中国大陆优先项目", "card_body", styles), p("中国大陆优先活动", "card_body", styles), p("重复候选合并案例", "card_body", styles), p("缺字段 / 人工核验案例", "card_body", styles)]], colWidths=[(A4[0]-36*mm)/4]*4)
+    evidence = Table([[p("28", "title", styles), p("21", "title", styles), p("3", "title", styles), p("6", "title", styles)], [p("国内优先项目", "card_body", styles), p("国内优先活动", "card_body", styles), p("重复候选合并案例", "card_body", styles), p("缺字段 / 人工核验案例", "card_body", styles)]], colWidths=[(A4[0]-36*mm)/4]*4)
     evidence.setStyle(TableStyle([("BACKGROUND", (0,0), (-1,-1), colors.white), ("BOX", (0,0), (-1,-1), .6, LINE), ("INNERGRID", (0,0), (-1,-1), .5, LINE), ("ALIGN", (0,0), (-1,-1), "CENTER"), ("VALIGN", (0,0), (-1,-1), "MIDDLE"), ("TOPPADDING", (0,0), (-1,-1), 9), ("BOTTOMPADDING", (0,0), (-1,-1), 9)]))
     story += [evidence, Spacer(1, 8 * mm), p("已验证的闭环", "h2", styles), p("实际浏览器操作覆盖：首页、项目筛选、详情、来源、收藏、标签、跟进状态、活动低价值筛选、活动详情、批量整理，以及实时待核验队列的来源证据、收藏和跟进回流。", "body", styles), p("失败案例：活动日程的“看起来完整”", "h2", styles), p("早期整理活动样本时，最容易犯的错误是为了填满字段而写入没有当前官方证据的 2026 日期、场地或嘉宾。这个 Demo 选择了更保守的处理：没有证据就写“待官方当前页 / 归档核验”，历史活动明确标成历史样本；实时采集结果也先标记为“待核验”。", "body", styles)]
-    future = Table([[card("下一步 1", "将已完成的中国大陆公开源采集接入定时 CI、版本留存与自动静态部署。", styles, col), card("下一步 2", "基于收藏、忽略、标签与跟进做可解释的主动推荐。", styles, col)], [card("下一步 3", "连接 CRM 与日历，但所有外部动作保留人工批准。", styles, col), card("求职价值", "证明把真实投研工作流翻译为产品、数据结构、采集规则、交互和可运行原型的能力。", styles, col)]], colWidths=[col, col])
+    future = Table([[card("下一步 1", "扩展已上线的国内公开源采集到高校创业营、项目展示和投资机构组合页，并保留人工审核。", styles, col), card("下一步 2", "基于收藏、忽略、标签与跟进做可解释的主动推荐。", styles, col)], [card("下一步 3", "连接 CRM 与日历，但所有外部动作保留人工批准。", styles, col), card("求职价值", "证明把真实投研工作流翻译为产品、数据结构、采集规则、交互和可运行原型的能力。", styles, col)]], colWidths=[col, col])
     future.setStyle(TableStyle([("VALIGN", (0,0), (-1,-1), "TOP"), ("BOTTOMPADDING", (0,0), (-1,-1), 7), ("RIGHTPADDING", (0,0), (0,-1), 10)]))
     story += [Spacer(1, 2 * mm), future]
 

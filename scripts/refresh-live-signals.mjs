@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * China-mainland-first public signal intake.
+ * Domestic-first public signal intake.
  *
  * This deliberately collects only a small number of public, no-key sources.
  * It writes a candidate queue, not a verified deal database: company identity,
@@ -15,7 +15,7 @@ import { fileURLToPath } from 'node:url';
 const root = fileURLToPath(new URL('..', import.meta.url));
 const outputPath = join(root, 'live-signals.js');
 const timeoutMs = 15_000;
-const userAgent = 'AI-Opportunity-Radar-Demo/1.1 (China-mainland public-signal intake; contact: portfolio-demo)';
+const userAgent = 'AI-Opportunity-Radar-Demo/1.1 (domestic public-signal intake; contact: portfolio-demo)';
 const sourceUrls = {
   infoq: 'https://www.infoq.cn/feed',
   qbitai: 'https://www.qbitai.com/feed',
@@ -104,11 +104,11 @@ async function request(name, url) {
 
 function matchedRules({ title, summary, type }) {
   const corpus = `${title} ${summary}`;
-  const matches = ['中国大陆优先公开源'];
+  const matches = ['国内优先公开源'];
   if (aiTerms.test(corpus)) matches.push('AI 相关关键词');
   if (type === 'project' && opportunityTerms.test(corpus)) matches.push('创业 / 融资 / 产品关键词');
-  if (type === 'project' && mainlandTerms.test(corpus)) matches.push('中国大陆主体 / 场景关键词');
-  if (type === 'event') matches.push('中国大陆 AI 活动目录');
+  if (type === 'project' && mainlandTerms.test(corpus)) matches.push('国内主体 / 场景关键词');
+  if (type === 'event') matches.push('国内 AI 活动目录');
   return matches;
 }
 
@@ -128,7 +128,7 @@ function projectSignal({ title, url, publishedAt, summary, sourceName, sourceUrl
     id: stableId('live-project', url || title),
     kind: 'project',
     name: title,
-    category: '中国大陆创业 / 产品待核验',
+    category: '国内创业 / 产品待核验',
     sourceName,
     sourceUrl,
     url,
@@ -136,8 +136,8 @@ function projectSignal({ title, url, publishedAt, summary, sourceName, sourceUrl
     collectedAt,
     summary: summary || '来源未提供可用摘要；请打开原始链接核验主体、融资与产品信息。',
     confidence: '待核验',
-    reasoning: `规则命中：${rules.join('、')}；自动收录为中国大陆优先候选，不代表已确认公司、融资、所在地或投资价值。`,
-    unknowns: ['公司主体与中国大陆经营主体：待核验', '融资阶段、金额与估值：未知', '公开联系方式：待人工核验'],
+    reasoning: `规则命中：${rules.join('、')}；自动收录为国内优先候选，不代表已确认公司、融资、所在地或投资价值。`,
+    unknowns: ['公司主体与国内经营主体：待核验', '融资阶段、金额与估值：未知', '公开联系方式：待人工核验'],
     nextAction: '打开来源，先确认公司主体、主要经营地、AI 相关性与是否存在可验证融资 / 产品信息。',
     sources: [{ title: sourceName, url, type: '公开新闻 / RSS' }],
     score: { novelty: 5, source: sourceWeight, relevance: aiTerms.test(`${title} ${summary}`) ? 4 : 2, completeness: 1, followup: 4 }
@@ -150,7 +150,7 @@ function eventSignal({ name, url, startDate, description, location, mode, organi
     id: stableId('live-event', url || name),
     kind: 'event',
     name,
-    category: '中国大陆 AI 活动待核验',
+    category: '国内 AI 活动待核验',
     sourceName,
     sourceUrl,
     url,
@@ -235,22 +235,22 @@ async function runSource({ id, name, url, loader, target }) {
 
 await runSource({
   id: 'infoq-rss',
-  name: 'InfoQ 中文（中国大陆 AI / 创业 / 产品新闻）',
+  name: 'InfoQ 中文（国内 AI / 创业 / 产品新闻）',
   url: sourceUrls.infoq,
   target: 'project',
   loader: async () => parseRss(await request('InfoQ 中文 RSS', sourceUrls.infoq))
     .filter(isMainlandProjectCandidate)
-    .map(item => projectSignal({ ...item, sourceName: 'InfoQ 中文（中国大陆 AI / 创业 / 产品新闻）', sourceUrl: sourceUrls.infoq, sourceWeight: 4, collectedAt }))
+    .map(item => projectSignal({ ...item, sourceName: 'InfoQ 中文（国内 AI / 创业 / 产品新闻）', sourceUrl: sourceUrls.infoq, sourceWeight: 4, collectedAt }))
 });
 
 await runSource({
   id: 'qbitai-rss',
-  name: '量子位 RSS（中国大陆 AI 新闻）',
+  name: '量子位 RSS（国内 AI 新闻）',
   url: sourceUrls.qbitai,
   target: 'project',
   loader: async () => parseRss(await request('量子位 RSS', sourceUrls.qbitai))
     .filter(isMainlandProjectCandidate)
-    .map(item => projectSignal({ ...item, sourceName: '量子位 RSS（中国大陆 AI 新闻）', sourceUrl: sourceUrls.qbitai, sourceWeight: 4, collectedAt }))
+    .map(item => projectSignal({ ...item, sourceName: '量子位 RSS（国内 AI 新闻）', sourceUrl: sourceUrls.qbitai, sourceWeight: 4, collectedAt }))
 });
 
 for (const source of sourceUrls.huodongxing) {
@@ -267,14 +267,14 @@ const projectCandidates = uniqueByTitleAndUrl(rawProjects, 18);
 rawEvents = uniqueByTitleAndUrl(rawEvents, 18);
 
 if (!projectCandidates.length && !rawEvents.length) {
-  console.error(JSON.stringify({ ok: false, reason: 'No China-mainland candidates were collected; previous live-signals.js was left untouched.', sources: sourceRuns }, null, 2));
+  console.error(JSON.stringify({ ok: false, reason: 'No domestic candidates were collected; previous live-signals.js was left untouched.', sources: sourceRuns }, null, 2));
   process.exitCode = 1;
 } else {
   const payload = {
     version: 2,
     generatedAt: collectedAt,
     status: sourceRuns.some(source => source.status === 'error') ? 'partial' : 'success',
-    disclaimer: '实时队列以中国大陆公开来源为优先，只收录待核验候选。未知字段保持未知；必须打开原始来源并由投资经理核验后，才能进入正式项目 / 活动信息池。',
+    disclaimer: '实时队列以国内公开来源为优先，只收录待核验候选。未知字段保持未知；必须打开原始来源并由投资经理核验后，才能进入正式项目 / 活动信息池。',
     sources: sourceRuns,
     projectCandidates,
     eventCandidates: rawEvents

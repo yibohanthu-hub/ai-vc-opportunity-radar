@@ -3,7 +3,7 @@
 ## 目标架构
 
 ```text
-InfoQ 中文 / 量子位 RSS / 活动行中国大陆城市目录
+InfoQ 中文 / 量子位 RSS / 活动行国内城市目录
             ↓（每 6 小时）
  GitHub Actions：采集、去重、字段校验
             ↓（仅有变化时提交）
@@ -37,7 +37,7 @@ InfoQ 中文 / 量子位 RSS / 活动行中国大陆城市目录
 
 在 `Settings → Pages` 中选择 **GitHub Actions** 作为发布来源。推送代码后，手动运行一次：
 
-1. `Refresh public AI signals`；
+1. `Refresh domestic public AI signals`；
 2. `Deploy AI Opportunity Radar`。
 
 首次成功后，Pages 会给出一个临时 `github.io` 地址，供 DNS 配置前测试。

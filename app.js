@@ -121,7 +121,7 @@
     if (routeName() === 'projects' && routeEntityId()) return '项目详情';
     if (routeName() === 'events' && routeEntityId()) return '活动详情';
     if (routeName() === 'signals' && routeEntityId()) return '线索核验';
-    const names = { dashboard: '今日机会雷达', projects: '创业项目池', project: '项目详情', events: 'AI 活动雷达', event: '活动详情', signals: '国内实时待核验线索', signal: '线索核验', 'follow-ups': '收藏与跟进' };
+    const names = { dashboard: '今日机会雷达', portfolio: 'AI 创新产品作品集', projects: '创业项目池', project: '项目详情', events: 'AI 活动雷达', event: '活动详情', signals: '国内实时待核验线索', signal: '线索核验', 'follow-ups': '收藏与跟进' };
     return names[routeName()] || 'AI 机会雷达';
   }
 
@@ -142,6 +142,37 @@
       </section>
       <section class="section-head"><div><span class="eyebrow">推荐入口</span><h2>为你推荐</h2></div></section>
       <section class="two-columns"><div>${miniProjectList(highProjects)}</div><div>${miniEventList(highEvents)}</div></section>`;
+  }
+
+  function portfolioPage() {
+    const liveSourceCount = (LIVE.sources || []).length;
+    return `<section class="portfolio-hero">
+      <div class="portfolio-hero-main">
+        <span class="eyebrow accent">AI INNOVATION PRODUCT PORTFOLIO</span>
+        <h2>把公开信号变成可验证的<br/>AI 产品决策工作流。</h2>
+        <p>这是一个独立完成、可实际操作的 AI Agent 产品原型：从国内公开信息采集出发，完成实体整理、可解释初筛、人工核验与反馈回流，而不是停留在概念说明或静态界面。</p>
+        <div class="hero-actions"><button class="primary-button" data-action="navigate" data-route="#/dashboard">进入可操作 Demo <span>→</span></button><button class="secondary-button" data-action="navigate" data-route="#/projects">查看项目雷达</button><a class="portfolio-source-link" href="https://github.com/yibohanthu-hub/ai-vc-opportunity-radar" target="_blank" rel="noreferrer">查看公开源码 ↗</a></div>
+      </div>
+      <aside class="portfolio-hero-aside"><span>作品性质</span><b>独立完成的 0→1 产品实践</b><p>聚焦真实用户任务、数据边界与可运行闭环；页面内的收藏、标签和跟进均可实际操作。</p><small>国内公开信息优先 · 人工保留最终判断</small></aside>
+    </section>
+    <section class="portfolio-facts" aria-label="作品事实">
+      <article><b>${DATA.projects.length}</b><span>国内优先项目样本</span></article>
+      <article><b>${DATA.events.length}</b><span>AI 活动样本</span></article>
+      <article><b>${liveSourceCount}</b><span>已接入公开来源</span></article>
+      <article><b>6 小时</b><span>自动采集与发布节奏</span></article>
+    </section>
+    <section class="portfolio-section-head"><div><span class="eyebrow">能力证据</span><h2>这份作品实际证明什么</h2></div><p>不是把 AI 当作一个功能标签，而是从用户任务、数据质量、可解释性和验证方式出发完成产品闭环。</p></section>
+    <section class="portfolio-evidence-grid">
+      <article><span>01</span><h3>从业务问题到可体验原型</h3><p>将“信息多、筛选难、难以持续跟进”的工作流拆为项目、活动、来源、验证问题和跟进状态，并独立完成 Web 原型与交互。</p></article>
+      <article><span>02</span><h3>把 Agent 放进可信工作流</h3><p>Agent 负责采集、规范化、去重、摘要和理由生成；不确定字段保留“未知”，人工仍掌握核验、判断和触达权。</p></article>
+      <article><span>03</span><h3>理解物理 AI 的信息与场景</h3><p>信息池覆盖具身智能、机器人、AI 终端、自动驾驶及相关活动信号；产品方法可迁移到“技术信号—场景假设—验证”的创新探索。</p></article>
+      <article><span>04</span><h3>先定义可验证的效果</h3><p>已完成浏览器功能验证与自动化更新验证；下一步以“发现有效线索率、核验耗时、收藏到跟进转化率”检验真实用户价值。</p></article>
+    </section>
+    <section class="portfolio-transfer">
+      <div><span class="eyebrow accent">可迁移的产品方法</span><h2>技术信号不是答案，<br/>它要经过产品化验证。</h2><p>这一过程可用于 AI Agent、生成式 AI 与物理 AI 的新场景探索：先捕捉变化，再形成可检查的假设，最后用用户反馈和效果指标继续迭代。</p></div>
+      <ol><li><b>技术 / 产品信号</b><span>来自公开来源、行业活动和用户任务</span></li><li><b>场景假设</b><span>明确谁在何时需要更快、更可信的判断</span></li><li><b>证据与可解释初筛</b><span>保留来源、未知项、理由与下一步问题</span></li><li><b>人工验证 / 反馈</b><span>以行为和结果指标驱动下一轮迭代</span></li></ol>
+    </section>
+    <section class="portfolio-boundary"><b>作品边界</b><p>本作品面向 VC 信息发现，不假装是车载系统、VLA 或机器人产品；它证明的是将 AI / 物理 AI 信息、用户工作流和可验证指标快速落成可体验产品的能力。</p></section>`;
   }
   function statCard(title, value, note, icon, color) {
     return `<article class="stat-card"><span class="stat-icon" style="--accent:${color}">${icon}</span><div><p>${title}</p><strong>${value}</strong><small>${note}</small></div></article>`;
@@ -328,6 +359,7 @@
   function renderPage() {
     const name = routeName();
     if (name === 'dashboard') return dashboard();
+    if (name === 'portfolio') return portfolioPage();
     if (name === 'projects') return routeEntityId() ? projectDetail(routeEntityId()) : projectsPage();
     if (name === 'events') return routeEntityId() ? eventDetail(routeEntityId()) : eventsPage();
     if (name === 'signals') return routeEntityId() ? signalDetail(routeEntityId()) : signalsPage();

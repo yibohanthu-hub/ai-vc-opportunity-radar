@@ -2,16 +2,17 @@
 
 ## 面向招聘方的交付物
 
-1. **在线 Demo**：已发布到自有域名 [www.aivcradar.online](http://www.aivcradar.online/)；使用浏览器本地存储完成筛选、收藏、标签和跟进操作。公开仓库见 [GitHub](https://github.com/yibohanthu-hub/ai-vc-opportunity-radar)。
+1. **在线 Demo**：已发布到自有域名 [www.aivcradar.online](http://www.aivcradar.online/)；使用浏览器本地存储完成筛选、收藏、标签和跟进操作。面向 AI 创新产品岗位时，建议直接投递 [岗位作品集入口](http://www.aivcradar.online/#/portfolio)。公开仓库见 [GitHub](https://github.com/yibohanthu-hub/ai-vc-opportunity-radar)。
 2. **作品集案例 PDF**：4 页，说明问题定义、产品取舍、Agent 工作流、数据字段、验证结果与后续迭代。
-3. **90 秒演示脚本**：可用于录屏或面试现场演示完整闭环。
-4. **产品说明与测试记录**：说明数据来源、可信度边界、异常样本处理与当前限制。
+3. **AI 创新产品补充说明 PDF**：1 页，将 0→1 产品、AI Agent、物理 AI 场景理解和评估设计映射到具体实现与边界。
+4. **90 秒演示脚本**：可用于录屏或面试现场演示完整闭环。
+5. **产品说明与测试记录**：说明数据来源、可信度边界、异常样本处理与当前限制。
 
 ## 推荐投递顺序
 
-1. 放在线 Demo 链接；
-2. 附上作品集案例 PDF；
-3. 用 2–3 句话说明这是一个可操作、以国内公开信息为优先范围的 VC AI 机会发现 Agent Demo；
+1. 放岗位作品集入口：`http://www.aivcradar.online/#/portfolio`；
+2. 附上 4 页作品集案例 PDF 与 1 页 AI 创新产品补充说明 PDF；
+3. 用 2–3 句话说明这是一个可操作、以国内公开信息为优先范围的 AI Agent 产品 Demo；
 4. 如有录屏，再补 90 秒演示视频链接。
 
 ## 使用说明
@@ -21,7 +22,8 @@
 - 收藏、忽略、标签和跟进状态会保存在访问者当前浏览器中；
 - 「实时待核验」展示 InfoQ 中文、量子位、36 氪融资快报与活动行国内城市目录实际采集的候选队列；候选保留来源、抓取时间、阶段线索和未知字段，不自动补全为正式投研档案。
 - GitHub Actions 已启用，每 6 小时运行一次采集脚本并发布刷新后的页面；系统不发送外部联系。
+- AI 创新产品岗位说明与可复制申请描述见 [`ai-innovation-product-fit.md`](ai-innovation-product-fit.md)。
 
 ## 已知边界
 
-这是作品集 Demo，不是生产投研系统。公开来源、日期、融资信息和联系方式仍须在行动前由用户复核；系统不输出投资建议，也不会自动触达任何人。自有域名和自动部署的配置步骤见 `docs/deployment-runbook.md`。
+这是作品集 Demo，不是生产投研系统。公开来源、日期、融资信息和联系方式仍须在行动前由用户复核；系统不输出投资建议，也不会自动触达任何人。它也不是车载、VLA 或机器人控制产品，而是展示从 AI / 物理 AI 信号、用户任务到可验证原型的产品能力。自有域名和自动部署的配置步骤见 `docs/deployment-runbook.md`。

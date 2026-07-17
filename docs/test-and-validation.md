@@ -48,6 +48,7 @@ npm run check:signals
 | 场景 | 预期 | 结果 |
 | --- | --- | --- |
 | 首页加载 | 显示项目/活动入口、今日新增、收藏、待跟进与推荐入口 | 通过 |
+| AI 创新产品作品集入口 | `#/portfolio` 清楚展示可操作 Demo、0→1、Agent、物理 AI 场景与评估边界，并能跳转至 Dashboard / 项目页 / 公开源码 | 通过（本地桌面 1440px、移动 390px；无控制台错误） |
 | 导航简化 | 侧边栏与移动端不显示“产品说明 / Agent 方法与边界”；旧 `#/method` 链接安全回到首页 | 通过 |
 | 项目筛选 | 选择“AI 基础设施”后显示 5 条（硅基流动、维泛智能、Manifold AI、逆矩阵、幻码跃迁） | 通过 |
 | 早期项目字段 | 打开新智具身、维泛智能或攀峰智能，显示“早期项目”标记、成立 / 公开出现时间、来源与待核验问题 | 通过 |
@@ -76,6 +77,8 @@ npm run check:signals
 - `output/playwright/v1.5-events.png`
 - `output/playwright/v1.5-coddie-detail.png`
 - `output/playwright/v1.5-public-events.png`
+- `output/playwright/v1.6-portfolio.png`
+- `output/playwright/v1.6-portfolio-mobile.png`
 
 ## 4. 异常处理与失败案例
 
@@ -101,3 +104,4 @@ npm run check:signals
 2. 部分活动页面的最新嘉宾、时间或地点会变化，行动前必须再次打开官方来源。
 3. 已实现轻量公开源采集和去重，但尚未实现跨来源实体消歧、字段级事实验证、组织账户、权限与 CRM 同步。
 4. 浏览器本地存储只用于演示行为记录；刷新 / 更换浏览器后状态由当前 profile 决定。
+5. 已完成的是功能、数据和自动化发布验证；尚未开展外部目标用户访谈或可量化的真实用户效果测试，不能将后续指标假装成现有结论。

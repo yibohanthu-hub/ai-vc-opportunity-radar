@@ -31,6 +31,8 @@ npm start
 ## 发布与投递
 
 - 公开仓库：[yibohanthu-hub/ai-vc-opportunity-radar](https://github.com/yibohanthu-hub/ai-vc-opportunity-radar)。自有域名为 `www.aivcradar.online`；GitHub Pages 正在为该域名签发 HTTPS 证书，签发完成前可通过 HTTP 访问。
+- 面向 AI 创新产品岗位的直接作品集入口：[`http://www.aivcradar.online/#/portfolio`](http://www.aivcradar.online/#/portfolio)。该入口用真实实现与测试证据说明 0→1 产品、AI Agent 工作流、物理 AI 场景理解与评估边界，不对外宣称这是车载或 VLA 产品。
+- 附加的一页岗位说明 PDF：`output/pdf/AI-Innovation-Product-Portfolio-Note.pdf`；可直接与 4 页案例 PDF 一起上传。
 - `npm run check:release` 会同时检查样本数据、生成可部署静态版本，并验证线上版本需要的入口文件与链接预览图。
 - `public/og.png` 是投递链接在邮件、聊天工具和作品集页中的预览封面；发布时会自动替换为实际站点域名。
 - 推荐投递材料和使用说明见 [投递交付说明](docs/submission-guide.md)；自有域名与自动更新上线步骤见 [部署运行手册](docs/deployment-runbook.md)。
@@ -54,4 +56,4 @@ npm start
 - 部分活动是历史样本或待官方当前页复核的样本，界面已明确标注，不能被当作实时日程。
 - 实时队列是候选信息而非已完成投研档案；任何实际触达、投资或参会前都必须回到原始来源核验。
 
-详见：[产品说明](docs/product-spec.md)、[作品集案例](docs/portfolio-case-study.md)、[90 秒演示脚本](docs/demo-script-90s.md)、[测试与验证记录](docs/test-and-validation.md)、[实时信号管道](docs/live-signal-pipeline.md)、[部署运行手册](docs/deployment-runbook.md)。
+详见：[产品说明](docs/product-spec.md)、[作品集案例](docs/portfolio-case-study.md)、[AI 创新产品岗位说明](docs/ai-innovation-product-fit.md)、[90 秒演示脚本](docs/demo-script-90s.md)、[测试与验证记录](docs/test-and-validation.md)、[实时信号管道](docs/live-signal-pipeline.md)、[部署运行手册](docs/deployment-runbook.md)。

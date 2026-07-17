@@ -23,7 +23,10 @@ const sourceUrls = {
   huodongxing: [
     { id: 'huodongxing-beijing', city: '北京', url: 'https://www.huodongxing.com/events?city=%E5%8C%97%E4%BA%AC&tag=AI' },
     { id: 'huodongxing-shanghai', city: '上海', url: 'https://www.huodongxing.com/events?city=%E4%B8%8A%E6%B5%B7&tag=AI' },
-    { id: 'huodongxing-shenzhen', city: '深圳', url: 'https://www.huodongxing.com/events?city=%E6%B7%B1%E5%9C%B3&tag=AI' }
+    { id: 'huodongxing-shenzhen', city: '深圳', url: 'https://www.huodongxing.com/events?city=%E6%B7%B1%E5%9C%B3&tag=AI' },
+    { id: 'huodongxing-hangzhou', city: '杭州', url: 'https://www.huodongxing.com/events?city=%E6%9D%AD%E5%B7%9E&tag=AI' },
+    { id: 'huodongxing-guangzhou', city: '广州', url: 'https://www.huodongxing.com/events?city=%E5%B9%BF%E5%B7%9E&tag=AI' },
+    { id: 'huodongxing-chengdu', city: '成都', url: 'https://www.huodongxing.com/events?city=%E6%88%90%E9%83%BD&tag=AI' }
   ]
 };
 
@@ -342,7 +345,7 @@ for (const source of sourceUrls.huodongxing) {
 }
 
 const projectCandidates = uniqueByTitleAndUrl(rawProjects, 30);
-rawEvents = uniqueByTitleAndUrl(rawEvents, 18);
+rawEvents = uniqueByTitleAndUrl(rawEvents, 30);
 
 if (!projectCandidates.length && !rawEvents.length) {
   console.error(JSON.stringify({ ok: false, reason: 'No domestic candidates were collected; previous live-signals.js was left untouched.', sources: sourceRuns }, null, 2));

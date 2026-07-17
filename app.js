@@ -10,8 +10,8 @@
   };
   const STORAGE_KEY = 'vc-opportunity-radar-demo-v1';
   const SAMPLE_DATE = '2026-07-17';
-  const projectSeedToday = new Set(['zhipu-ai', 'minimax', 'moonshot', 'stepfun', 'siliconflow', 'agibot', 'galbot', 'deepseek', 'neoteai', 'weifan-intelligence', 'synmat-ai', 'manifold-ai', 'k2-lab', 'wujie-dynamics', 'cas-yukun', 'neowa-robotics', 'shunheng-intelligence', 'chengwu-robotics', 'lexiang-technology', 'physis-ai', 'xingyuan-zhi', 'beta-infinity', 'fuan-intelligence', 'zhuizhi-engineering', 'quantum-leap', 'roboparty']);
-  const eventSeedToday = new Set(['waic-2026', 'waic-academic-2026', 'wrc-2026', 'cicai-2026', 'ai-interactive-film-game', 'embodied-robot-commercialization']);
+  const projectSeedToday = new Set(['zhipu-ai', 'minimax', 'moonshot', 'stepfun', 'siliconflow', 'agibot', 'galbot', 'deepseek', 'neoteai', 'weifan-intelligence', 'synmat-ai', 'manifold-ai', 'k2-lab', 'wujie-dynamics', 'cas-yukun', 'neowa-robotics', 'shunheng-intelligence', 'chengwu-robotics', 'lexiang-technology', 'physis-ai', 'xingyuan-zhi', 'beta-infinity', 'fuan-intelligence', 'zhuizhi-engineering', 'quantum-leap', 'roboparty', 'crown-physical-ai', 'coolqq-cookiepi', 'bxi-robotics', 'lingqiao-intelligence', 'newqi-robotics', 'brainrock-embodied', 'coddie-ai', 'xingyi-ai', 'molian-agent-net', 'zhizi-computing', 'ace-robotics', 'xing-su-steering', 'mifeng-physical-data', 'baiyao-virtual-cell', 'qingtian-robot-leasing', 'knowin-robotics', 'zhengxing-physical-ai', 'meixin-food-ai', 'dm-robotics']);
+  const eventSeedToday = new Set(['waic-2026', 'waic-academic-2026', 'wrc-2026', 'cicai-2026', 'ai-interactive-film-game', 'embodied-robot-commercialization', 'gaiec-2026', 'ai-show-hangzhou-2026', 'gaie-shenzhen-2026', 'shenzhen-bci-challenge-2026', 'gaic-hangzhou-2026', 'idc-ai-summit-2026', 'iaicc-2026', 'ai-hangzhou-2026', 'robotech-2026', 'beijing-ai-innovation-challenge-2026', 'embodied-robot-forum-2026', 'embodied-robot-components-2026', 'seai-guangzhou-2026', 'shenzhi-cup-2026', 'startup-shanghai-2026']);
 
   const initialState = {
     favorites: {},
@@ -110,7 +110,6 @@
       <aside class="sidebar">
         <button class="brand" data-action="navigate" data-route="#/dashboard"><span class="brand-glyph">◒</span><span><b>AI 机会雷达</b><small>创投机会发现</small></span></button>
         <div class="nav-group"><p>工作台</p>${navLink('dashboard', '今日雷达', '⌂')}${navLink('projects', '创业项目', '◈')}${navLink('events', 'AI 活动', '◎')}${navLink('signals', '实时待核验', '⌁')}${navLink('follow-ups', '收藏与跟进', '↗')}</div>
-        <div class="nav-group nav-bottom"><p>产品说明</p>${navLink('method', 'Agent 方法与边界', '⌘')}</div>
         <div class="sidebar-foot"><span class="pulse"></span>国内优先样本<br/><b>2026.07.17</b></div>
       </aside>
       <main class="main"><header class="topbar"><div><span class="eyebrow">CN VC · AI SIGNAL DESK</span><h1>${pageTitle()}</h1></div><div class="topbar-tools"><button class="refresh-button" data-action="navigate" data-route="#/signals">⌁ 实时线索</button></div></header>${content}</main>
@@ -122,7 +121,7 @@
     if (routeName() === 'projects' && routeEntityId()) return '项目详情';
     if (routeName() === 'events' && routeEntityId()) return '活动详情';
     if (routeName() === 'signals' && routeEntityId()) return '线索核验';
-    const names = { dashboard: '今日机会雷达', projects: '创业项目池', project: '项目详情', events: 'AI 活动雷达', event: '活动详情', signals: '国内实时待核验线索', signal: '线索核验', 'follow-ups': '收藏与跟进', method: 'Agent 方法与边界' };
+    const names = { dashboard: '今日机会雷达', projects: '创业项目池', project: '项目详情', events: 'AI 活动雷达', event: '活动详情', signals: '国内实时待核验线索', signal: '线索核验', 'follow-ups': '收藏与跟进' };
     return names[routeName()] || 'AI 机会雷达';
   }
 
@@ -326,14 +325,6 @@
     return `<article class="followup-row"><label class="check-wrap"><input type="checkbox" data-action="select" data-type="${type}" data-id="${item.id}" ${isSelected(type, item.id) ? 'checked' : ''}/><span></span></label><span class="row-icon">${icon}</span><div class="row-main"><button data-action="navigate" data-route="#/${route}/${item.id}"><b>${escapeHtml(item.name)}</b><small>${escapeHtml(label)}</small></button><div>${tagsMarkup(type, item.id)}</div></div><div class="row-meta"><small>最近查看</small><span>${escapeHtml(lastViewed)}</span></div><div class="row-meta"><small>下一步行动</small><span>${escapeHtml(action)}</span></div>${statusControl(type, item.id)}<button class="source-mini" data-action="open-source" data-type="${type}" data-id="${item.id}">来源 ↗</button></article>`;
   }
 
-  function methodPageLegacy() {
-    return `<section class="method-hero"><span class="eyebrow accent">PRODUCT NOTE · V1</span><h2>让“信息多”变成<br/>“可验证、可行动”。</h2><p>本 Demo 不是生产级投研系统，也不替代 VC 投资经理的判断。它展示一条从公开信息到人工验证、再到跟进管理的 AI 产品工作流。</p></section><section class="method-flow"><article><span>01</span><h2>收集</h2><p>从有限代表性公开来源读取项目和活动；每条记录保留来源链接、写入时间与来源类型。</p></article><i>→</i><article><span>02</span><h2>规范化</h2><p>统一名称、赛道、地区、融资字段和活动元数据。找不到的字段显示“未知 / 待核验”。</p></article><i>→</i><article><span>03</span><h2>去重与初筛</h2><p>将实体、来源和描述合并；按新颖性、来源、完整度、相关性等规则得到可解释优先级。</p></article><i>→</i><article><span>04</span><h2>人类判断</h2><p>投资经理查看证据、选择收藏或忽略、添加标签和跟进状态。系统不做自动联系。</p></article></section><section class="detail-grid method-grid"><div class="detail-column"><article class="detail-panel"><div class="panel-head"><h2>为什么不只用普通搜索</h2></div>${bulletList(['普通搜索返回页面；本产品将项目、人物、融资、活动和来源整理为可筛选实体。', '普通搜索的结果顺序不解释投研相关性；本产品展示排序构成、待验证问题和不确定性。', '普通搜索不会积累团队的收藏、忽略、标签和跟进行为；本产品把这些操作变成下一阶段推荐的可解释信号。'], 'good-list')}</article><article class="detail-panel"><div class="panel-head"><h2>当前已实现</h2></div>${bulletList(['项目与活动双模块、详情页、来源链接、可信度和待核验状态。', '按行业、地区、B 轮以前可能性、活动类型、质量和时间等筛选；可解释排序。', '收藏、忽略、标签、跟进状态、最近查看和批量整理，均使用浏览器本地存储。', '“更新样本”清楚标示为本地 Demo 刷新，不伪装成实时爬虫。'], 'good-list')}</article></div><div class="detail-column"><article class="detail-panel"><div class="panel-head"><h2>当前限制</h2></div>${bulletList(['不是全天候联网采集；样本来自有限公开来源，打开前和行动前仍需核验。', '未实现跨来源自动实体消歧、新闻级更新、组织权限或真实 CRM / 邮件集成。', '质量分数是规则样例，不使用隐藏黑箱模型，不构成投资、法律或联系建议。'], 'warn-list')}</article><article class="detail-panel"><div class="panel-head"><h2>第二阶段</h2></div>${bulletList(['接入合规公开源与人工审核队列，增加抓取时间、版本与字段级证据。', '基于查看、收藏、忽略、标签和跟进状态提供可解释的主动推荐。', '与 CRM、日历和团队协作连接，但保留“人批准后才执行”的动作边界。'], 'question-list')}</article></div></section><section class="source-notice"><b>样本数据说明</b><span>项目来源主要为公司官网与 Y Combinator 公开档案；活动来源主要为官方活动页。所有无法确认的信息均保留“未知 / 待核验”。</span></section>`;
-  }
-
-  function methodPage() {
-    return `<section class="method-hero"><span class="eyebrow accent">PRODUCT NOTE · V1.3</span><h2>让“信息多”变成<br/>“可验证、可行动”。</h2><p>本 Demo 面向国内 VC 场景，不替代投资经理判断。它将真实公开信号与已核验样本分层：Agent 先收集、规范化、去重和解释；人再决定是否核验、收藏或跟进。</p></section><section class="method-flow"><article><span>01</span><h2>公开收集</h2><p>定时读取国内公开 RSS、融资快报与活动目录；只采集少量代表性来源，并记录每个来源本次是否成功。</p></article><i>→</i><article><span>02</span><h2>待核验队列</h2><p>实时新闻和活动先进入候选池。缺失公司、融资、嘉宾或联系人时保持“未知”，不会被自动补造。</p></article><i>→</i><article><span>03</span><h2>去重与初筛</h2><p>按标题与来源链接去重；用公开来源、AI 相关性、完整度、阶段线索和核验价值形成可解释优先级。</p></article><i>→</i><article><span>04</span><h2>人类判断</h2><p>投资经理查看原始证据，收藏、忽略、加标签或设置跟进状态。系统不自动联系任何人。</p></article></section><section class="detail-grid method-grid"><div class="detail-column"><article class="detail-panel"><div class="panel-head"><h2>为什么不只用普通搜索</h2></div>${bulletList(['普通搜索返回页面；本产品将候选线索、已核验项目、活动和来源整理为可筛选的工作队列。', '普通搜索的结果顺序不解释投研相关性；本产品展示入队理由、来源健康状态、待验证问题和不确定性。', '普通搜索不会积累团队的收藏、忽略、标签和跟进行为；本产品把这些操作变成下一阶段推荐的可解释信号。'], 'good-list')}</article><article class="detail-panel"><div class="panel-head"><h2>当前已实现</h2></div>${bulletList(['41 个国内优先项目、21 个国内优先活动，均保留来源链接、可信度和待核验状态；其中 18 个带有早期阶段或成立时间较短信号。', '公开源采集脚本：InfoQ 中文 RSS、量子位 RSS、36 氪融资快报，以及活动行北京、上海、深圳 AI 活动目录。', 'GitHub Actions 每 6 小时采集、校验，变化时自动提交并发布到自有域名；项目页把实时待核验项目与正式档案分层展示。', '候选线索去重、抓取时间、来源健康状态、标题 / 摘要阶段线索、可解释入队理由与收藏/跟进闭环。'], 'good-list')}</article></div><div class="detail-column"><article class="detail-panel"><div class="panel-head"><h2>当前限制</h2></div>${bulletList(['实时队列是国内公开信息候选，不等于已完成公司、融资、活动质量或联系人核验。', '小红书等内容平台只作为人工发现入口；未做登录、绕过限制或自动抓取，任何关键事实仍需由官网、投资方、高校/孵化器或可信报道交叉验证。', '未实现跨来源实体消歧、组织权限或真实 CRM / 邮件集成；质量分数不是投资建议。'], 'warn-list')}</article><article class="detail-panel"><div class="panel-head"><h2>下一步迭代</h2></div>${bulletList(['扩展高校创业营、投资机构组合页、官方项目展示等更早期公开来源，并增加来源变更告警。', '为早期项目增加成立时间、融资轮次、公开产品上线和招聘等可解释信号，而不是只按新闻热度排序。', '后续再接入合规数据源与人工审核，逐步将高质量线索提升为正式项目 / 活动记录。'], 'question-list')}</article></div></section><section class="source-notice"><b>实时数据说明</b><span>国内公开 RSS、融资快报与活动目录只用于候选线索发现。每条线索保留原始来源和抓取时间；没有证据的字段明确显示“未知 / 待核验”。</span></section>`;
-  }
-
   function renderPage() {
     const name = routeName();
     if (name === 'dashboard') return dashboard();
@@ -341,7 +332,6 @@
     if (name === 'events') return routeEntityId() ? eventDetail(routeEntityId()) : eventsPage();
     if (name === 'signals') return routeEntityId() ? signalDetail(routeEntityId()) : signalsPage();
     if (name === 'follow-ups') return followupsPage();
-    if (name === 'method') return methodPage();
     if (name === 'project') return projectDetail(routeEntityId());
     if (name === 'event') return eventDetail(routeEntityId());
     if (name === 'signal') return signalDetail(routeEntityId());

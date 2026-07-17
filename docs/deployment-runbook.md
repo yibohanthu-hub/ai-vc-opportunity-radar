@@ -11,10 +11,10 @@ InfoQ 中文 / 量子位 RSS / 活动行国内城市目录
             ↓
  GitHub Pages：构建并自动发布静态站点
             ↓
-   radar.你的域名 → 公开访问
+   www.aivcradar.online → 公开访问
 ```
 
-这条路径不依赖飞书，也不需要持续运行传统云服务器。站点本身为静态页面；采集脚本由 GitHub Actions 定时运行，更新后的 `live-signals.js` 随静态站点重新发布。
+这条路径不需要持续运行传统云服务器。站点本身为静态页面；采集脚本由 GitHub Actions 定时运行，更新后的 `live-signals.js` 随静态站点重新发布。
 
 ## 已在仓库中准备好的内容
 
@@ -44,29 +44,28 @@ InfoQ 中文 / 量子位 RSS / 活动行国内城市目录
 
 ### 4. 绑定自有域名
 
-推荐用一个清晰的子域名，例如：
+当前线上地址使用：
 
 ```text
-radar.你的主域名
+www.aivcradar.online
 ```
 
-先在 GitHub Pages 设置中填写该域名并保存，再到域名 DNS 管理后台添加：
+对应 DNS 记录为：
 
 ```text
 类型：CNAME
-主机记录：radar
-记录值：[你的 GitHub 用户名或组织].github.io
+主机记录：www
+记录值：yibohanthu-hub.github.io
 ```
 
-不要使用通配符 DNS。完成 DNS 生效后，在 GitHub Pages 中验证域名并开启 `Enforce HTTPS`。DNS 传播和证书签发可能需要一段时间。
+不要使用通配符 DNS。完成 DNS 生效后，在 GitHub Pages 中验证域名并开启 `Enforce HTTPS`。DNS 传播和证书签发可能需要一段时间；截至 2026-07-17，HTTP 已生效，HTTPS 证书仍待 GitHub Pages 签发。
 
 ### 5. 上线后验收
 
-1. 访问 `https://radar.你的主域名/#/signals`；
+1. 访问 `http://www.aivcradar.online/#/signals`，并在证书签发完成后改用 HTTPS；
 2. 页面显示最近成功抓取时间和每个来源的健康状态；
 3. GitHub Actions 手动运行后，确认 `live-signals.js` 有变化时会提交并触发部署；
-4. 从无痕窗口确认无需登录即可访问；
-5. 保留飞书链接仅作为备用 Demo 地址，不作为正式投递链接。
+4. 从无痕窗口确认自有域名无需登录即可访问。
 
 ## 运行边界与告警建议
 

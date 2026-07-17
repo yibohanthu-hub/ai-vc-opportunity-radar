@@ -31,7 +31,18 @@ npm run check:signals
 
 最近一次本地实测（2026-07-17 13:42，北京时间）：5 个国内公开来源均成功返回，生成 3 条项目 / 产品待核验线索与 7 条活动待核验线索。来源为 InfoQ 中文 RSS、量子位 RSS 与活动行北京 / 上海 / 深圳 AI 目录。每条记录包含抓取时间、原始链接和“待核验”状态；来源失败时不会伪造或用空数据覆盖上一次成功结果。
 
-## 2. 功能验证
+## 2. 线上自动化验证
+
+| 验证项 | 结果 | 证据 |
+| --- | --- | --- |
+| 手动触发真实采集 | 通过 | [GitHub Actions #29558139178](https://github.com/yibohanthu-hub/ai-vc-opportunity-radar/actions/runs/29558139178) 于 2026-07-17 13:45（北京时间）完成。 |
+| 采集与字段校验 | 通过 | 5 个来源均成功；`Fetch and normalize public signals` 与 `Validate the generated queue` 均成功。 |
+| 变化提交与发布 | 通过 | 工作流写入新的 `live-signals.js`，随后完成 release 校验、Pages 配置、artifact 上传和 Pages 部署。 |
+| 主分支发布工作流 | 通过 | [Deploy AI Opportunity Radar #29558127042](https://github.com/yibohanthu-hub/ai-vc-opportunity-radar/actions/runs/29558127042) 成功。 |
+| 公网结果核验 | 通过（HTTP） | `http://www.aivcradar.online/live-signals.js` 已显示本次生成时间 `2026-07-17T05:45:20.204Z` 与“国内”来源名称。 |
+| HTTPS | 待 GitHub Pages 证书签发 | 域名 CNAME 与 HTTP 已生效；当前证书尚未覆盖 `www.aivcradar.online`，不能伪装为 HTTPS 已完成。 |
+
+## 3. 功能验证
 
 | 场景 | 预期 | 结果 |
 | --- | --- | --- |
@@ -58,7 +69,7 @@ npm run check:signals
 - `output/playwright/dashboard-mobile.png`
 - `output/playwright/live-signal-queue.png`
 
-## 3. 异常处理与失败案例
+## 4. 异常处理与失败案例
 
 ### 重复候选
 
@@ -76,7 +87,7 @@ npm run check:signals
 
 在浏览器测试中，批量选择使用整页重渲染会造成自动化点击短暂超时。已改为局部更新“已选择数量”，选择状态保持即时可用，随后批量操作再触发列表刷新。
 
-## 4. 已知限制
+## 5. 已知限制
 
 1. 已核验样本不等于完整市场覆盖；实时队列是候选信息而非已验证投研结论。
 2. 部分活动页面的最新嘉宾、时间或地点会变化，行动前必须再次打开官方来源。

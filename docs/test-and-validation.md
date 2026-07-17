@@ -35,10 +35,11 @@ npm run check:signals
 
 | 验证项 | 结果 | 证据 |
 | --- | --- | --- |
-| 手动触发真实采集 | 通过 | [GitHub Actions #29558139178](https://github.com/yibohanthu-hub/ai-vc-opportunity-radar/actions/runs/29558139178) 于 2026-07-17 13:45（北京时间）完成。 |
-| 采集与字段校验 | 通过 | 初版 5 个来源端到端验证通过；V1.3 本地验证 6 个来源均成功，36 氪融资快报已加入同一校验链路。 |
-| 变化提交与发布 | 通过 | 工作流写入新的 `live-signals.js`，随后完成 release 校验、Pages 配置、artifact 上传和 Pages 部署。 |
-| 主分支发布工作流 | 通过 | [Deploy AI Opportunity Radar #29558127042](https://github.com/yibohanthu-hub/ai-vc-opportunity-radar/actions/runs/29558127042) 成功。 |
+| 手动触发真实采集 | 通过 | [GitHub Actions #29580034192](https://github.com/yibohanthu-hub/ai-vc-opportunity-radar/actions/runs/29580034192) 于 2026-07-17 20:23（北京时间）完成；执行路径与定时任务一致。 |
+| 采集与字段校验 | 通过 | V1.3 在线运行 6 个公开来源均成功，生成 12 条项目 / 产品候选与 9 条活动候选；36 氪融资快报已加入同一校验链路。 |
+| 变化提交与发布 | 通过 | 工作流将变更写入 `live-signals.js` 并产生提交 `ac2df07`，随后完成 release 校验、Pages 配置、artifact 上传和 Pages 部署。 |
+| 主分支发布工作流 | 通过 | [Deploy AI Opportunity Radar #29579973294](https://github.com/yibohanthu-hub/ai-vc-opportunity-radar/actions/runs/29579973294) 成功。 |
+| 定时策略 | 已启用 | GitHub Actions UTC `17 */6 * * *`；对应北京时间约 02:17、08:17、14:17、20:17。调度为尽力而为，不承诺精确到分钟。 |
 | 公网结果核验 | 通过（HTTP） | `http://www.aivcradar.online/live-signals.js` 已显示本次生成时间 `2026-07-17T05:45:20.204Z` 与“国内”来源名称。 |
 | HTTPS | 待 GitHub Pages 证书签发 | 域名 CNAME 与 HTTP 已生效；当前证书尚未覆盖 `www.aivcradar.online`，不能伪装为 HTTPS 已完成。 |
 

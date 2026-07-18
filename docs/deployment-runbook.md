@@ -3,7 +3,7 @@
 ## 目标架构
 
 ```text
-InfoQ 中文 / 量子位 / 36 氪公开 RSS / 融资快报 / 活动行 16 城目录
+InfoQ 中文 / 量子位 / 36 氪 / 雷峰网公开 RSS / 融资快报 / 活动行 28 城目录
             ↓（每 4 小时）
  GitHub Actions：采集、去重、字段校验
             ↓（仅有变化时提交）
@@ -20,7 +20,7 @@ InfoQ 中文 / 量子位 / 36 氪公开 RSS / 融资快报 / 活动行 16 城目
 
 - `.github/workflows/refresh-live-signals.yml`：每 4 小时第 17 分钟运行一次采集，候选近 45 天滚动保留并写入 `live-signals.js`。
 - `.github/workflows/deploy-pages.yml`：主分支更新后执行数据校验、构建，并发布 GitHub Pages。
-- `scripts/refresh-live-signals.mjs`：读取 InfoQ 中文 RSS、量子位 RSS、36 氪公开 RSS / 融资快报与活动行 16 座重点产业城市 AI 活动目录。
+- `scripts/refresh-live-signals.mjs`：读取 InfoQ 中文 RSS、量子位 RSS、36 氪与雷峰网公开 RSS / 融资快报，以及活动行 28 座重点产业城市 AI 活动目录（共 38 个来源）。
 - `scripts/check-live-signals.mjs`：拒绝缺来源、缺抓取时间或不符合“待核验”边界的生成文件。
 
 ## 上线步骤

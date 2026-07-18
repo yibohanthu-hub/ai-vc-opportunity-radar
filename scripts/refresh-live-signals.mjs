@@ -17,6 +17,7 @@ const outputPath = join(root, 'live-signals.js');
 const timeoutMs = 15_000;
 const userAgent = 'AI-Opportunity-Radar-Demo/1.2 (domestic public-signal intake; contact: portfolio-demo)';
 const retentionDays = 45;
+const maxRssItemAgeDays = 120;
 const maxProjectCandidates = 120;
 const maxEventCandidates = 120;
 const sourceUrls = {
@@ -29,6 +30,14 @@ const sourceUrls = {
     { id: '36kr-rss-main', name: '36氪 RSS（公开创投 / 科技资讯）', url: 'https://36kr.com/feed' },
     { id: '36kr-rss-article', name: '36氪文章 RSS（公开科技 / 创业报道）', url: 'https://36kr.com/feed-article' },
     { id: '36kr-rss-newsflash', name: '36氪快讯 RSS（公开产品 / 融资快讯）', url: 'https://36kr.com/feed-newsflash' }
+  ],
+  // 雷峰网公开列出的 RSS 分类。AI、机器人、智能驾驶和投融资共同覆盖
+  // 早期 AI 公司、具身智能、自动驾驶及融资线索；依旧由后续规则筛选。
+  leiphoneRss: [
+    { id: 'leiphone-ai', name: '雷峰网 RSS（人工智能 / 创业报道）', url: 'https://www.leiphone.com/feed/categoryRss/name/ai' },
+    { id: 'leiphone-robot', name: '雷峰网 RSS（机器人 / 创业报道）', url: 'https://www.leiphone.com/feed/categoryRss/name/robot' },
+    { id: 'leiphone-transportation', name: '雷峰网 RSS（智能驾驶 / 创业报道）', url: 'https://www.leiphone.com/feed/categoryRss/name/transportation' },
+    { id: 'leiphone-financing', name: '雷峰网 RSS（投融资 / 创业报道）', url: 'https://www.leiphone.com/feed/categoryRss/name/touzi' }
   ],
   huodongxing: [
     { id: 'huodongxing-beijing', city: '北京', url: 'https://www.huodongxing.com/events?city=%E5%8C%97%E4%BA%AC&tag=AI' },
@@ -46,18 +55,31 @@ const sourceUrls = {
     { id: 'huodongxing-changsha', city: '长沙', url: 'https://www.huodongxing.com/events?city=%E9%95%BF%E6%B2%99&tag=AI' },
     { id: 'huodongxing-hefei', city: '合肥', url: 'https://www.huodongxing.com/events?city=%E5%90%88%E8%82%A5&tag=AI' },
     { id: 'huodongxing-xiamen', city: '厦门', url: 'https://www.huodongxing.com/events?city=%E5%8E%A6%E9%97%A8&tag=AI' },
-    { id: 'huodongxing-qingdao', city: '青岛', url: 'https://www.huodongxing.com/events?city=%E9%9D%92%E5%B2%9B&tag=AI' }
+    { id: 'huodongxing-qingdao', city: '青岛', url: 'https://www.huodongxing.com/events?city=%E9%9D%92%E5%B2%9B&tag=AI' },
+    { id: 'huodongxing-ningbo', city: '宁波', url: 'https://www.huodongxing.com/events?city=%E5%AE%81%E6%B3%A2&tag=AI' },
+    { id: 'huodongxing-dongguan', city: '东莞', url: 'https://www.huodongxing.com/events?city=%E4%B8%9C%E8%8E%9E&tag=AI' },
+    { id: 'huodongxing-foshan', city: '佛山', url: 'https://www.huodongxing.com/events?city=%E4%BD%9B%E5%B1%B1&tag=AI' },
+    { id: 'huodongxing-wuxi', city: '无锡', url: 'https://www.huodongxing.com/events?city=%E6%97%A0%E9%94%A1&tag=AI' },
+    { id: 'huodongxing-jinan', city: '济南', url: 'https://www.huodongxing.com/events?city=%E6%B5%8E%E5%8D%97&tag=AI' },
+    { id: 'huodongxing-zhengzhou', city: '郑州', url: 'https://www.huodongxing.com/events?city=%E9%83%91%E5%B7%9E&tag=AI' },
+    { id: 'huodongxing-fuzhou', city: '福州', url: 'https://www.huodongxing.com/events?city=%E7%A6%8F%E5%B7%9E&tag=AI' },
+    { id: 'huodongxing-kunming', city: '昆明', url: 'https://www.huodongxing.com/events?city=%E6%98%86%E6%98%8E&tag=AI' },
+    { id: 'huodongxing-nanchang', city: '南昌', url: 'https://www.huodongxing.com/events?city=%E5%8D%97%E6%98%8C&tag=AI' },
+    { id: 'huodongxing-shenyang', city: '沈阳', url: 'https://www.huodongxing.com/events?city=%E6%B2%88%E9%98%B3&tag=AI' },
+    { id: 'huodongxing-dalian', city: '大连', url: 'https://www.huodongxing.com/events?city=%E5%A4%A7%E8%BF%9E&tag=AI' },
+    { id: 'huodongxing-changzhou', city: '常州', url: 'https://www.huodongxing.com/events?city=%E5%B8%B8%E5%B7%9E&tag=AI' }
   ]
 };
 
 const aiTerms = /人工智能|\bAI\b|AIGC|大模型|生成式|智能体|Agent|具身智能|人形机器人|自动驾驶|机器学习|多模态|算力|推理|机器人|计算机视觉|语音模型|视觉模型|AI\s*Coding|VLA|世界模型|强化学习|\bRL\b/i;
 const opportunityTerms = /创业|初创|融资|获投|天使|种子|Pre[-\s]?A|A轮|B轮|轮融资|发布|推出|上线|开源|产品|模型|智能体|机器人|公司|企业|团队|项目|成立|投资|估值|自动驾驶|具身/i;
 const mainlandTerms = /中国|国内|本土|北京|上海|深圳|杭州|广州|成都|合肥|武汉|苏州|南京|厦门|宁波|西安|天津|长沙|东莞|重庆|青岛|济南|智谱|MiniMax|月之暗面|Kimi|百川|零一万物|阶跃|面壁|生数|硅基流动|DeepSeek|深度求索|轻舟|智元|银河通用|逐际|星尘|加速进化|松延|元象|帕西尼|Rokid|思谋|斯年智驾|原力灵机|优可测|无问芯穹/i;
-const matureCompanyTerms = /阿里巴巴|阿里云|腾讯|百度|字节跳动|华为|蚂蚁集团|小米|京东|美团|拼多多|快手|联想|比亚迪|理想汽车|蔚来|小鹏|中国移动|中国电信|中国联通|商汤|科大讯飞|苹果|Apple|Google|Meta|微软|Microsoft|英伟达|NVIDIA|英特尔|Intel|金山|WPS|寒武纪|兆易创新|长电科技|澜起科技|上海电影|儒意/i;
+const matureCompanyTerms = /阿里巴巴|阿里云|腾讯|百度|字节跳动|华为|蚂蚁集团|小米|京东|美团|拼多多|快手|联想|比亚迪|理想汽车|蔚来|小鹏|中国移动|中国电信|中国联通|商汤|科大讯飞|苹果|Apple|Google|Meta|微软|Microsoft|英伟达|NVIDIA|英特尔|Intel|OpenAI|ChatGPT|Claude|Mistral|Tesla|SpaceX|金山|WPS|寒武纪|兆易创新|长电科技|澜起科技|上海电影|儒意/i;
 // 新闻源里的 AI 技术会议、报告和研究机构资讯不应冒充“创业项目候选”。
 // 这里宁可漏掉边缘线索，也把实时队列优先留给可进一步核验的公司 / 产品。
-const eventTerms = /活动|大会|峰会|论坛|展会|嘉年华|沙龙|研讨|课程|讲座|招聘|闭门分享|AICon|报告|白皮书|研究院|实验室|训练营|开发者日/i;
+const eventTerms = /活动|大会|峰会|论坛|展会|嘉年华|沙龙|研讨|课程|讲座|招聘|闭门分享|AICon|ICRA|CVPR|NeurIPS|ICML|ACL|报告|白皮书|研究院|实验室|训练营|开发者日/i;
 const marketTerms = /A股|股市|指数|收跌|涨停|股价|公告|市值|研报|财报/i;
+const researchNoiseTerms = /一作|论文|研究员|学术会议|课题组/i;
 
 function cleanText(value = '') {
   return String(value)
@@ -108,6 +130,13 @@ function parseRss(xml) {
   }).filter(item => item.title && item.url);
 }
 
+function isRecentRssItem(item) {
+  const timestamp = Date.parse(item.publishedAt || '');
+  // 某些公开 RSS 会把多年旧文重新置顶。能解析到日期时，拒绝过旧条目；
+  // 不能解析日期的条目仍可作为候选，但会在页面上暴露其来源时间状态。
+  return !Number.isFinite(timestamp) || timestamp >= Date.now() - maxRssItemAgeDays * 24 * 60 * 60 * 1000;
+}
+
 async function request(name, url) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
@@ -145,6 +174,7 @@ function isMainlandProjectCandidate(item) {
     && mainlandTerms.test(corpus)
     && !matureCompanyTerms.test(corpus)
     && !eventTerms.test(corpus)
+    && !researchNoiseTerms.test(corpus)
     && !marketTerms.test(corpus);
 }
 
@@ -342,8 +372,8 @@ function mergeRollingCandidates(fresh, previous, limit) {
   const cutoff = Date.now() - retentionDays * 24 * 60 * 60 * 1000;
   // V2 队列没有 retention 元数据。升级时将其用原有抓取时间初始化，
   // 这样旧候选不会因为字段升级而被丢失或在校验中变成不完整记录。
-  const previousItems = (previous || [])
-    .filter(item => item && item.id && item.name && item.url && candidateTimestamp(item) >= cutoff)
+const previousItems = (previous || [])
+    .filter(item => item && item.id && item.name && item.url && candidateTimestamp(item) >= cutoff && isRecentRssItem(item))
     .map(item => {
       const knownAt = item.lastSeenAt || item.collectedAt || item.publishedAt || collectedAt;
       return {
@@ -398,6 +428,7 @@ await runSource({
   url: sourceUrls.infoq,
   target: 'project',
   loader: async () => parseRss(await request('InfoQ 中文 RSS', sourceUrls.infoq))
+    .filter(isRecentRssItem)
     .filter(isMainlandProjectCandidate)
     .map(item => projectSignal({ ...item, sourceName: 'InfoQ 中文（国内 AI / 创业 / 产品新闻）', sourceUrl: sourceUrls.infoq, sourceWeight: 4, collectedAt }))
 });
@@ -408,6 +439,7 @@ await runSource({
   url: sourceUrls.qbitai,
   target: 'project',
   loader: async () => parseRss(await request('量子位 RSS', sourceUrls.qbitai))
+    .filter(isRecentRssItem)
     .filter(isMainlandProjectCandidate)
     .map(item => projectSignal({ ...item, sourceName: '量子位 RSS（国内 AI 新闻）', sourceUrl: sourceUrls.qbitai, sourceWeight: 4, collectedAt }))
 });
@@ -427,8 +459,22 @@ for (const source of sourceUrls.kr36Rss) {
     url: source.url,
     target: 'project',
     loader: async () => parseRss(await request(source.name, source.url))
+      .filter(isRecentRssItem)
       .filter(isMainlandProjectCandidate)
       .map(item => projectSignal({ ...item, sourceName: source.name, sourceUrl: source.url, sourceWeight: 3, collectedAt }))
+  });
+}
+
+for (const source of sourceUrls.leiphoneRss) {
+  await runSource({
+    id: source.id,
+    name: source.name,
+    url: source.url,
+    target: 'project',
+    loader: async () => parseRss(await request(source.name, source.url))
+      .filter(isRecentRssItem)
+      .filter(isMainlandProjectCandidate)
+      .map(item => projectSignal({ ...item, sourceName: source.name, sourceUrl: source.url, sourceWeight: 4, collectedAt }))
   });
 }
 

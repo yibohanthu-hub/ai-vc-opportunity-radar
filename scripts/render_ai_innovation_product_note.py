@@ -80,7 +80,7 @@ def build_pdf():
     ]
 
     stats = Table([
-        [p("60", "stat", sheet), p("36", "stat", sheet), p("22", "stat", sheet), p("4 小时", "stat", sheet)],
+        [p("60", "stat", sheet), p("36", "stat", sheet), p("38", "stat", sheet), p("4 小时", "stat", sheet)],
         [p("国内优先项目样本", "stat_label", sheet), p("AI 活动样本", "stat_label", sheet), p("已接入公开来源", "stat_label", sheet), p("自动采集与发布节奏", "stat_label", sheet)],
     ], colWidths=[width / 4] * 4)
     stats.setStyle(TableStyle([

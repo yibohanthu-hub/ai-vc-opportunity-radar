@@ -35,12 +35,12 @@ npm run check:signals
 
 | 验证项 | 结果 | 证据 |
 | --- | --- | --- |
-| 手动触发真实采集 | 通过 | [GitHub Actions #29633168490](https://github.com/yibohanthu-hub/ai-vc-opportunity-radar/actions/runs/29633168490) 于 2026-07-18 13:58（北京时间）完成，35 秒内依次完成抓取、队列校验、提交、release 校验与 Pages 部署；执行路径与定时任务一致。 |
-| 扩大采集与字段校验 | 通过（本地 V1.7 全量复测） | 38 个公开来源均成功；实时队列为 38 条项目 / 产品候选和 42 条活动候选，候选均具备来源、抓取时间、首次发现、最近一次看到、出现次数和待核验边界字段。 |
-| 变化提交与发布 | 通过 | 工作流将本次变更写入 `live-signals.js` 并产生提交 `14c6985`，随后完成 release 校验、Pages 配置、artifact 上传和 Pages 部署。 |
-| GitHub Pages 部署 | 通过 | 同一 [刷新工作流 #29633168490](https://github.com/yibohanthu-hub/ai-vc-opportunity-radar/actions/runs/29633168490) 已报告 Pages deployment success。 |
+| 手动触发真实采集 | 通过 | [GitHub Actions #29633976979](https://github.com/yibohanthu-hub/ai-vc-opportunity-radar/actions/runs/29633976979) 于 2026-07-18 14:26（北京时间）完成，约 1 分钟内依次完成抓取、队列校验、提交、release 校验与 Pages 部署；执行路径与定时任务一致。 |
+| 扩大采集与字段校验 | 通过（线上 V1.7 全量复测） | 38 个公开来源均成功；线上实时队列为 38 条项目 / 产品候选和 48 条活动候选（合计 86 条），候选均具备来源、抓取时间、首次发现、最近一次看到、出现次数和待核验边界字段。 |
+| 变化提交与发布 | 通过 | 工作流将本次变更写入 `live-signals.js` 并产生提交 `aa65ff3`，随后完成 release 校验、Pages 配置、artifact 上传和 Pages 部署。 |
+| GitHub Pages 部署 | 通过 | 同一 [刷新工作流 #29633976979](https://github.com/yibohanthu-hub/ai-vc-opportunity-radar/actions/runs/29633976979) 已报告 Pages deployment success。 |
 | 定时策略 | 已启用 | GitHub Actions UTC `17 */4 * * *`；对应北京时间为 00:17、04:17、08:17、12:17、16:17、20:17。调度为尽力而为，不承诺精确到分钟。 |
-| 浏览器数据可见性 | 通过 | 项目页显示“已整理 60 条 · 实时待核验 38 条 · 项目线索合计 98 条”；活动页显示“已整理 36 条 · 实时待核验 42 条 · 活动线索合计 78 条”，并可打开候选的来源与核验详情。 |
+| 浏览器与线上数据可见性 | 通过 | 本地项目页显示“已整理 60 条 · 实时待核验 38 条 · 项目线索合计 98 条”；线上活动页最新队列为“已整理 36 条 · 实时待核验 48 条 · 活动线索合计 84 条”，并可打开候选的来源与核验详情。 |
 | AI 创新产品作品集入口公网验证 | 通过（HTTPS） | `https://www.aivcradar.online/#/portfolio` 已可公开访问；作品集页的 Demo 跳转、Agent、物理 AI 场景与评估边界可用。 |
 | HTTPS | 通过 | 自有域名已由 GitHub Pages 配置并可通过 `https://www.aivcradar.online` 访问。 |
 

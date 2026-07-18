@@ -175,7 +175,7 @@ def build_pdf():
 
     # Page 4
     story += [p("04 / 验证、失败案例与下一步", "h1", styles)]
-    evidence = Table([[p("60", "title", styles), p("36", "title", styles), p("38", "title", styles), p("80", "title", styles)], [p("国内优先项目样本", "card_body", styles), p("国内优先活动样本", "card_body", styles), p("实时公开来源", "card_body", styles), p("当前实时待核验线索", "card_body", styles)]], colWidths=[(A4[0]-36*mm)/4]*4)
+    evidence = Table([[p("60", "title", styles), p("36", "title", styles), p("38", "title", styles), p("86", "title", styles)], [p("国内优先项目样本", "card_body", styles), p("国内优先活动样本", "card_body", styles), p("实时公开来源", "card_body", styles), p("当前实时待核验线索", "card_body", styles)]], colWidths=[(A4[0]-36*mm)/4]*4)
     evidence.setStyle(TableStyle([("BACKGROUND", (0,0), (-1,-1), colors.white), ("BOX", (0,0), (-1,-1), .6, LINE), ("INNERGRID", (0,0), (-1,-1), .5, LINE), ("ALIGN", (0,0), (-1,-1), "CENTER"), ("VALIGN", (0,0), (-1,-1), "MIDDLE"), ("TOPPADDING", (0,0), (-1,-1), 9), ("BOTTOMPADDING", (0,0), (-1,-1), 9)]))
     story += [evidence, Spacer(1, 8 * mm), p("已验证的闭环", "h2", styles), p("实际浏览器操作覆盖：首页、项目筛选、详情、来源、收藏、标签、跟进状态、活动低价值筛选、活动详情、批量整理，以及实时待核验队列的来源证据、收藏和跟进回流。", "body", styles), p("失败案例：活动日程的“看起来完整”", "h2", styles), p("早期整理活动样本时，最容易犯的错误是为了填满字段而写入没有当前官方证据的 2026 日期、场地或嘉宾。这个 Demo 选择了更保守的处理：没有证据就写“待官方当前页 / 归档核验”，历史活动明确标成历史样本；实时采集结果也先标记为“待核验”。", "body", styles)]
     future = Table([[card("下一步 1", "扩展已上线的国内公开源采集到高校创业营、项目展示和投资机构组合页，并保留人工审核。", styles, col), card("下一步 2", "基于收藏、忽略、标签与跟进做可解释的主动推荐。", styles, col)], [card("下一步 3", "连接 CRM 与日历，但所有外部动作保留人工批准。", styles, col), card("求职价值", "证明把真实投研工作流翻译为产品、数据结构、采集规则、交互和可运行原型的能力。", styles, col)]], colWidths=[col, col])

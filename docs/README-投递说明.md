@@ -2,17 +2,15 @@
 
 ## 建议填写
 
-- **作品链接**：`http://www.aivcradar.online/#/portfolio`
+- **作品链接**：`https://www.aivcradar.online/#/portfolio`
 - **备用链接**：`https://github.com/yibohanthu-hub/ai-vc-opportunity-radar`
 - **优先上传附件**：
   1. `AI-Innovation-Product-Portfolio-Note.pdf`（一页岗位补充说明）
   2. `VC-AI-Opportunity-Radar-Case-Study.pdf`（四页完整案例）
 
-> 自有域名的 HTTPS 证书由 GitHub Pages 签发中。如招聘系统无法打开 HTTP 链接或强制 HTTPS，请保留 GitHub 备用链接，并在证书生效后更新作品链接。
-
 ## 可直接粘贴的描述
 
-我独立完成了 AI Opportunity Radar：一个可操作的 AI Agent Web Demo，将国内公开 AI 项目与活动信号经过采集、规范化、去重、可解释初筛和人工反馈，沉淀为可筛选、可追溯、可跟进的信息工作流。项目已接入 9 个真实公开来源，GitHub Actions 每 6 小时自动更新并发布；我同时完成了用户流程、数据字段、前端交互、验证记录与作品集文档。该作品不是车载或 VLA 产品，但体现了我把 AI / 物理 AI 信号转化为用户场景、可验证原型和迭代指标的 0→1 产品能力。
+我独立完成了 AI Opportunity Radar：一个可操作的 AI Agent Web Demo，将国内公开 AI 项目与活动信号经过采集、规范化、去重、可解释初筛和人工反馈，沉淀为可筛选、可追溯、可跟进的信息工作流。项目已接入 22 个真实公开来源，候选近 45 天滚动保留，GitHub Actions 每 4 小时自动更新并发布；我同时完成了用户流程、数据字段、前端交互、验证记录与作品集文档。该作品不是车载或 VLA 产品，但体现了我把 AI / 物理 AI 信号转化为用户场景、可验证原型和迭代指标的 0→1 产品能力。
 
 ## 文件说明
 

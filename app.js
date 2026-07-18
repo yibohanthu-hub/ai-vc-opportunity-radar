@@ -53,6 +53,7 @@
   function isSelected(type, id) { return Boolean(state.selected[key(type, id)]); }
   function liveCandidates() { return [...(LIVE.projectCandidates || []), ...(LIVE.eventCandidates || [])]; }
   function liveProjectCandidates() { return [...(LIVE.projectCandidates || [])]; }
+  function liveEventCandidates() { return [...(LIVE.eventCandidates || [])]; }
   function entity(type, id) {
     const collection = type === 'project' ? DATA.projects : type === 'event' ? DATA.events : liveCandidates();
     return collection.find(item => item.id === id);
@@ -126,8 +127,8 @@
   }
 
   function dashboard() {
-    const projectsToday = DATA.projects.filter(item => projectSeedToday.has(item.id)).length;
-    const eventsToday = DATA.events.filter(item => eventSeedToday.has(item.id)).length;
+    const projectsToday = Number.isFinite(Number(LIVE.fresh?.projects)) ? Number(LIVE.fresh.projects) : DATA.projects.filter(item => projectSeedToday.has(item.id)).length;
+    const eventsToday = Number.isFinite(Number(LIVE.fresh?.events)) ? Number(LIVE.fresh.events) : DATA.events.filter(item => eventSeedToday.has(item.id)).length;
     const favorites = Object.keys(state.favorites).length;
     const pending = Object.values(state.followups).filter(item => ['待研究', '待联系', '已联系'].includes(item)).length;
     const highProjects = DATA.projects.filter(item => item.confidence === '高').sort((a, b) => entityScore(b) - entityScore(a)).slice(0, 3);
@@ -135,8 +136,8 @@
     const liveCount = liveCandidates().length;
     return `<section class="hero-card"><div><span class="eyebrow accent">国内公开信号队列 · ${liveTimestamp(LIVE.generatedAt)}</span><h2>把公开信号变成可验证、<br/>可跟进的机会清单。</h2><p>面向国内 VC 场景。Agent 负责发现、整理、去重、解释和记录反馈；投资经理保留判断与触达权。</p><div class="hero-actions"><button class="primary-button" data-action="navigate" data-route="#/projects">查看新增项目 <span>→</span></button><button class="secondary-button" data-action="navigate" data-route="#/events">查看 AI 活动</button><button class="secondary-button" data-action="navigate" data-route="#/signals">待核验线索 ${liveCount} 条</button></div></div><div class="hero-orbit"><div class="orbit-center">AI<br/><small>RADAR</small></div><i class="orbit-dot dot-1"></i><i class="orbit-dot dot-2"></i><i class="orbit-dot dot-3"></i></div></section>
       <section class="stat-grid">
-        ${statCard('今日新增项目', projectsToday, '国内公开样本批次', '◈', '#7c5cff')}
-        ${statCard('今日新增活动', eventsToday, '国内近期与历史对照', '◎', '#22b8a7')}
+        ${statCard('今日新增项目', projectsToday, `本次采集 · 待核验池 ${liveProjectCandidates().length} 条`, '◈', '#7c5cff')}
+        ${statCard('今日新增活动', eventsToday, `本次采集 · 待核验池 ${liveEventCandidates().length} 条`, '◎', '#22b8a7')}
         ${statCard('已收藏', favorites, '跨项目与活动', '★', '#f0a93b')}
         ${statCard('待跟进', pending, '研究、联系或已联系', '↗', '#ec6a5c')}
       </section>
@@ -159,7 +160,7 @@
       <article><b>${DATA.projects.length}</b><span>国内优先项目样本</span></article>
       <article><b>${DATA.events.length}</b><span>AI 活动样本</span></article>
       <article><b>${liveSourceCount}</b><span>已接入公开来源</span></article>
-      <article><b>6 小时</b><span>自动采集与发布节奏</span></article>
+      <article><b>4 小时</b><span>自动采集与发布节奏</span></article>
     </section>
     <section class="portfolio-section-head"><div><span class="eyebrow">能力证据</span><h2>这份作品实际证明什么</h2></div><p>不是把 AI 当作一个功能标签，而是从用户任务、数据质量、可解释性和验证方式出发完成产品闭环。</p></section>
     <section class="portfolio-evidence-grid">
@@ -198,7 +199,7 @@
     return liveCandidates().filter(item => {
       const haystack = [item.name, item.category, item.sourceName, item.summary, item.reasoning].join(' ').toLowerCase();
       return (!query || haystack.includes(query)) && (!ui.signal.kind || item.kind === ui.signal.kind) && (!ui.signal.source || item.sourceName === ui.signal.source);
-    }).sort((a, b) => Date.parse(b.collectedAt) - Date.parse(a.collectedAt));
+    }).sort((a, b) => Date.parse(b.lastSeenAt || b.collectedAt) - Date.parse(a.lastSeenAt || a.collectedAt));
   }
   function signalFilters() {
     return `<div class="filters signal-filters"><label class="search-box">⌕<input data-filter="signal" data-key="search" value="${escapeHtml(ui.signal.search)}" placeholder="搜索线索、来源或关键词" /></label>${selectFilter('signal', 'kind', '线索类型', ['project|项目 / 产品', 'event|AI 活动'], ui.signal.kind, true)}${selectFilter('signal', 'source', '公开来源', signalSources(), ui.signal.source)}<button class="clear-button" data-action="clear-filters" data-type="signal">清除</button></div>`;
@@ -208,13 +209,15 @@
     const healthySources = (LIVE.sources || []).filter(source => source.status === 'success').length;
     const failedSources = (LIVE.sources || []).filter(source => source.status === 'error').length;
     const statusText = LIVE.status === 'success' ? '本次抓取完整' : LIVE.status === 'partial' ? '部分来源暂不可用' : '尚未生成实时数据';
-    return `<section class="signal-overview"><div><span class="eyebrow accent">国内公开源采集</span><h2>${liveCandidates().length} 条实时待核验线索</h2><p>最近抓取 ${escapeHtml(liveTimestamp(LIVE.generatedAt))}。队列优先收录国内公开源：不自动补全公司、融资、联系人或活动质量；人工核验后才可进入正式信息池。</p></div><div class="signal-health"><b>${healthySources}/${(LIVE.sources || []).length}</b><span>来源正常</span><small>${escapeHtml(statusText)}${failedSources ? ` · ${failedSources} 个来源待恢复` : ''}</small></div></section><section class="source-run-list">${(LIVE.sources || []).map(source => `<a class="source-run ${source.status}" href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer"><span>${source.status === 'success' ? '✓' : '!'}</span><b>${escapeHtml(source.name)}</b><small>${source.status === 'success' ? `${source.records} 条候选` : '本次未获取'}</small></a>`).join('')}</section>${signalFilters()}<section class="list-stack" data-signal-results>${signals.length ? signals.map(signalCard).join('') : empty('没有符合条件的实时线索', '尝试清除筛选，或等待下一次后台采集。')}</section><section class="source-notice"><b>数据边界</b><span>${escapeHtml(LIVE.disclaimer || '实时信号只作为待核验候选。')}</span></section>`;
+    const freshCount = Number(LIVE.fresh?.projects || 0) + Number(LIVE.fresh?.events || 0);
+    const retained = Math.max(0, liveCandidates().length - freshCount);
+    return `<section class="signal-overview"><div><span class="eyebrow accent">国内公开源采集</span><h2>${liveCandidates().length} 条实时待核验线索</h2><p>最近抓取 ${escapeHtml(liveTimestamp(LIVE.generatedAt))}：本次新增 ${freshCount} 条，保留近 ${escapeHtml(String(LIVE.retention?.days || 45))} 天仍待核验的 ${retained} 条。队列不自动补全公司、融资、联系人或活动质量；人工核验后才可进入正式信息池。</p></div><div class="signal-health"><b>${healthySources}/${(LIVE.sources || []).length}</b><span>来源正常</span><small>${escapeHtml(statusText)}${failedSources ? ` · ${failedSources} 个来源待恢复` : ''}</small></div></section><section class="source-run-list">${(LIVE.sources || []).map(source => `<a class="source-run ${source.status}" href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer"><span>${source.status === 'success' ? '✓' : '!'}</span><b>${escapeHtml(source.name)}</b><small>${source.status === 'success' ? `${source.records} 条本次候选` : '本次未获取'}</small></a>`).join('')}</section>${signalFilters()}<section class="list-stack" data-signal-results>${signals.length ? signals.map(signalCard).join('') : empty('没有符合条件的实时线索', '尝试清除筛选，或等待下一次后台采集。')}</section><section class="source-notice"><b>数据边界</b><span>${escapeHtml(LIVE.disclaimer || '实时信号只作为待核验候选。')}</span></section>`;
   }
   function signalCard(item) {
     const isEvent = item.kind === 'event';
     const score = entityScore(item);
     const timeLabel = isEvent ? `活动日期：${item.eventMeta?.startDate || '未知'}` : `来源时间：${liveTimestamp(item.publishedAt)}`;
-    return `<article class="live-signal-card ${isIgnored('signal', item.id) ? 'is-ignored' : ''}"><div class="signal-main"><div class="card-kicker"><span class="entity-icon">${signalIcon(item)}</span>${chip(signalKindLabel(item))}${!isEvent && item.earlyStage ? chip('早期线索') : ''}${!isEvent && item.stageHint && item.stageHint !== '阶段待核验' ? chip(`阶段：${item.stageHint}`) : ''}<span class="confidence confidence-low">${escapeHtml(item.confidence)}</span></div><div class="card-title-row"><div><h2>${escapeHtml(item.name)}</h2><p>${escapeHtml(item.summary)}</p></div><div class="signal-score"><b>${score}</b><span>/ 25</span>${scoreBar(score, 25)}</div></div><div class="signal-meta"><span>${escapeHtml(timeLabel)}</span>${!isEvent ? `<span>阶段线索：${escapeHtml(item.stageHint || '待核验')}</span>` : ''}${isEvent ? `<span>形式：${escapeHtml(item.eventMeta?.mode || '未知')}</span><span>地点：${escapeHtml(item.eventMeta?.location || '未知')}</span>` : ''}<span>抓取：${escapeHtml(liveTimestamp(item.collectedAt))}</span><span>来源：${escapeHtml(item.sourceName)}</span></div><div class="why-row"><b>为何入队</b><span>${escapeHtml(item.reasoning)}</span></div></div><div class="card-side">${actionButtons('signal', item.id)}${statusControl('signal', item.id)}${tagsMarkup('signal', item.id)}<button class="view-button" data-action="navigate" data-route="#/signals/${item.id}">查看来源与核验 <span>→</span></button></div></article>`;
+    return `<article class="live-signal-card ${isIgnored('signal', item.id) ? 'is-ignored' : ''}"><div class="signal-main"><div class="card-kicker"><span class="entity-icon">${signalIcon(item)}</span>${chip(signalKindLabel(item))}${!isEvent && item.earlyStage ? chip('早期线索') : ''}${!isEvent && item.stageHint && item.stageHint !== '阶段待核验' ? chip(`阶段：${item.stageHint}`) : ''}<span class="confidence confidence-low">${escapeHtml(item.confidence)}</span></div><div class="card-title-row"><div><h2>${escapeHtml(item.name)}</h2><p>${escapeHtml(item.summary)}</p></div><div class="signal-score"><b>${score}</b><span>/ 25</span>${scoreBar(score, 25)}</div></div><div class="signal-meta"><span>${escapeHtml(timeLabel)}</span>${!isEvent ? `<span>阶段线索：${escapeHtml(item.stageHint || '待核验')}</span>` : ''}${isEvent ? `<span>形式：${escapeHtml(item.eventMeta?.mode || '未知')}</span><span>地点：${escapeHtml(item.eventMeta?.location || '未知')}</span>` : ''}<span>首次发现：${escapeHtml(liveTimestamp(item.firstCollectedAt || item.collectedAt))}</span><span>最近见到：${escapeHtml(liveTimestamp(item.lastSeenAt || item.collectedAt))}</span><span>来源：${escapeHtml(item.sourceName)}</span></div><div class="why-row"><b>为何入队</b><span>${escapeHtml(item.reasoning)}</span></div></div><div class="card-side">${actionButtons('signal', item.id)}${statusControl('signal', item.id)}${tagsMarkup('signal', item.id)}<button class="view-button" data-action="navigate" data-route="#/signals/${item.id}">查看来源与核验 <span>→</span></button></div></article>`;
   }
   function signalDetail(id) {
     const item = entity('signal', id);
@@ -224,7 +227,9 @@
     const rows = [
       ['队列类型', signalKindLabel(item)],
       [isEvent ? '活动日期' : '来源发布时间', isEvent ? item.eventMeta?.startDate || '未知' : liveTimestamp(item.publishedAt)],
-      ['本次抓取时间', liveTimestamp(item.collectedAt)],
+      ['首次发现', liveTimestamp(item.firstCollectedAt || item.collectedAt)],
+      ['最近一次看到', liveTimestamp(item.lastSeenAt || item.collectedAt)],
+      ['连续出现次数', `${Number(item.seenCount) || 1} 次`],
       ['来源', item.sourceName],
       ...(isEvent ? [['形式', item.eventMeta?.mode || '未知'], ['地点', item.eventMeta?.location || '未知'], ['主办方', item.eventMeta?.organizer || '未知']] : [['标题 / 摘要阶段线索', item.stageHint || '待核验']]),
       ['自动摘要', item.summary]
@@ -289,7 +294,7 @@
     const list = filteredProjects();
     const live = liveProjectCandidates().sort((a, b) => Number(Boolean(b.earlyStage)) - Number(Boolean(a.earlyStage)) || Date.parse(b.collectedAt) - Date.parse(a.collectedAt));
     const total = DATA.projects.length + live.length;
-    return `<section class="page-intro"><div class="legend">${chip('◆ 已整理项目', 'confidence-high')}${chip('◇ 实时待核验', 'confidence-low')}<span data-project-count>已整理 ${DATA.projects.length} 条 · 实时待核验 ${live.length} 条 · 项目线索合计 ${total} 条 · 当前已整理筛选 ${list.length} 条</span></div></section>${projectFilters()}<section class="list-stack" data-project-results>${list.length ? list.map(projectCard).join('') : empty('没有符合条件的项目', '尝试清除筛选或更换搜索词。')}</section>${live.length ? `<section class="section-head inline live-project-head"><div><span class="eyebrow">自动更新候选</span><h2>实时待核验创业项目</h2><p>这 ${live.length} 条来自本次公开源抓取，按早期阶段线索优先展示；它们尚未被自动升级为正式项目档案。</p></div><button class="text-button" data-action="navigate" data-route="#/signals">查看全部实时线索 →</button></section><section class="list-stack live-project-list">${live.map(signalCard).join('')}</section>` : ''}`;
+    return `<section class="page-intro"><div class="legend">${chip('◆ 已整理项目', 'confidence-high')}${chip('◇ 实时待核验', 'confidence-low')}<span data-project-count>已整理 ${DATA.projects.length} 条 · 实时待核验 ${live.length} 条 · 项目线索合计 ${total} 条 · 当前已整理筛选 ${list.length} 条</span></div></section>${projectFilters()}<section class="list-stack" data-project-results>${list.length ? list.map(projectCard).join('') : empty('没有符合条件的项目', '尝试清除筛选或更换搜索词。')}</section>${live.length ? `<section class="section-head inline live-project-head"><div><span class="eyebrow">自动更新候选</span><h2>实时待核验创业项目</h2><p>这 ${live.length} 条来自近 ${LIVE.retention?.days || 45} 天公开源抓取，按早期阶段线索优先展示；它们尚未被自动升级为正式项目档案。</p></div><button class="text-button" data-action="navigate" data-route="#/signals">查看全部实时线索 →</button></section><section class="list-stack live-project-list">${live.map(signalCard).join('')}</section>` : ''}`;
   }
   function projectCard(item) {
     const score = entityScore(item);
@@ -326,7 +331,9 @@
 
   function eventsPage() {
     const list = filteredEvents();
-    return `<section class="page-intro"><div class="legend">${chip('● 高价值', 'quality-high')}${chip('● 低优先级', 'quality-low')}<span data-event-count>共 ${DATA.events.length} 条国内优先公开样本 · 当前 ${list.length} 条</span></div></section>${eventFilters()}<section class="event-grid" data-event-results>${list.length ? list.map(eventCard).join('') : empty('没有符合条件的活动', '尝试清除筛选或更换搜索词。')}</section>`;
+    const live = liveEventCandidates().sort((a, b) => Number(Boolean(b.isNew)) - Number(Boolean(a.isNew)) || Date.parse(b.lastSeenAt || b.collectedAt) - Date.parse(a.lastSeenAt || a.collectedAt));
+    const total = DATA.events.length + live.length;
+    return `<section class="page-intro"><div class="legend">${chip('● 已整理高价值', 'quality-high')}${chip('◇ 实时待核验', 'confidence-low')}${chip('● 低优先级', 'quality-low')}<span data-event-count>已整理 ${DATA.events.length} 条 · 实时待核验 ${live.length} 条 · 活动线索合计 ${total} 条 · 当前已整理筛选 ${list.length} 条</span></div></section>${eventFilters()}<section class="event-grid" data-event-results>${list.length ? list.map(eventCard).join('') : empty('没有符合条件的活动', '尝试清除筛选或更换搜索词。')}</section>${live.length ? `<section class="section-head inline live-project-head"><div><span class="eyebrow">自动更新候选</span><h2>实时待核验 AI 活动</h2><p>这 ${live.length} 条来自近 ${LIVE.retention?.days || 45} 天国内公开活动目录；日期、嘉宾、主办方与项目发现价值都必须打开原始页面复核。</p></div><button class="text-button" data-action="navigate" data-route="#/signals">查看全部实时线索 →</button></section><section class="list-stack live-project-list">${live.map(signalCard).join('')}</section>` : ''}`;
   }
   function eventCard(item) {
     const score = entityScore(item);
@@ -440,7 +447,7 @@
     const list = filteredEvents();
     const count = document.querySelector('[data-event-count]');
     const results = document.querySelector('[data-event-results]');
-    if (count) count.textContent = `共 ${DATA.events.length} 条国内优先公开样本 · 当前 ${list.length} 条`;
+    if (count) count.textContent = `已整理 ${DATA.events.length} 条 · 实时待核验 ${liveEventCandidates().length} 条 · 活动线索合计 ${DATA.events.length + liveEventCandidates().length} 条 · 当前已整理筛选 ${list.length} 条`;
     if (results) results.innerHTML = list.length ? list.map(eventCard).join('') : empty('没有符合条件的活动', '尝试清除筛选或更换搜索词。');
   }
   document.getElementById('app').addEventListener('input', event => {

@@ -80,7 +80,7 @@ def build_pdf():
     ]
 
     stats = Table([
-        [p("60", "stat", sheet), p("36", "stat", sheet), p("9", "stat", sheet), p("6 小时", "stat", sheet)],
+        [p("60", "stat", sheet), p("36", "stat", sheet), p("22", "stat", sheet), p("4 小时", "stat", sheet)],
         [p("国内优先项目样本", "stat_label", sheet), p("AI 活动样本", "stat_label", sheet), p("已接入公开来源", "stat_label", sheet), p("自动采集与发布节奏", "stat_label", sheet)],
     ], colWidths=[width / 4] * 4)
     stats.setStyle(TableStyle([
@@ -120,7 +120,7 @@ def build_pdf():
         ("LINEBEFORE", (0, 0), (0, -1), 3, TEAL), ("LEFTPADDING", (0, 0), (-1, -1), 12),
         ("RIGHTPADDING", (0, 0), (-1, -1), 12), ("TOPPADDING", (0, 0), (-1, -1), 10), ("BOTTOMPADDING", (0, 0), (-1, -1), 10),
     ]))
-    story += [boundary, Spacer(1, 6 * mm), p("在线作品：http://www.aivcradar.online/#/portfolio    ·    源码与自动化配置：https://github.com/yibohanthu-hub/ai-vc-opportunity-radar", "small", sheet)]
+    story += [boundary, Spacer(1, 6 * mm), p("在线作品：https://www.aivcradar.online/#/portfolio    ·    源码与自动化配置：https://github.com/yibohanthu-hub/ai-vc-opportunity-radar", "small", sheet)]
 
     doc.build(story, onFirstPage=header_footer, onLaterPages=header_footer)
     print(OUT)

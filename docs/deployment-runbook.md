@@ -3,8 +3,8 @@
 ## 目标架构
 
 ```text
-InfoQ 中文 / 量子位 RSS / 36 氪融资快报 / 活动行国内城市目录
-            ↓（每 6 小时）
+InfoQ 中文 / 量子位 / 36 氪公开 RSS / 融资快报 / 活动行 16 城目录
+            ↓（每 4 小时）
  GitHub Actions：采集、去重、字段校验
             ↓（仅有变化时提交）
         main 分支更新
@@ -18,9 +18,9 @@ InfoQ 中文 / 量子位 RSS / 36 氪融资快报 / 活动行国内城市目录
 
 ## 已在仓库中准备好的内容
 
-- `.github/workflows/refresh-live-signals.yml`：每 6 小时第 17 分钟运行一次采集，只有 `live-signals.js` 变化时才提交。
+- `.github/workflows/refresh-live-signals.yml`：每 4 小时第 17 分钟运行一次采集，候选近 45 天滚动保留并写入 `live-signals.js`。
 - `.github/workflows/deploy-pages.yml`：主分支更新后执行数据校验、构建，并发布 GitHub Pages。
-- `scripts/refresh-live-signals.mjs`：读取 InfoQ 中文 RSS、量子位 RSS、36 氪融资快报与活动行北京 / 上海 / 深圳 / 杭州 / 广州 / 成都 AI 活动目录。
+- `scripts/refresh-live-signals.mjs`：读取 InfoQ 中文 RSS、量子位 RSS、36 氪公开 RSS / 融资快报与活动行 16 座重点产业城市 AI 活动目录。
 - `scripts/check-live-signals.mjs`：拒绝缺来源、缺抓取时间或不符合“待核验”边界的生成文件。
 
 ## 上线步骤
@@ -58,11 +58,11 @@ www.aivcradar.online
 记录值：yibohanthu-hub.github.io
 ```
 
-不要使用通配符 DNS。完成 DNS 生效后，在 GitHub Pages 中验证域名并开启 `Enforce HTTPS`。DNS 传播和证书签发可能需要一段时间；截至 2026-07-17，HTTP 已生效，HTTPS 证书仍待 GitHub Pages 签发。
+不要使用通配符 DNS。完成 DNS 生效后，在 GitHub Pages 中验证域名并开启 `Enforce HTTPS`。当前 `https://www.aivcradar.online` 已可公开访问；仍应保留 GitHub 仓库作为发布故障时的源码备份入口。
 
 ### 5. 上线后验收
 
-1. 访问 `http://www.aivcradar.online/#/signals`，并在证书签发完成后改用 HTTPS；
+1. 访问 `https://www.aivcradar.online/#/signals`；
 2. 页面显示最近成功抓取时间和每个来源的健康状态；
 3. GitHub Actions 手动运行后，确认 `live-signals.js` 有变化时会提交并触发部署；
 4. 从无痕窗口确认自有域名无需登录即可访问。

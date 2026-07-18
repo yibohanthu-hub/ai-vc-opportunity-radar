@@ -3,8 +3,10 @@ name: Refresh domestic public AI signals
 on:
   workflow_dispatch:
   schedule:
-    # Every six hours, offset from the hour to reduce scheduled-job congestion.
-    - cron: '17 */6 * * *'
+    # Every four hours, offset from the hour to reduce scheduled-job congestion.
+    # UTC: 00:17 / 04:17 / 08:17 / 12:17 / 16:17 / 20:17
+    # Beijing time: 08:17 / 12:17 / 16:17 / 20:17 / 00:17 / 04:17.
+    - cron: '17 */4 * * *'
 
 permissions:
   contents: write
@@ -37,7 +39,7 @@ jobs:
         run: npm run check:signals
 
       - id: queue-change
-        name: Commit only meaningful queue changes
+        name: Commit refreshed queue
         run: |
           if git diff --quiet -- live-signals.js; then
             echo "changed=false" >> "$GITHUB_OUTPUT"

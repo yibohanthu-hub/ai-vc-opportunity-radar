@@ -38,10 +38,6 @@ a { color: inherit; }
 .nav-link:hover { color: #fff; background: rgba(255,255,255,.06); }
 .nav-link.active { color: #fff; background: rgba(132, 108, 250, .18); font-weight: 600; }
 .nav-link.active > span { color: #aa9bff; }
-.sidebar-foot { margin: 23px 9px 0; padding: 14px 0 1px; border-top: 1px solid rgba(255,255,255,.08); color: #758092; font: 10px/1.55 'DM Mono', monospace; letter-spacing: .03em; }
-.sidebar-foot b { color: #b8c2d2; font-weight: 500; }
-.pulse { display: inline-block; width: 6px; height: 6px; margin: 0 6px 1px 0; border-radius: 50%; background: #5ee0c9; box-shadow: 0 0 0 4px rgba(94,224,201,.1); }
-
 .main { width: calc(100% - 246px); margin-left: 246px; padding: 30px 38px 64px; max-width: 1840px; }
 .topbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 24px; }
 .eyebrow { display: inline-block; color: #7d8695; font: 600 10px/1.2 'DM Mono', monospace; letter-spacing: .12em; text-transform: uppercase; }

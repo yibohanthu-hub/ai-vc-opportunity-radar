@@ -111,7 +111,6 @@
       <aside class="sidebar">
         <button class="brand" data-action="navigate" data-route="#/dashboard"><span class="brand-glyph">◒</span><span><b>AI 机会雷达</b><small>创投机会发现</small></span></button>
         <div class="nav-group"><p>工作台</p>${navLink('dashboard', '今日雷达', '⌂')}${navLink('projects', '创业项目', '◈')}${navLink('events', 'AI 活动', '◎')}${navLink('signals', '实时待核验', '⌁')}${navLink('follow-ups', '收藏与跟进', '↗')}</div>
-        <div class="sidebar-foot"><span class="pulse"></span>国内优先样本<br/><b>2026.07.17</b></div>
       </aside>
       <main class="main"><header class="topbar"><div><span class="eyebrow">CN VC · AI SIGNAL DESK</span><h1>${pageTitle()}</h1></div><div class="topbar-tools"><button class="refresh-button" data-action="navigate" data-route="#/signals">⌁ 实时线索</button></div></header>${content}</main>
       <nav class="mobile-nav">${navLink('dashboard', '今日', '⌂')}${navLink('projects', '项目', '◈')}${navLink('events', '活动', '◎')}${navLink('signals', '线索', '⌁')}${navLink('follow-ups', '跟进', '↗')}</nav>

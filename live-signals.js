@@ -2,8 +2,8 @@
 (function () {
   window.RADAR_LIVE_SIGNALS = {
   "version": 3,
-  "generatedAt": "2026-11-03T02:24:51.847Z",
-  "status": "success",
+  "generatedAt": "2026-11-03T12:00:56.997Z",
+  "status": "partial",
   "disclaimer": "实时队列以国内公开来源为优先，保留近 45 天待核验候选。未知字段保持未知；必须打开原始来源并由投资经理核验后，才能进入正式项目 / 活动信息池。",
   "refreshCadence": "每 4 小时自动采集并发布一次（GitHub Actions 尽力调度）",
   "retention": {
@@ -12,8 +12,8 @@
     "maxEventCandidates": 120
   },
   "fresh": {
-    "projects": 1,
-    "events": 4
+    "projects": 3,
+    "events": 8
   },
   "sources": [
     {
@@ -21,7 +21,7 @@
       "name": "InfoQ 中文（国内 AI / 创业 / 产品新闻）",
       "url": "https://www.infoq.cn/feed",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
       "records": 0
     },
     {
@@ -29,23 +29,23 @@
       "name": "量子位 RSS（国内 AI 新闻）",
       "url": "https://www.qbitai.com/feed",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
-      "records": 1
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
+      "records": 0
     },
     {
       "id": "36kr-financing-flash",
       "name": "36氪融资快报（公开融资 / 创业线索）",
       "url": "https://pitchhub.36kr.com/financing-flash",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
-      "records": 6
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
+      "records": 8
     },
     {
       "id": "36kr-rss-main",
       "name": "36氪 RSS（公开创投 / 科技资讯）",
       "url": "https://36kr.com/feed",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
       "records": 0
     },
     {
@@ -53,7 +53,7 @@
       "name": "36氪文章 RSS（公开科技 / 创业报道）",
       "url": "https://36kr.com/feed-article",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
       "records": 0
     },
     {
@@ -61,39 +61,42 @@
       "name": "36氪快讯 RSS（公开产品 / 融资快讯）",
       "url": "https://36kr.com/feed-newsflash",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
       "records": 0
     },
     {
       "id": "leiphone-ai",
       "name": "雷峰网 RSS（人工智能 / 创业报道）",
       "url": "https://www.leiphone.com/feed/categoryRss/name/ai",
-      "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
-      "records": 10
+      "status": "error",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
+      "records": 0,
+      "message": "雷峰网 RSS（人工智能 / 创业报道）: request timed out"
     },
     {
       "id": "leiphone-robot",
       "name": "雷峰网 RSS（机器人 / 创业报道）",
       "url": "https://www.leiphone.com/feed/categoryRss/name/robot",
-      "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
-      "records": 9
+      "status": "error",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
+      "records": 0,
+      "message": "雷峰网 RSS（机器人 / 创业报道）: request timed out"
     },
     {
       "id": "leiphone-transportation",
       "name": "雷峰网 RSS（智能驾驶 / 创业报道）",
       "url": "https://www.leiphone.com/feed/categoryRss/name/transportation",
-      "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
-      "records": 5
+      "status": "error",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
+      "records": 0,
+      "message": "雷峰网 RSS（智能驾驶 / 创业报道）: request timed out"
     },
     {
       "id": "leiphone-financing",
       "name": "雷峰网 RSS（投融资 / 创业报道）",
       "url": "https://www.leiphone.com/feed/categoryRss/name/touzi",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
       "records": 0
     },
     {
@@ -101,31 +104,31 @@
       "name": "活动行：北京 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E5%8C%97%E4%BA%AC&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
-      "records": 2
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
+      "records": 3
     },
     {
       "id": "huodongxing-shanghai",
       "name": "活动行：上海 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E4%B8%8A%E6%B5%B7&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
-      "records": 2
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
+      "records": 1
     },
     {
       "id": "huodongxing-shenzhen",
       "name": "活动行：深圳 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E6%B7%B1%E5%9C%B3&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
-      "records": 5
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
+      "records": 3
     },
     {
       "id": "huodongxing-hangzhou",
       "name": "活动行：杭州 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E6%9D%AD%E5%B7%9E&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
       "records": 3
     },
     {
@@ -133,7 +136,7 @@
       "name": "活动行：广州 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E5%B9%BF%E5%B7%9E&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
       "records": 3
     },
     {
@@ -141,7 +144,7 @@
       "name": "活动行：成都 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E6%88%90%E9%83%BD&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
       "records": 3
     },
     {
@@ -149,7 +152,7 @@
       "name": "活动行：南京 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E5%8D%97%E4%BA%AC&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
       "records": 3
     },
     {
@@ -157,7 +160,7 @@
       "name": "活动行：武汉 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E6%AD%A6%E6%B1%89&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
       "records": 3
     },
     {
@@ -165,7 +168,7 @@
       "name": "活动行：苏州 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E8%8B%8F%E5%B7%9E&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
       "records": 3
     },
     {
@@ -173,15 +176,15 @@
       "name": "活动行：西安 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E8%A5%BF%E5%AE%89&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
-      "records": 2
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
+      "records": 3
     },
     {
       "id": "huodongxing-chongqing",
       "name": "活动行：重庆 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E9%87%8D%E5%BA%86&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
       "records": 2
     },
     {
@@ -189,7 +192,7 @@
       "name": "活动行：天津 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E5%A4%A9%E6%B4%A5&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
       "records": 0
     },
     {
@@ -197,7 +200,7 @@
       "name": "活动行：长沙 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E9%95%BF%E6%B2%99&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
       "records": 3
     },
     {
@@ -205,7 +208,7 @@
       "name": "活动行：合肥 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E5%90%88%E8%82%A5&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
       "records": 0
     },
     {
@@ -213,15 +216,15 @@
       "name": "活动行：厦门 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E5%8E%A6%E9%97%A8&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
-      "records": 2
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
+      "records": 3
     },
     {
       "id": "huodongxing-qingdao",
       "name": "活动行：青岛 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E9%9D%92%E5%B2%9B&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
       "records": 3
     },
     {
@@ -229,7 +232,7 @@
       "name": "活动行：宁波 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E5%AE%81%E6%B3%A2&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
       "records": 0
     },
     {
@@ -237,15 +240,15 @@
       "name": "活动行：东莞 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E4%B8%9C%E8%8E%9E&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
-      "records": 2
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
+      "records": 0
     },
     {
       "id": "huodongxing-foshan",
       "name": "活动行：佛山 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E4%BD%9B%E5%B1%B1&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
       "records": 0
     },
     {
@@ -253,7 +256,7 @@
       "name": "活动行：无锡 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E6%97%A0%E9%94%A1&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
       "records": 3
     },
     {
@@ -261,7 +264,7 @@
       "name": "活动行：济南 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E6%B5%8E%E5%8D%97&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
       "records": 0
     },
     {
@@ -269,7 +272,7 @@
       "name": "活动行：郑州 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E9%83%91%E5%B7%9E&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
       "records": 3
     },
     {
@@ -277,15 +280,15 @@
       "name": "活动行：福州 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E7%A6%8F%E5%B7%9E&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
-      "records": 0
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
+      "records": 2
     },
     {
       "id": "huodongxing-kunming",
       "name": "活动行：昆明 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E6%98%86%E6%98%8E&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
       "records": 0
     },
     {
@@ -293,7 +296,7 @@
       "name": "活动行：南昌 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E5%8D%97%E6%98%8C&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
       "records": 0
     },
     {
@@ -301,27 +304,148 @@
       "name": "活动行：沈阳 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E6%B2%88%E9%98%B3&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
       "records": 0
     },
     {
       "id": "huodongxing-dalian",
       "name": "活动行：大连 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E5%A4%A7%E8%BF%9E&tag=AI",
-      "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
-      "records": 0
+      "status": "error",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
+      "records": 0,
+      "message": "活动行 大连: HTTP 500"
     },
     {
       "id": "huodongxing-changzhou",
       "name": "活动行：常州 AI 活动目录",
       "url": "https://www.huodongxing.com/events?city=%E5%B8%B8%E5%B7%9E&tag=AI",
       "status": "success",
-      "fetchedAt": "2026-11-03T02:24:51.847Z",
+      "fetchedAt": "2026-11-03T12:00:56.997Z",
       "records": 0
     }
   ],
   "projectCandidates": [
+    {
+      "id": "live-project-o5gj3j",
+      "kind": "project",
+      "name": "“飒智智能”完成数亿元Pre-B轮融资",
+      "category": "国内创业 / 产品待核验",
+      "sourceName": "36氪融资快报（公开融资 / 创业线索）",
+      "sourceUrl": "https://pitchhub.36kr.com/financing-flash",
+      "url": "https://36kr.com/newsflashes/4053562108957572",
+      "publishedAt": "6小时前",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "stageHint": "B轮",
+      "earlyStage": false,
+      "summary": "36氪获悉，“飒智智能”近期完成数亿元Pre-B轮融资。投资方包括建投投资有限责任公司、南通投管和云启资本三家机构。本轮资金将主要用于大模型研发、多臂机器人本体迭代、产线扩建以及全球市场的深度拓展。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、创业 / 融资 / 产品关键词、标题 / 摘要阶段线索：B轮；自动收录为国内优先候选，不代表已确认公司、融资、所在地或投资价值。",
+      "unknowns": [
+        "公司主体与国内经营主体：待核验",
+        "融资阶段、金额与估值：未知",
+        "公开联系方式：待人工核验"
+      ],
+      "nextAction": "打开来源，先确认公司主体、主要经营地、AI 相关性与是否存在可验证融资 / 产品信息。",
+      "sources": [
+        {
+          "title": "36氪融资快报（公开融资 / 创业线索）",
+          "url": "https://36kr.com/newsflashes/4053562108957572",
+          "type": "公开新闻 / RSS"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 1,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-11-03T12:00:56.997Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 1,
+      "isNew": true
+    },
+    {
+      "id": "live-project-s3ysl3",
+      "kind": "project",
+      "name": "共绩科技完成数亿元融资，加速布局分布式算力网",
+      "category": "国内创业 / 产品待核验",
+      "sourceName": "36氪融资快报（公开融资 / 创业线索）",
+      "sourceUrl": "https://pitchhub.36kr.com/financing-flash",
+      "url": "https://36kr.com/p/4053401935566728",
+      "publishedAt": "9小时前",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "stageHint": "阶段待核验",
+      "earlyStage": false,
+      "summary": "持续放大算力服务规模化交付与智能化运营能力",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、创业 / 融资 / 产品关键词；自动收录为国内优先候选，不代表已确认公司、融资、所在地或投资价值。",
+      "unknowns": [
+        "公司主体与国内经营主体：待核验",
+        "融资阶段、金额与估值：未知",
+        "公开联系方式：待人工核验"
+      ],
+      "nextAction": "打开来源，先确认公司主体、主要经营地、AI 相关性与是否存在可验证融资 / 产品信息。",
+      "sources": [
+        {
+          "title": "36氪融资快报（公开融资 / 创业线索）",
+          "url": "https://36kr.com/p/4053401935566728",
+          "type": "公开新闻 / RSS"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 1,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-11-03T12:00:56.997Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 1,
+      "isNew": true
+    },
+    {
+      "id": "live-project-1a524u9",
+      "kind": "project",
+      "name": "“智子光垣”完成数亿元种子轮融资",
+      "category": "国内早期创业 / 产品待核验",
+      "sourceName": "36氪融资快报（公开融资 / 创业线索）",
+      "sourceUrl": "https://pitchhub.36kr.com/financing-flash",
+      "url": "https://36kr.com/newsflashes/4053404619592836",
+      "publishedAt": "9小时前",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "stageHint": "种子轮",
+      "earlyStage": true,
+      "summary": "36氪获悉，光计算芯片公司“智子光垣”已完成数亿元种子轮融资。公司成立后已连续完成5轮种子轮次融资，投资方包括海桐国际创新中心、云启资本、国泰海通、险峰长青、原子创投、同鑫资本和上海交通大学AI未来基金。资金将主要用于核心芯片研发与流片迭代、高端人才引进与团队建设，以及应用场景拓展与生态合作。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、创业 / 融资 / 产品关键词、国内主体 / 场景关键词、标题 / 摘要阶段线索：种子轮；自动收录为国内优先候选，不代表已确认公司、融资、所在地或投资价值。",
+      "unknowns": [
+        "公司主体与国内经营主体：待核验",
+        "融资阶段、金额与估值：未知",
+        "公开联系方式：待人工核验"
+      ],
+      "nextAction": "打开来源，先确认公司主体、主要经营地、AI 相关性与是否存在可验证融资 / 产品信息。",
+      "sources": [
+        {
+          "title": "36氪融资快报（公开融资 / 创业线索）",
+          "url": "https://36kr.com/newsflashes/4053404619592836",
+          "type": "公开新闻 / RSS"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 1,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-11-03T12:00:56.997Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 1,
+      "isNew": true
+    },
     {
       "id": "live-project-1c3mgmx",
       "kind": "project",
@@ -330,8 +454,8 @@
       "sourceName": "36氪融资快报（公开融资 / 创业线索）",
       "sourceUrl": "https://pitchhub.36kr.com/financing-flash",
       "url": "https://36kr.com/p/4053394503603076",
-      "publishedAt": "18分钟前",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
+      "publishedAt": "9小时前",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
       "stageHint": "阶段待核验",
       "earlyStage": false,
       "summary": "六臂机器人可实现双工位并行、四臂交替",
@@ -358,9 +482,169 @@
         "followup": 4
       },
       "firstCollectedAt": "2026-11-03T02:24:51.847Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 1,
-      "isNew": true
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 2,
+      "isNew": false
+    },
+    {
+      "id": "live-project-1dg3a92",
+      "kind": "project",
+      "name": "“芯联动力”完成近20亿人民币C轮融资，估值20亿美元",
+      "category": "国内创业 / 产品待核验",
+      "sourceName": "36氪融资快报（公开融资 / 创业线索）",
+      "sourceUrl": "https://pitchhub.36kr.com/financing-flash",
+      "url": "https://36kr.com/newsflashes/4051977766868101",
+      "publishedAt": "昨天",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "stageHint": "阶段待核验",
+      "earlyStage": false,
+      "summary": "11月2日，化合物半导体企业“芯联动力”宣布完成近20亿元人民币规模C轮融资。本轮融资由中国移动链长基金领投，浪潮信息、元璟资本、中石化氢能基金、北方华创诺华资本、江丰电子、常州星宇、凯辉基金、普超资本、建信股权、中信金石、中信证券、银河源汇等战略投资方联合投资。本轮融资完成后，芯联动力估值已达到20亿美元，公司股东已覆盖通信、算力、电网、新能源及汽车等领域产业资本。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、创业 / 融资 / 产品关键词、国内主体 / 场景关键词；自动收录为国内优先候选，不代表已确认公司、融资、所在地或投资价值。",
+      "unknowns": [
+        "公司主体与国内经营主体：待核验",
+        "融资阶段、金额与估值：未知",
+        "公开联系方式：待人工核验"
+      ],
+      "nextAction": "打开来源，先确认公司主体、主要经营地、AI 相关性与是否存在可验证融资 / 产品信息。",
+      "sources": [
+        {
+          "title": "36氪融资快报（公开融资 / 创业线索）",
+          "url": "https://36kr.com/newsflashes/4051977766868101",
+          "type": "公开新闻 / RSS"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 1,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-11-02T06:21:27.900Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 4,
+      "isNew": false
+    },
+    {
+      "id": "live-project-1e559jf",
+      "kind": "project",
+      "name": "黑石集团预计Anthropic上市后或无法获得投资级评级，融资成本面临上升压力",
+      "category": "国内创业 / 产品待核验",
+      "sourceName": "36氪融资快报（公开融资 / 创业线索）",
+      "sourceUrl": "https://pitchhub.36kr.com/financing-flash",
+      "url": "https://36kr.com/newsflashes/4049146450819592",
+      "publishedAt": "2026-10-31",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "stageHint": "阶段待核验",
+      "earlyStage": false,
+      "summary": "10月31日，据报道，黑石集团近日向投资者表示，人工智能初创公司Anthropic上市后可能无法立即获得投资级信用评级，预计评级或处于“BB”区间。此前，黑石曾预计该公司年底前可获得投资级评级。Anthropic正在推进一项总额630亿美元的芯片融资交易，其中180亿美元为由其租赁付款支持的次级债务。若无法获得投资级评级，Anthropic未来融资渠道可能受到限制，借贷成本也可能上升。（界面新闻）",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、创业 / 融资 / 产品关键词；自动收录为国内优先候选，不代表已确认公司、融资、所在地或投资价值。",
+      "unknowns": [
+        "公司主体与国内经营主体：待核验",
+        "融资阶段、金额与估值：未知",
+        "公开联系方式：待人工核验"
+      ],
+      "nextAction": "打开来源，先确认公司主体、主要经营地、AI 相关性与是否存在可验证融资 / 产品信息。",
+      "sources": [
+        {
+          "title": "36氪融资快报（公开融资 / 创业线索）",
+          "url": "https://36kr.com/newsflashes/4049146450819592",
+          "type": "公开新闻 / RSS"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 1,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-10-31T05:54:16.332Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 11,
+      "isNew": false
+    },
+    {
+      "id": "live-project-1vlxp77",
+      "kind": "project",
+      "name": "前华为VP创业做AI原生电力资产运营，获宁德时代旗下基金数千万美元A轮融资",
+      "category": "国内早期创业 / 产品待核验",
+      "sourceName": "36氪融资快报（公开融资 / 创业线索）",
+      "sourceUrl": "https://pitchhub.36kr.com/financing-flash",
+      "url": "https://36kr.com/p/4047734928259592",
+      "publishedAt": "2026-10-30",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "stageHint": "A轮",
+      "earlyStage": true,
+      "summary": "已在欧洲10个国家布局电力市场准入。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、创业 / 融资 / 产品关键词、标题 / 摘要阶段线索：A轮；自动收录为国内优先候选，不代表已确认公司、融资、所在地或投资价值。",
+      "unknowns": [
+        "公司主体与国内经营主体：待核验",
+        "融资阶段、金额与估值：未知",
+        "公开联系方式：待人工核验"
+      ],
+      "nextAction": "打开来源，先确认公司主体、主要经营地、AI 相关性与是否存在可验证融资 / 产品信息。",
+      "sources": [
+        {
+          "title": "36氪融资快报（公开融资 / 创业线索）",
+          "url": "https://36kr.com/p/4047734928259592",
+          "type": "公开新闻 / RSS"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 1,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-10-30T05:58:15.888Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 14,
+      "isNew": false
+    },
+    {
+      "id": "live-project-4q5i7j",
+      "kind": "project",
+      "name": "“Green Voltis”宣布完成数千万美元A轮融资",
+      "category": "国内早期创业 / 产品待核验",
+      "sourceName": "36氪融资快报（公开融资 / 创业线索）",
+      "sourceUrl": "https://pitchhub.36kr.com/financing-flash",
+      "url": "https://36kr.com/newsflashes/4047699249871111",
+      "publishedAt": "2026-10-30",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "stageHint": "A轮",
+      "earlyStage": true,
+      "summary": "36氪获悉，总部位于瑞典的AI原生电力资产运营商Green Voltis近日宣布完成数千万美元A轮融资，由宁德时代支持设立的美元基金Lochpine Capital 独家投资。本轮融资资金将主要用于三个方面：继续加大Aether AI电力交易智能体与Chronos并网控制系统的研发投入、欧洲重点市场的业务拓展，以及AI基础设施领域的布局。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、创业 / 融资 / 产品关键词、标题 / 摘要阶段线索：A轮；自动收录为国内优先候选，不代表已确认公司、融资、所在地或投资价值。",
+      "unknowns": [
+        "公司主体与国内经营主体：待核验",
+        "融资阶段、金额与估值：未知",
+        "公开联系方式：待人工核验"
+      ],
+      "nextAction": "打开来源，先确认公司主体、主要经营地、AI 相关性与是否存在可验证融资 / 产品信息。",
+      "sources": [
+        {
+          "title": "36氪融资快报（公开融资 / 创业线索）",
+          "url": "https://36kr.com/newsflashes/4047699249871111",
+          "type": "公开新闻 / RSS"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 1,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-10-30T05:58:15.888Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 14,
+      "isNew": false
     },
     {
       "id": "live-project-1pr6w8o",
@@ -400,166 +684,6 @@
       "firstCollectedAt": "2026-11-02T18:30:17.818Z",
       "lastSeenAt": "2026-11-03T02:24:51.847Z",
       "seenCount": 2,
-      "isNew": false
-    },
-    {
-      "id": "live-project-1dg3a92",
-      "kind": "project",
-      "name": "“芯联动力”完成近20亿人民币C轮融资，估值20亿美元",
-      "category": "国内创业 / 产品待核验",
-      "sourceName": "36氪融资快报（公开融资 / 创业线索）",
-      "sourceUrl": "https://pitchhub.36kr.com/financing-flash",
-      "url": "https://36kr.com/newsflashes/4051977766868101",
-      "publishedAt": "昨天",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
-      "stageHint": "阶段待核验",
-      "earlyStage": false,
-      "summary": "11月2日，化合物半导体企业“芯联动力”宣布完成近20亿元人民币规模C轮融资。本轮融资由中国移动链长基金领投，浪潮信息、元璟资本、中石化氢能基金、北方华创诺华资本、江丰电子、常州星宇、凯辉基金、普超资本、建信股权、中信金石、中信证券、银河源汇等战略投资方联合投资。本轮融资完成后，芯联动力估值已达到20亿美元，公司股东已覆盖通信、算力、电网、新能源及汽车等领域产业资本。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、创业 / 融资 / 产品关键词、国内主体 / 场景关键词；自动收录为国内优先候选，不代表已确认公司、融资、所在地或投资价值。",
-      "unknowns": [
-        "公司主体与国内经营主体：待核验",
-        "融资阶段、金额与估值：未知",
-        "公开联系方式：待人工核验"
-      ],
-      "nextAction": "打开来源，先确认公司主体、主要经营地、AI 相关性与是否存在可验证融资 / 产品信息。",
-      "sources": [
-        {
-          "title": "36氪融资快报（公开融资 / 创业线索）",
-          "url": "https://36kr.com/newsflashes/4051977766868101",
-          "type": "公开新闻 / RSS"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 1,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-11-02T06:21:27.900Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 3,
-      "isNew": false
-    },
-    {
-      "id": "live-project-1e559jf",
-      "kind": "project",
-      "name": "黑石集团预计Anthropic上市后或无法获得投资级评级，融资成本面临上升压力",
-      "category": "国内创业 / 产品待核验",
-      "sourceName": "36氪融资快报（公开融资 / 创业线索）",
-      "sourceUrl": "https://pitchhub.36kr.com/financing-flash",
-      "url": "https://36kr.com/newsflashes/4049146450819592",
-      "publishedAt": "2026-10-31",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
-      "stageHint": "阶段待核验",
-      "earlyStage": false,
-      "summary": "10月31日，据报道，黑石集团近日向投资者表示，人工智能初创公司Anthropic上市后可能无法立即获得投资级信用评级，预计评级或处于“BB”区间。此前，黑石曾预计该公司年底前可获得投资级评级。Anthropic正在推进一项总额630亿美元的芯片融资交易，其中180亿美元为由其租赁付款支持的次级债务。若无法获得投资级评级，Anthropic未来融资渠道可能受到限制，借贷成本也可能上升。（界面新闻）",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、创业 / 融资 / 产品关键词；自动收录为国内优先候选，不代表已确认公司、融资、所在地或投资价值。",
-      "unknowns": [
-        "公司主体与国内经营主体：待核验",
-        "融资阶段、金额与估值：未知",
-        "公开联系方式：待人工核验"
-      ],
-      "nextAction": "打开来源，先确认公司主体、主要经营地、AI 相关性与是否存在可验证融资 / 产品信息。",
-      "sources": [
-        {
-          "title": "36氪融资快报（公开融资 / 创业线索）",
-          "url": "https://36kr.com/newsflashes/4049146450819592",
-          "type": "公开新闻 / RSS"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 1,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-10-31T05:54:16.332Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 10,
-      "isNew": false
-    },
-    {
-      "id": "live-project-1vlxp77",
-      "kind": "project",
-      "name": "前华为VP创业做AI原生电力资产运营，获宁德时代旗下基金数千万美元A轮融资",
-      "category": "国内早期创业 / 产品待核验",
-      "sourceName": "36氪融资快报（公开融资 / 创业线索）",
-      "sourceUrl": "https://pitchhub.36kr.com/financing-flash",
-      "url": "https://36kr.com/p/4047734928259592",
-      "publishedAt": "2026-10-30",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
-      "stageHint": "A轮",
-      "earlyStage": true,
-      "summary": "已在欧洲10个国家布局电力市场准入。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、创业 / 融资 / 产品关键词、标题 / 摘要阶段线索：A轮；自动收录为国内优先候选，不代表已确认公司、融资、所在地或投资价值。",
-      "unknowns": [
-        "公司主体与国内经营主体：待核验",
-        "融资阶段、金额与估值：未知",
-        "公开联系方式：待人工核验"
-      ],
-      "nextAction": "打开来源，先确认公司主体、主要经营地、AI 相关性与是否存在可验证融资 / 产品信息。",
-      "sources": [
-        {
-          "title": "36氪融资快报（公开融资 / 创业线索）",
-          "url": "https://36kr.com/p/4047734928259592",
-          "type": "公开新闻 / RSS"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 1,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-10-30T05:58:15.888Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 13,
-      "isNew": false
-    },
-    {
-      "id": "live-project-4q5i7j",
-      "kind": "project",
-      "name": "“Green Voltis”宣布完成数千万美元A轮融资",
-      "category": "国内早期创业 / 产品待核验",
-      "sourceName": "36氪融资快报（公开融资 / 创业线索）",
-      "sourceUrl": "https://pitchhub.36kr.com/financing-flash",
-      "url": "https://36kr.com/newsflashes/4047699249871111",
-      "publishedAt": "2026-10-30",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
-      "stageHint": "A轮",
-      "earlyStage": true,
-      "summary": "36氪获悉，总部位于瑞典的AI原生电力资产运营商Green Voltis近日宣布完成数千万美元A轮融资，由宁德时代支持设立的美元基金Lochpine Capital 独家投资。本轮融资资金将主要用于三个方面：继续加大Aether AI电力交易智能体与Chronos并网控制系统的研发投入、欧洲重点市场的业务拓展，以及AI基础设施领域的布局。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、创业 / 融资 / 产品关键词、标题 / 摘要阶段线索：A轮；自动收录为国内优先候选，不代表已确认公司、融资、所在地或投资价值。",
-      "unknowns": [
-        "公司主体与国内经营主体：待核验",
-        "融资阶段、金额与估值：未知",
-        "公开联系方式：待人工核验"
-      ],
-      "nextAction": "打开来源，先确认公司主体、主要经营地、AI 相关性与是否存在可验证融资 / 产品信息。",
-      "sources": [
-        {
-          "title": "36氪融资快报（公开融资 / 创业线索）",
-          "url": "https://36kr.com/newsflashes/4047699249871111",
-          "type": "公开新闻 / RSS"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 1,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-10-30T05:58:15.888Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 13,
       "isNew": false
     },
     {
@@ -5001,129 +5125,1505 @@
       "lastSeenAt": "2026-10-11T20:21:38.408Z",
       "seenCount": 10,
       "isNew": false
-    },
+    }
+  ],
+  "eventCandidates": [
     {
-      "id": "live-project-kma1st",
-      "kind": "project",
-      "name": "攻坚“Physical Harness”架构，清华00后博士团队获亿元级融资",
-      "category": "国内早期创业 / 产品待核验",
-      "sourceName": "36氪融资快报（公开融资 / 创业线索）",
-      "sourceUrl": "https://pitchhub.36kr.com/financing-flash",
-      "url": "https://36kr.com/p/4016868961980550",
-      "publishedAt": "2026-10-08",
-      "collectedAt": "2026-10-11T20:21:38.408Z",
-      "stageHint": "A轮",
-      "earlyStage": true,
-      "summary": "近日，清华系硬核科创企业灵生科技正式官宣完成亿元级A轮融资，本次融资由华方资本、道禾长期旗下道禾元启、苏文电能（300982.SZ）、某具身智能领域头部产业战略投资方联合投资。",
+      "id": "live-event-p8pabe",
+      "kind": "event",
+      "name": "AI不是风口，是周期！",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：北京 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E5%8C%97%E4%BA%AC&tag=AI",
+      "url": "https://www.huodongxing.com/event/8884682837000",
+      "publishedAt": "11/07 周六 14:00（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 北京 AI 公开目录收录。主办方：原生增长；具体议程、嘉宾与项目展示需打开活动页核验。",
       "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、创业 / 融资 / 产品关键词、标题 / 摘要阶段线索：A轮；自动收录为国内优先候选，不代表已确认公司、融资、所在地或投资价值。",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
       "unknowns": [
-        "公司主体与国内经营主体：待核验",
-        "融资阶段、金额与估值：未知",
-        "公开联系方式：待人工核验"
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
       ],
-      "nextAction": "打开来源，先确认公司主体、主要经营地、AI 相关性与是否存在可验证融资 / 产品信息。",
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/07 周六 14:00（活动行列表页，年份待核验）",
+        "location": "北京朝阳",
+        "mode": "线下 / 待核验",
+        "organizer": "原生增长"
+      },
       "sources": [
         {
-          "title": "36氪融资快报（公开融资 / 创业线索）",
-          "url": "https://36kr.com/p/4016868961980550",
-          "type": "公开新闻 / RSS"
+          "title": "活动行：北京 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/8884682837000",
+          "type": "公开活动目录"
         }
       ],
       "score": {
         "novelty": 5,
         "source": 3,
         "relevance": 4,
-        "completeness": 1,
+        "completeness": 2,
         "followup": 4
       },
-      "firstCollectedAt": "2026-10-08T15:41:45.352Z",
-      "lastSeenAt": "2026-10-11T20:21:38.408Z",
+      "firstCollectedAt": "2026-11-03T12:00:56.997Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 1,
+      "isNew": true
+    },
+    {
+      "id": "live-event-rgg25a",
+      "kind": "event",
+      "name": "《AI老板圈饭局股东晚宴 + Codex AI平台沉浸式体验》",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：北京 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E5%8C%97%E4%BA%AC&tag=AI",
+      "url": "https://www.huodongxing.com/event/2885563623800",
+      "publishedAt": "后天 19:00（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 北京 AI 公开目录收录。主办方：原生增长；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "后天 19:00（活动行列表页，年份待核验）",
+        "location": "北京海淀",
+        "mode": "线下 / 待核验",
+        "organizer": "原生增长"
+      },
+      "sources": [
+        {
+          "title": "活动行：北京 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/2885563623800",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-11-03T12:00:56.997Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 1,
+      "isNew": true
+    },
+    {
+      "id": "live-event-x68za4",
+      "kind": "event",
+      "name": "（11.20/深圳站）爱搜GEO主题沙龙：AI全域获客增长（右滑解锁更多城市→）",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：深圳 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E6%B7%B1%E5%9C%B3&tag=AI",
+      "url": "https://www.huodongxing.com/event/1883937982611",
+      "publishedAt": "11/20 周五 13:00（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 深圳 AI 公开目录收录。主办方：AIDSO爱搜；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/20 周五 13:00（活动行列表页，年份待核验）",
+        "location": "广东深圳",
+        "mode": "线下 / 待核验",
+        "organizer": "AIDSO爱搜"
+      },
+      "sources": [
+        {
+          "title": "活动行：深圳 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/1883937982611",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-11-03T12:00:56.997Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 1,
+      "isNew": true
+    },
+    {
+      "id": "live-event-odc8u6",
+      "kind": "event",
+      "name": "AIGC赋能电商短视频创作沙龙研讨",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：杭州 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E6%9D%AD%E5%B7%9E&tag=AI",
+      "url": "https://www.huodongxing.com/event/1885672483000",
+      "publishedAt": "11/06 周五 14:00（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 杭州 AI 公开目录收录。主办方：杭州链影未来科技有限公司；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/06 周五 14:00（活动行列表页，年份待核验）",
+        "location": "浙江杭州",
+        "mode": "线下 / 待核验",
+        "organizer": "杭州链影未来科技有限公司"
+      },
+      "sources": [
+        {
+          "title": "活动行：杭州 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/1885672483000",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-11-03T12:00:56.997Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 1,
+      "isNew": true
+    },
+    {
+      "id": "live-event-cbhndq",
+      "kind": "event",
+      "name": "2026第八届全国“创业之芯”大赛总决赛中国光谷先进封装与AI芯片产业大会",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：武汉 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E6%AD%A6%E6%B1%89&tag=AI",
+      "url": "https://www.huodongxing.com/event/8885546132200",
+      "publishedAt": "11/25 周三 ~ 11/27 周五（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 武汉 AI 公开目录收录。主办方：江城集成电路超级孵化器；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/25 周三 ~ 11/27 周五（活动行列表页，年份待核验）",
+        "location": "湖北武汉",
+        "mode": "线下 / 待核验",
+        "organizer": "江城集成电路超级孵化器"
+      },
+      "sources": [
+        {
+          "title": "活动行：武汉 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/8885546132200",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-11-03T12:00:56.997Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 1,
+      "isNew": true
+    },
+    {
+      "id": "live-event-jc8z92",
+      "kind": "event",
+      "name": "西安线下小班AI办公培训，Worbuddy实战应用",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：西安 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E8%A5%BF%E5%AE%89&tag=AI",
+      "url": "https://www.huodongxing.com/event/1885660525600",
+      "publishedAt": "11/21 周六 ~ 11/22 周日（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 西安 AI 公开目录收录。主办方：数领AI；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/21 周六 ~ 11/22 周日（活动行列表页，年份待核验）",
+        "location": "陕西西安",
+        "mode": "线下 / 待核验",
+        "organizer": "数领AI"
+      },
+      "sources": [
+        {
+          "title": "活动行：西安 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/1885660525600",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-11-03T12:00:56.997Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 1,
+      "isNew": true
+    },
+    {
+      "id": "live-event-1bpps8k",
+      "kind": "event",
+      "name": "制造业AI场景应用设计开发特训营（C班）",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：无锡 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E6%97%A0%E9%94%A1&tag=AI",
+      "url": "https://www.huodongxing.com/event/4885537330200",
+      "publishedAt": "11/21 周六 ~ 12/12 周六（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 无锡 AI 公开目录收录。主办方：场景学社；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/21 周六 ~ 12/12 周六（活动行列表页，年份待核验）",
+        "location": "江苏无锡",
+        "mode": "线下 / 待核验",
+        "organizer": "场景学社"
+      },
+      "sources": [
+        {
+          "title": "活动行：无锡 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/4885537330200",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-11-03T12:00:56.997Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 1,
+      "isNew": true
+    },
+    {
+      "id": "live-event-stgmc5",
+      "kind": "event",
+      "name": "福州 2026 开发者节（DevFest Fuzhou 2026） - 端侧技术守卫隐私边界，护航全民智能体时代",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：福州 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E7%A6%8F%E5%B7%9E&tag=AI",
+      "url": "https://www.huodongxing.com/event/7885288893100",
+      "publishedAt": "11/22 周日 14:00（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 福州 AI 公开目录收录。主办方：福州谷歌开发者社区（GDG Fuzhou）；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/22 周日 14:00（活动行列表页，年份待核验）",
+        "location": "福建福州",
+        "mode": "线下 / 待核验",
+        "organizer": "福州谷歌开发者社区（GDG Fuzhou）"
+      },
+      "sources": [
+        {
+          "title": "活动行：福州 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/7885288893100",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-11-03T12:00:56.997Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 1,
+      "isNew": true
+    },
+    {
+      "id": "live-event-zvpyho",
+      "kind": "event",
+      "name": "ECS2026 第11届电子通信与半导体数字科技大会暨AI大会",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：北京 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E5%8C%97%E4%BA%AC&tag=AI",
+      "url": "https://www.huodongxing.com/event/7876870839900",
+      "publishedAt": "11/06 周五 08:00（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 北京 AI 公开目录收录。主办方：星创咨询；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/06 周五 08:00（活动行列表页，年份待核验）",
+        "location": "北京西城",
+        "mode": "线下 / 待核验",
+        "organizer": "星创咨询"
+      },
+      "sources": [
+        {
+          "title": "活动行：北京 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/7876870839900",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-10-26T04:56:52.950Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 7,
+      "isNew": false
+    },
+    {
+      "id": "live-event-a5u6ep",
+      "kind": "event",
+      "name": "FDE企业AI落地工作坊-3小时实操",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：上海 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E4%B8%8A%E6%B5%B7&tag=AI",
+      "url": "https://www.huodongxing.com/event/5881419782200",
+      "publishedAt": "11/08 周日 14:00（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 上海 AI 公开目录收录。主办方：玄果AI商学院；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/08 周日 14:00（活动行列表页，年份待核验）",
+        "location": "上海青浦",
+        "mode": "线下 / 待核验",
+        "organizer": "玄果AI商学院"
+      },
+      "sources": [
+        {
+          "title": "活动行：上海 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/5881419782200",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-11-01T06:20:26.761Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 2,
+      "isNew": false
+    },
+    {
+      "id": "live-event-17rral9",
+      "kind": "event",
+      "name": "【智体共生.造物新程】AIZQ2026第二届粤港澳大湾区AI硬件千人嘉年华",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：深圳 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E6%B7%B1%E5%9C%B3&tag=AI",
+      "url": "https://www.huodongxing.com/event/3882063218400",
+      "publishedAt": "12/29 周二 09:00（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 深圳 AI 公开目录收录。主办方：AIZQ知穹传媒；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "12/29 周二 09:00（活动行列表页，年份待核验）",
+        "location": "广东深圳",
+        "mode": "线下 / 待核验",
+        "organizer": "AIZQ知穹传媒"
+      },
+      "sources": [
+        {
+          "title": "活动行：深圳 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/3882063218400",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-10-09T06:17:53.895Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 39,
+      "isNew": false
+    },
+    {
+      "id": "live-event-18byafr",
+      "kind": "event",
+      "name": "AI硬件路演沙龙—第四期",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：深圳 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E6%B7%B1%E5%9C%B3&tag=AI",
+      "url": "https://www.huodongxing.com/event/4884936009400",
+      "publishedAt": "11/25 周三 13:30（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 深圳 AI 公开目录收录。主办方：世界人工智能与物联网创新联盟（WAIA）；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/25 周三 13:30（活动行列表页，年份待核验）",
+        "location": "广东深圳",
+        "mode": "线下 / 待核验",
+        "organizer": "世界人工智能与物联网创新联盟（WAIA）"
+      },
+      "sources": [
+        {
+          "title": "活动行：深圳 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/4884936009400",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-11-02T06:21:27.900Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 4,
+      "isNew": false
+    },
+    {
+      "id": "live-event-10xyeja",
+      "kind": "event",
+      "name": "（11.17/杭州站）爱搜GEO主题沙龙：AI全域获客增长（右滑解锁更多城市→）",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：杭州 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E6%9D%AD%E5%B7%9E&tag=AI",
+      "url": "https://www.huodongxing.com/event/3883937419111",
+      "publishedAt": "11/17 周二 13:00（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 杭州 AI 公开目录收录。主办方：AIDSO爱搜；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/17 周二 13:00（活动行列表页，年份待核验）",
+        "location": "浙江杭州",
+        "mode": "线下 / 待核验",
+        "organizer": "AIDSO爱搜"
+      },
+      "sources": [
+        {
+          "title": "活动行：杭州 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/3883937419111",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-10-25T13:13:25.062Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 7,
+      "isNew": false
+    },
+    {
+      "id": "live-event-ybol95",
+      "kind": "event",
+      "name": "AI 创变 智探未来新天地",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：杭州 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E6%9D%AD%E5%B7%9E&tag=AI",
+      "url": "https://www.huodongxing.com/event/1815998892687",
+      "publishedAt": "文艺生活（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 杭州 AI 公开目录收录。主办方：文艺生活；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "文艺生活（活动行列表页，年份待核验）",
+        "location": "杭州",
+        "mode": "线下 / 待核验",
+        "organizer": "文艺生活"
+      },
+      "sources": [
+        {
+          "title": "活动行：杭州 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/1815998892687",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-09-24T13:36:02.560Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 140,
+      "isNew": false
+    },
+    {
+      "id": "live-event-zh2ir8",
+      "kind": "event",
+      "name": "（11.19/广州站）爱搜GEO主题沙龙：AI全域获客增长（右滑解锁更多城市→）",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：广州 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E5%B9%BF%E5%B7%9E&tag=AI",
+      "url": "https://www.huodongxing.com/event/3883937684511",
+      "publishedAt": "11/19 周四 13:00（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 广州 AI 公开目录收录。主办方：AIDSO爱搜；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/19 周四 13:00（活动行列表页，年份待核验）",
+        "location": "广东广州",
+        "mode": "线下 / 待核验",
+        "organizer": "AIDSO爱搜"
+      },
+      "sources": [
+        {
+          "title": "活动行：广州 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/3883937684511",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-10-25T13:13:25.062Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 5,
+      "isNew": false
+    },
+    {
+      "id": "live-event-12auovw",
+      "kind": "event",
+      "name": "解码爱奇艺AIGC影视创作——广州场",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：广州 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E5%B9%BF%E5%B7%9E&tag=AI",
+      "url": "https://www.huodongxing.com/event/7885539763511",
+      "publishedAt": "11/12 周四 14:30（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 广州 AI 公开目录收录。主办方：爱奇艺；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/12 周四 14:30（活动行列表页，年份待核验）",
+        "location": "广东广州",
+        "mode": "线下 / 待核验",
+        "organizer": "爱奇艺"
+      },
+      "sources": [
+        {
+          "title": "活动行：广州 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/7885539763511",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-11-02T18:30:17.818Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 3,
+      "isNew": false
+    },
+    {
+      "id": "live-event-13tzvj2",
+      "kind": "event",
+      "name": "AI 落地别 \"烂尾\"，CAIO 实战营・两天一夜练会 AI 落地操盘【成都班】",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：成都 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E6%88%90%E9%83%BD&tag=AI",
+      "url": "https://www.huodongxing.com/event/1884663094300",
+      "publishedAt": "11/10 周二 ~ 11/11 周三（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 成都 AI 公开目录收录。主办方：贝叶斯AI学院；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/10 周二 ~ 11/11 周三（活动行列表页，年份待核验）",
+        "location": "四川成都",
+        "mode": "线下 / 待核验",
+        "organizer": "贝叶斯AI学院"
+      },
+      "sources": [
+        {
+          "title": "活动行：成都 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/1884663094300",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-10-27T14:37:26.371Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 19,
+      "isNew": false
+    },
+    {
+      "id": "live-event-p585av",
+      "kind": "event",
+      "name": "OPC 时代 AI 创业破局：找可落地项目，开启个人第二曲线闭门会【成都】",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：成都 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E6%88%90%E9%83%BD&tag=AI",
+      "url": "https://www.huodongxing.com/event/7884513032411",
+      "publishedAt": "11/06 周五 14:00（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 成都 AI 公开目录收录。主办方：司马阅；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/06 周五 14:00（活动行列表页，年份待核验）",
+        "location": "四川成都",
+        "mode": "线下 / 待核验",
+        "organizer": "司马阅"
+      },
+      "sources": [
+        {
+          "title": "活动行：成都 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/7884513032411",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-10-27T20:45:36.466Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 14,
+      "isNew": false
+    },
+    {
+      "id": "live-event-rqwxw7",
+      "kind": "event",
+      "name": "南京｜AI微短剧创作公益公开课",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：南京 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E5%8D%97%E4%BA%AC&tag=AI",
+      "url": "https://www.huodongxing.com/event/9884106121900",
+      "publishedAt": "11/07 周六 09:30（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 南京 AI 公开目录收录。主办方：中国电影基金会新媒体影视人才发展专项基金江苏产教融合项目；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/07 周六 09:30（活动行列表页，年份待核验）",
+        "location": "江苏南京",
+        "mode": "线下 / 待核验",
+        "organizer": "中国电影基金会新媒体影视人才发展专项基金江苏产教融合项目"
+      },
+      "sources": [
+        {
+          "title": "活动行：南京 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/9884106121900",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-10-23T13:33:04.297Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 37,
+      "isNew": false
+    },
+    {
+      "id": "live-event-tekid2",
+      "kind": "event",
+      "name": "让临床需求遇见技术供给！医疗大模型与脑机接口对接会",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：南京 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E5%8D%97%E4%BA%AC&tag=AI",
+      "url": "https://www.huodongxing.com/event/3885089305100",
+      "publishedAt": "明天 14:00（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 南京 AI 公开目录收录。主办方：同橙AI；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "明天 14:00（活动行列表页，年份待核验）",
+        "location": "江苏南京",
+        "mode": "线下 / 待核验",
+        "organizer": "同橙AI"
+      },
+      "sources": [
+        {
+          "title": "活动行：南京 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/3885089305100",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-10-30T05:58:15.888Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 14,
+      "isNew": false
+    },
+    {
+      "id": "live-event-1qaeqrf",
+      "kind": "event",
+      "name": "（11.16/武汉站）爱搜GEO主题沙龙：AI全域获客增长（右滑解锁更多城市→）",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：武汉 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E6%AD%A6%E6%B1%89&tag=AI",
+      "url": "https://www.huodongxing.com/event/7883936616411",
+      "publishedAt": "11/16 周一 13:00（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 武汉 AI 公开目录收录。主办方：AIDSO爱搜；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/16 周一 13:00（活动行列表页，年份待核验）",
+        "location": "湖北武汉",
+        "mode": "线下 / 待核验",
+        "organizer": "AIDSO爱搜"
+      },
+      "sources": [
+        {
+          "title": "活动行：武汉 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/7883936616411",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-10-25T13:13:25.062Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 23,
+      "isNew": false
+    },
+    {
+      "id": "live-event-1w70thb",
+      "kind": "event",
+      "name": "AI算力基材高端供需对接会",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：苏州 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E8%8B%8F%E5%B7%9E&tag=AI",
+      "url": "https://www.huodongxing.com/event/3885534609200",
+      "publishedAt": "11/05 周四 ~ 11/06 周五（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 苏州 AI 公开目录收录。主办方：Sol；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/05 周四 ~ 11/06 周五（活动行列表页，年份待核验）",
+        "location": "江苏苏州",
+        "mode": "线下 / 待核验",
+        "organizer": "Sol"
+      },
+      "sources": [
+        {
+          "title": "活动行：苏州 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/3885534609200",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-11-02T06:21:27.900Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 4,
+      "isNew": false
+    },
+    {
+      "id": "live-event-dsg8tt",
+      "kind": "event",
+      "name": "AI实战·FDE线下实战营（苏州站）——从「AI 使用者」到「真正用会AI」",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：苏州 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E8%8B%8F%E5%B7%9E&tag=AI",
+      "url": "https://www.huodongxing.com/event/3885539804211",
+      "publishedAt": "11/14 周六 ~ 11/15 周日（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 苏州 AI 公开目录收录。主办方：苏州水滴跃动科技有限公司；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/14 周六 ~ 11/15 周日（活动行列表页，年份待核验）",
+        "location": "江苏苏州",
+        "mode": "线下 / 待核验",
+        "organizer": "苏州水滴跃动科技有限公司"
+      },
+      "sources": [
+        {
+          "title": "活动行：苏州 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/3885539804211",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-11-02T18:30:17.818Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 3,
+      "isNew": false
+    },
+    {
+      "id": "live-event-rkybx3",
+      "kind": "event",
+      "name": "西安市《视播时代企业短视频+AI获客》总裁班",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：西安 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E8%A5%BF%E5%AE%89&tag=AI",
+      "url": "https://www.huodongxing.com/event/3885551710011",
+      "publishedAt": "11/23 周一 ~ 11/25 周三（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 西安 AI 公开目录收录。主办方：重庆东方紫荆国际教育有限公司；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/23 周一 ~ 11/25 周三（活动行列表页，年份待核验）",
+        "location": "陕西西安",
+        "mode": "线下 / 待核验",
+        "organizer": "重庆东方紫荆国际教育有限公司"
+      },
+      "sources": [
+        {
+          "title": "活动行：西安 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/3885551710011",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-11-02T18:30:17.818Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 3,
+      "isNew": false
+    },
+    {
+      "id": "live-event-13s9w6t",
+      "kind": "event",
+      "name": "重庆《新媒体短视频+AI营销获客变现》商业策略班",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：重庆 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E9%87%8D%E5%BA%86&tag=AI",
+      "url": "https://www.huodongxing.com/event/7884949375511",
+      "publishedAt": "11/07 周六 08:00（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 重庆 AI 公开目录收录。主办方：和君咨询集团股份有限公司；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/07 周六 08:00（活动行列表页，年份待核验）",
+        "location": "重庆渝北",
+        "mode": "线下 / 待核验",
+        "organizer": "和君咨询集团股份有限公司"
+      },
+      "sources": [
+        {
+          "title": "活动行：重庆 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/7884949375511",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-10-30T05:58:15.888Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 13,
+      "isNew": false
+    },
+    {
+      "id": "live-event-14zv100",
+      "kind": "event",
+      "name": "2026 AI+华中高端制造业数智化论坛",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：长沙 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E9%95%BF%E6%B2%99&tag=AI",
+      "url": "https://www.huodongxing.com/event/9884962335300",
+      "publishedAt": "11/19 周四 13:30（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 长沙 AI 公开目录收录。主办方：科技达人；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/19 周四 13:30（活动行列表页，年份待核验）",
+        "location": "湖南长沙",
+        "mode": "线下 / 待核验",
+        "organizer": "科技达人"
+      },
+      "sources": [
+        {
+          "title": "活动行：长沙 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/9884962335300",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-11-02T06:21:27.900Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 4,
+      "isNew": false
+    },
+    {
+      "id": "live-event-2zg4og",
+      "kind": "event",
+      "name": "与大模型共舞，Codex + AI Agent 驱动的交易未来",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：长沙 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E9%95%BF%E6%B2%99&tag=AI",
+      "url": "https://www.huodongxing.com/event/8884982998100",
+      "publishedAt": "10/31 周六 ~ 11/02 周一（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 长沙 AI 公开目录收录。主办方：123X Labs；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "10/31 周六 ~ 11/02 周一（活动行列表页，年份待核验）",
+        "location": "湖南长沙",
+        "mode": "线下 / 待核验",
+        "organizer": "123X Labs"
+      },
+      "sources": [
+        {
+          "title": "活动行：长沙 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/8884982998100",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-10-30T20:52:17.412Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 11,
+      "isNew": false
+    },
+    {
+      "id": "live-event-5ne9it",
+      "kind": "event",
+      "name": "智涌鹭岛 货通全球 —— AI 赋能跨境电商卖家私享会",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：厦门 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E5%8E%A6%E9%97%A8&tag=AI",
+      "url": "https://www.huodongxing.com/event/1884100859300",
+      "publishedAt": "11/12 周四 14:30（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 厦门 AI 公开目录收录。主办方：Nativex；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/12 周四 14:30（活动行列表页，年份待核验）",
+        "location": "福建厦门",
+        "mode": "线下 / 待核验",
+        "organizer": "Nativex"
+      },
+      "sources": [
+        {
+          "title": "活动行：厦门 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/1884100859300",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-10-23T13:33:04.297Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 32,
+      "isNew": false
+    },
+    {
+      "id": "live-event-aa0ybc",
+      "kind": "event",
+      "name": "Google Cloud 游戏出海“AI补给站\"巡回系列",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：厦门 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E5%8E%A6%E9%97%A8&tag=AI",
+      "url": "https://www.huodongxing.com/event/5884949386600",
+      "publishedAt": "11/26 周四 13:30（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 厦门 AI 公开目录收录。主办方：NeWave|新舟岛；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/26 周四 13:30（活动行列表页，年份待核验）",
+        "location": "福建厦门",
+        "mode": "线下 / 待核验",
+        "organizer": "NeWave|新舟岛"
+      },
+      "sources": [
+        {
+          "title": "活动行：厦门 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/5884949386600",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-10-29T15:16:21.039Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
       "seenCount": 12,
       "isNew": false
     },
     {
-      "id": "live-project-1ih07mg",
-      "kind": "project",
-      "name": "同济博士团队让原生3DGS成为可交互的真实世界，4个月完成3轮融资",
-      "category": "国内创业 / 产品待核验",
-      "sourceName": "36氪融资快报（公开融资 / 创业线索）",
-      "sourceUrl": "https://pitchhub.36kr.com/financing-flash",
-      "url": "https://36kr.com/p/4016850710351752",
-      "publishedAt": "2026-10-08",
-      "collectedAt": "2026-10-11T05:57:43.952Z",
-      "stageHint": "阶段待核验",
-      "earlyStage": false,
-      "summary": "构建具身智能需要的真实世界。",
+      "id": "live-event-exh7v8",
+      "kind": "event",
+      "name": "青岛市《视播时代企业短视频+AI获客》总裁班",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：青岛 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E9%9D%92%E5%B2%9B&tag=AI",
+      "url": "https://www.huodongxing.com/event/2885551560711",
+      "publishedAt": "11/24 周二 ~ 11/26 周四（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 青岛 AI 公开目录收录。主办方：重庆东方紫荆国际教育有限公司；具体议程、嘉宾与项目展示需打开活动页核验。",
       "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、创业 / 融资 / 产品关键词；自动收录为国内优先候选，不代表已确认公司、融资、所在地或投资价值。",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
       "unknowns": [
-        "公司主体与国内经营主体：待核验",
-        "融资阶段、金额与估值：未知",
-        "公开联系方式：待人工核验"
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
       ],
-      "nextAction": "打开来源，先确认公司主体、主要经营地、AI 相关性与是否存在可验证融资 / 产品信息。",
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/24 周二 ~ 11/26 周四（活动行列表页，年份待核验）",
+        "location": "山东青岛",
+        "mode": "线下 / 待核验",
+        "organizer": "重庆东方紫荆国际教育有限公司"
+      },
       "sources": [
         {
-          "title": "36氪融资快报（公开融资 / 创业线索）",
-          "url": "https://36kr.com/p/4016850710351752",
-          "type": "公开新闻 / RSS"
+          "title": "活动行：青岛 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/2885551560711",
+          "type": "公开活动目录"
         }
       ],
       "score": {
         "novelty": 5,
         "source": 3,
         "relevance": 4,
-        "completeness": 1,
+        "completeness": 2,
         "followup": 4
       },
-      "firstCollectedAt": "2026-10-08T15:41:45.352Z",
-      "lastSeenAt": "2026-10-11T05:57:43.952Z",
-      "seenCount": 10,
+      "firstCollectedAt": "2026-11-02T18:30:17.818Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 3,
       "isNew": false
     },
     {
-      "id": "live-project-1dtt89r",
-      "kind": "project",
-      "name": "从红外卫星到太空私有云SaaS，星火传明完成新一轮融资",
-      "category": "国内创业 / 产品待核验",
-      "sourceName": "36氪融资快报（公开融资 / 创业线索）",
-      "sourceUrl": "https://pitchhub.36kr.com/financing-flash",
-      "url": "https://36kr.com/p/4016831197613956",
-      "publishedAt": "2026-10-08",
-      "collectedAt": "2026-10-11T05:57:43.952Z",
-      "stageHint": "阶段待核验",
-      "earlyStage": false,
-      "summary": "用红外卫星、星上AI与全球地面站，星火传明尝试把遥感做成实时服务。",
+      "id": "live-event-t2vct9",
+      "kind": "event",
+      "name": "青岛站《企业短视频+AI获客策略精华班》开课通知",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：青岛 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E9%9D%92%E5%B2%9B&tag=AI",
+      "url": "https://www.huodongxing.com/event/9885410330211",
+      "publishedAt": "11/24 周二 ~ 11/26 周四（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 青岛 AI 公开目录收录。主办方：博君企业管理咨询集团股份有限公司；具体议程、嘉宾与项目展示需打开活动页核验。",
       "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、创业 / 融资 / 产品关键词；自动收录为国内优先候选，不代表已确认公司、融资、所在地或投资价值。",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
       "unknowns": [
-        "公司主体与国内经营主体：待核验",
-        "融资阶段、金额与估值：未知",
-        "公开联系方式：待人工核验"
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
       ],
-      "nextAction": "打开来源，先确认公司主体、主要经营地、AI 相关性与是否存在可验证融资 / 产品信息。",
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/24 周二 ~ 11/26 周四（活动行列表页，年份待核验）",
+        "location": "山东青岛",
+        "mode": "线下 / 待核验",
+        "organizer": "博君企业管理咨询集团股份有限公司"
+      },
       "sources": [
         {
-          "title": "36氪融资快报（公开融资 / 创业线索）",
-          "url": "https://36kr.com/p/4016831197613956",
-          "type": "公开新闻 / RSS"
+          "title": "活动行：青岛 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/9885410330211",
+          "type": "公开活动目录"
         }
       ],
       "score": {
         "novelty": 5,
         "source": 3,
         "relevance": 4,
-        "completeness": 1,
+        "completeness": 2,
         "followup": 4
       },
-      "firstCollectedAt": "2026-10-08T15:41:45.352Z",
-      "lastSeenAt": "2026-10-11T05:57:43.952Z",
-      "seenCount": 10,
+      "firstCollectedAt": "2026-11-02T06:21:27.900Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 4,
       "isNew": false
-    }
-  ],
-  "eventCandidates": [
+    },
+    {
+      "id": "live-event-1tzphiq",
+      "kind": "event",
+      "name": "AIGC数智产业论坛",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：无锡 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E6%97%A0%E9%94%A1&tag=AI",
+      "url": "https://www.huodongxing.com/event/9884841148900",
+      "publishedAt": "11/09 周一 13:00（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 无锡 AI 公开目录收录。主办方：央视国际网络无锡有限公司；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/09 周一 13:00（活动行列表页，年份待核验）",
+        "location": "江苏无锡",
+        "mode": "线下 / 待核验",
+        "organizer": "央视国际网络无锡有限公司"
+      },
+      "sources": [
+        {
+          "title": "活动行：无锡 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/9884841148900",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-11-03T02:24:51.847Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 2,
+      "isNew": false
+    },
+    {
+      "id": "live-event-h1zxcu",
+      "kind": "event",
+      "name": "AI 时代，也是女性的时代",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：郑州 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E9%83%91%E5%B7%9E&tag=AI",
+      "url": "https://www.huodongxing.com/event/6885151139500",
+      "publishedAt": "11/14 周六 14:00（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 郑州 AI 公开目录收录。主办方：吉平；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/14 周六 14:00（活动行列表页，年份待核验）",
+        "location": "河南郑州",
+        "mode": "线下 / 待核验",
+        "organizer": "吉平"
+      },
+      "sources": [
+        {
+          "title": "活动行：郑州 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/6885151139500",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-11-03T02:24:51.847Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 2,
+      "isNew": false
+    },
+    {
+      "id": "live-event-5o25hw",
+      "kind": "event",
+      "name": "第三期AI公益夜校：办公提效与图文创作",
+      "category": "国内 AI 活动待核验",
+      "sourceName": "活动行：郑州 AI 活动目录",
+      "sourceUrl": "https://www.huodongxing.com/events?city=%E9%83%91%E5%B7%9E&tag=AI",
+      "url": "https://www.huodongxing.com/event/1883974965000",
+      "publishedAt": "11/03 周二 ~ 11/06 周五（活动行列表页，年份待核验）",
+      "collectedAt": "2026-11-03T12:00:56.997Z",
+      "summary": "活动行 郑州 AI 公开目录收录。主办方：凹瓶科技；具体议程、嘉宾与项目展示需打开活动页核验。",
+      "confidence": "待核验",
+      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
+      "unknowns": [
+        "主办方、嘉宾和实际参与人群：待核验",
+        "活动质量与项目发现价值：待人工筛选",
+        "公开联系入口：请以来源页为准"
+      ],
+      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
+      "eventMeta": {
+        "startDate": "11/03 周二 ~ 11/06 周五（活动行列表页，年份待核验）",
+        "location": "河南郑州",
+        "mode": "线下 / 待核验",
+        "organizer": "凹瓶科技"
+      },
+      "sources": [
+        {
+          "title": "活动行：郑州 AI 活动目录",
+          "url": "https://www.huodongxing.com/event/1883974965000",
+          "type": "公开活动目录"
+        }
+      ],
+      "score": {
+        "novelty": 5,
+        "source": 3,
+        "relevance": 4,
+        "completeness": 2,
+        "followup": 4
+      },
+      "firstCollectedAt": "2026-10-24T04:45:46.585Z",
+      "lastSeenAt": "2026-11-03T12:00:56.997Z",
+      "seenCount": 12,
+      "isNew": false
+    },
     {
       "id": "live-event-tk9x07",
       "kind": "event",
@@ -5166,7 +6666,7 @@
       "firstCollectedAt": "2026-11-03T02:24:51.847Z",
       "lastSeenAt": "2026-11-03T02:24:51.847Z",
       "seenCount": 1,
-      "isNew": true
+      "isNew": false
     },
     {
       "id": "live-event-16vlvzn",
@@ -5210,138 +6710,6 @@
       "firstCollectedAt": "2026-11-03T02:24:51.847Z",
       "lastSeenAt": "2026-11-03T02:24:51.847Z",
       "seenCount": 1,
-      "isNew": true
-    },
-    {
-      "id": "live-event-1tzphiq",
-      "kind": "event",
-      "name": "AIGC数智产业论坛",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：无锡 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E6%97%A0%E9%94%A1&tag=AI",
-      "url": "https://www.huodongxing.com/event/9884841148900",
-      "publishedAt": "11/09 周一 13:00（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
-      "summary": "活动行 无锡 AI 公开目录收录。主办方：央视国际网络无锡有限公司；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/09 周一 13:00（活动行列表页，年份待核验）",
-        "location": "江苏无锡",
-        "mode": "线下 / 待核验",
-        "organizer": "央视国际网络无锡有限公司"
-      },
-      "sources": [
-        {
-          "title": "活动行：无锡 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/9884841148900",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-11-03T02:24:51.847Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 1,
-      "isNew": true
-    },
-    {
-      "id": "live-event-h1zxcu",
-      "kind": "event",
-      "name": "AI 时代，也是女性的时代",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：郑州 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E9%83%91%E5%B7%9E&tag=AI",
-      "url": "https://www.huodongxing.com/event/6885151139500",
-      "publishedAt": "11/14 周六 14:00（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
-      "summary": "活动行 郑州 AI 公开目录收录。主办方：吉平；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/14 周六 14:00（活动行列表页，年份待核验）",
-        "location": "河南郑州",
-        "mode": "线下 / 待核验",
-        "organizer": "吉平"
-      },
-      "sources": [
-        {
-          "title": "活动行：郑州 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/6885151139500",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-11-03T02:24:51.847Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 1,
-      "isNew": true
-    },
-    {
-      "id": "live-event-zvpyho",
-      "kind": "event",
-      "name": "ECS2026 第11届电子通信与半导体数字科技大会暨AI大会",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：北京 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E5%8C%97%E4%BA%AC&tag=AI",
-      "url": "https://www.huodongxing.com/event/7876870839900",
-      "publishedAt": "11/06 周五 08:00（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
-      "summary": "活动行 北京 AI 公开目录收录。主办方：星创咨询；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/06 周五 08:00（活动行列表页，年份待核验）",
-        "location": "北京西城",
-        "mode": "线下 / 待核验",
-        "organizer": "星创咨询"
-      },
-      "sources": [
-        {
-          "title": "活动行：北京 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/7876870839900",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-10-26T04:56:52.950Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 6,
       "isNew": false
     },
     {
@@ -5386,138 +6754,6 @@
       "firstCollectedAt": "2026-10-26T04:56:52.950Z",
       "lastSeenAt": "2026-11-03T02:24:51.847Z",
       "seenCount": 5,
-      "isNew": false
-    },
-    {
-      "id": "live-event-ybol95",
-      "kind": "event",
-      "name": "AI 创变 智探未来新天地",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：上海 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E4%B8%8A%E6%B5%B7&tag=AI",
-      "url": "https://www.huodongxing.com/event/1815998892687",
-      "publishedAt": "文艺生活（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
-      "summary": "活动行 上海 AI 公开目录收录。主办方：文艺生活；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "文艺生活（活动行列表页，年份待核验）",
-        "location": "上海",
-        "mode": "线下 / 待核验",
-        "organizer": "文艺生活"
-      },
-      "sources": [
-        {
-          "title": "活动行：上海 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/1815998892687",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-09-24T13:36:02.560Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 139,
-      "isNew": false
-    },
-    {
-      "id": "live-event-18byafr",
-      "kind": "event",
-      "name": "AI硬件路演沙龙—第四期",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：深圳 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E6%B7%B1%E5%9C%B3&tag=AI",
-      "url": "https://www.huodongxing.com/event/4884936009400",
-      "publishedAt": "11/25 周三 13:30（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
-      "summary": "活动行 深圳 AI 公开目录收录。主办方：世界人工智能与物联网创新联盟（WAIA）；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/25 周三 13:30（活动行列表页，年份待核验）",
-        "location": "广东深圳",
-        "mode": "线下 / 待核验",
-        "organizer": "世界人工智能与物联网创新联盟（WAIA）"
-      },
-      "sources": [
-        {
-          "title": "活动行：深圳 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/4884936009400",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-11-02T06:21:27.900Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 3,
-      "isNew": false
-    },
-    {
-      "id": "live-event-17rral9",
-      "kind": "event",
-      "name": "【智体共生.造物新程】AIZQ2026第二届粤港澳大湾区AI硬件千人嘉年华",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：深圳 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E6%B7%B1%E5%9C%B3&tag=AI",
-      "url": "https://www.huodongxing.com/event/3882063218400",
-      "publishedAt": "12/29 周二 09:00（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
-      "summary": "活动行 深圳 AI 公开目录收录。主办方：AIZQ知穹传媒；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "12/29 周二 09:00（活动行列表页，年份待核验）",
-        "location": "广东深圳",
-        "mode": "线下 / 待核验",
-        "organizer": "AIZQ知穹传媒"
-      },
-      "sources": [
-        {
-          "title": "活动行：深圳 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/3882063218400",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-10-09T06:17:53.895Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 38,
       "isNew": false
     },
     {
@@ -5653,50 +6889,6 @@
       "isNew": false
     },
     {
-      "id": "live-event-12auovw",
-      "kind": "event",
-      "name": "解码爱奇艺AIGC影视创作——广州场",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：广州 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E5%B9%BF%E5%B7%9E&tag=AI",
-      "url": "https://www.huodongxing.com/event/7885539763511",
-      "publishedAt": "11/12 周四 14:30（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
-      "summary": "活动行 广州 AI 公开目录收录。主办方：爱奇艺；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/12 周四 14:30（活动行列表页，年份待核验）",
-        "location": "广东广州",
-        "mode": "线下 / 待核验",
-        "organizer": "爱奇艺"
-      },
-      "sources": [
-        {
-          "title": "活动行：广州 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/7885539763511",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-11-02T18:30:17.818Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 2,
-      "isNew": false
-    },
-    {
       "id": "live-event-ivx2rc",
       "kind": "event",
       "name": "第十一届智造数字科技大会暨AI大会",
@@ -5738,182 +6930,6 @@
       "firstCollectedAt": "2026-09-03T12:52:02.939Z",
       "lastSeenAt": "2026-11-03T02:24:51.847Z",
       "seenCount": 77,
-      "isNew": false
-    },
-    {
-      "id": "live-event-13tzvj2",
-      "kind": "event",
-      "name": "AI 落地别 \"烂尾\"，CAIO 实战营・两天一夜练会 AI 落地操盘【成都班】",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：成都 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E6%88%90%E9%83%BD&tag=AI",
-      "url": "https://www.huodongxing.com/event/1884663094300",
-      "publishedAt": "11/10 周二 ~ 11/11 周三（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
-      "summary": "活动行 成都 AI 公开目录收录。主办方：贝叶斯AI学院；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/10 周二 ~ 11/11 周三（活动行列表页，年份待核验）",
-        "location": "四川成都",
-        "mode": "线下 / 待核验",
-        "organizer": "贝叶斯AI学院"
-      },
-      "sources": [
-        {
-          "title": "活动行：成都 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/1884663094300",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-10-27T14:37:26.371Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 18,
-      "isNew": false
-    },
-    {
-      "id": "live-event-p585av",
-      "kind": "event",
-      "name": "OPC 时代 AI 创业破局：找可落地项目，开启个人第二曲线闭门会【成都】",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：成都 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E6%88%90%E9%83%BD&tag=AI",
-      "url": "https://www.huodongxing.com/event/7884513032411",
-      "publishedAt": "11/06 周五 14:00（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
-      "summary": "活动行 成都 AI 公开目录收录。主办方：司马阅；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/06 周五 14:00（活动行列表页，年份待核验）",
-        "location": "四川成都",
-        "mode": "线下 / 待核验",
-        "organizer": "司马阅"
-      },
-      "sources": [
-        {
-          "title": "活动行：成都 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/7884513032411",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-10-27T20:45:36.466Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 13,
-      "isNew": false
-    },
-    {
-      "id": "live-event-rqwxw7",
-      "kind": "event",
-      "name": "南京｜AI微短剧创作公益公开课",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：南京 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E5%8D%97%E4%BA%AC&tag=AI",
-      "url": "https://www.huodongxing.com/event/9884106121900",
-      "publishedAt": "11/07 周六 09:30（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
-      "summary": "活动行 南京 AI 公开目录收录。主办方：中国电影基金会新媒体影视人才发展专项基金江苏产教融合项目；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/07 周六 09:30（活动行列表页，年份待核验）",
-        "location": "江苏南京",
-        "mode": "线下 / 待核验",
-        "organizer": "中国电影基金会新媒体影视人才发展专项基金江苏产教融合项目"
-      },
-      "sources": [
-        {
-          "title": "活动行：南京 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/9884106121900",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-10-23T13:33:04.297Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 36,
-      "isNew": false
-    },
-    {
-      "id": "live-event-tekid2",
-      "kind": "event",
-      "name": "让临床需求遇见技术供给！医疗大模型与脑机接口对接会",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：南京 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E5%8D%97%E4%BA%AC&tag=AI",
-      "url": "https://www.huodongxing.com/event/3885089305100",
-      "publishedAt": "明天 14:00（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
-      "summary": "活动行 南京 AI 公开目录收录。主办方：同橙AI；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "明天 14:00（活动行列表页，年份待核验）",
-        "location": "江苏南京",
-        "mode": "线下 / 待核验",
-        "organizer": "同橙AI"
-      },
-      "sources": [
-        {
-          "title": "活动行：南京 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/3885089305100",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-10-30T05:58:15.888Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 13,
       "isNew": false
     },
     {
@@ -6005,402 +7021,6 @@
       "isNew": false
     },
     {
-      "id": "live-event-1w70thb",
-      "kind": "event",
-      "name": "AI算力基材高端供需对接会",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：苏州 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E8%8B%8F%E5%B7%9E&tag=AI",
-      "url": "https://www.huodongxing.com/event/3885534609200",
-      "publishedAt": "11/05 周四 ~ 11/06 周五（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
-      "summary": "活动行 苏州 AI 公开目录收录。主办方：Sol；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/05 周四 ~ 11/06 周五（活动行列表页，年份待核验）",
-        "location": "江苏苏州",
-        "mode": "线下 / 待核验",
-        "organizer": "Sol"
-      },
-      "sources": [
-        {
-          "title": "活动行：苏州 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/3885534609200",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-11-02T06:21:27.900Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 3,
-      "isNew": false
-    },
-    {
-      "id": "live-event-dsg8tt",
-      "kind": "event",
-      "name": "AI实战·FDE线下实战营（苏州站）——从「AI 使用者」到「真正用会AI」",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：苏州 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E8%8B%8F%E5%B7%9E&tag=AI",
-      "url": "https://www.huodongxing.com/event/3885539804211",
-      "publishedAt": "11/14 周六 ~ 11/15 周日（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
-      "summary": "活动行 苏州 AI 公开目录收录。主办方：苏州水滴跃动科技有限公司；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/14 周六 ~ 11/15 周日（活动行列表页，年份待核验）",
-        "location": "江苏苏州",
-        "mode": "线下 / 待核验",
-        "organizer": "苏州水滴跃动科技有限公司"
-      },
-      "sources": [
-        {
-          "title": "活动行：苏州 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/3885539804211",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-11-02T18:30:17.818Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 2,
-      "isNew": false
-    },
-    {
-      "id": "live-event-rkybx3",
-      "kind": "event",
-      "name": "西安市《视播时代企业短视频+AI获客》总裁班",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：西安 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E8%A5%BF%E5%AE%89&tag=AI",
-      "url": "https://www.huodongxing.com/event/3885551710011",
-      "publishedAt": "11/23 周一 ~ 11/25 周三（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
-      "summary": "活动行 西安 AI 公开目录收录。主办方：重庆东方紫荆国际教育有限公司；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/23 周一 ~ 11/25 周三（活动行列表页，年份待核验）",
-        "location": "陕西西安",
-        "mode": "线下 / 待核验",
-        "organizer": "重庆东方紫荆国际教育有限公司"
-      },
-      "sources": [
-        {
-          "title": "活动行：西安 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/3885551710011",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-11-02T18:30:17.818Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 2,
-      "isNew": false
-    },
-    {
-      "id": "live-event-13s9w6t",
-      "kind": "event",
-      "name": "重庆《新媒体短视频+AI营销获客变现》商业策略班",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：重庆 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E9%87%8D%E5%BA%86&tag=AI",
-      "url": "https://www.huodongxing.com/event/7884949375511",
-      "publishedAt": "11/07 周六 08:00（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
-      "summary": "活动行 重庆 AI 公开目录收录。主办方：和君咨询集团股份有限公司；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/07 周六 08:00（活动行列表页，年份待核验）",
-        "location": "重庆渝北",
-        "mode": "线下 / 待核验",
-        "organizer": "和君咨询集团股份有限公司"
-      },
-      "sources": [
-        {
-          "title": "活动行：重庆 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/7884949375511",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-10-30T05:58:15.888Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 12,
-      "isNew": false
-    },
-    {
-      "id": "live-event-14zv100",
-      "kind": "event",
-      "name": "2026 AI+华中高端制造业数智化论坛",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：长沙 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E9%95%BF%E6%B2%99&tag=AI",
-      "url": "https://www.huodongxing.com/event/9884962335300",
-      "publishedAt": "11/19 周四 13:30（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
-      "summary": "活动行 长沙 AI 公开目录收录。主办方：科技达人；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/19 周四 13:30（活动行列表页，年份待核验）",
-        "location": "湖南长沙",
-        "mode": "线下 / 待核验",
-        "organizer": "科技达人"
-      },
-      "sources": [
-        {
-          "title": "活动行：长沙 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/9884962335300",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-11-02T06:21:27.900Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 3,
-      "isNew": false
-    },
-    {
-      "id": "live-event-2zg4og",
-      "kind": "event",
-      "name": "与大模型共舞，Codex + AI Agent 驱动的交易未来",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：长沙 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E9%95%BF%E6%B2%99&tag=AI",
-      "url": "https://www.huodongxing.com/event/8884982998100",
-      "publishedAt": "10/31 周六 ~ 11/02 周一（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
-      "summary": "活动行 长沙 AI 公开目录收录。主办方：123X Labs；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "10/31 周六 ~ 11/02 周一（活动行列表页，年份待核验）",
-        "location": "湖南长沙",
-        "mode": "线下 / 待核验",
-        "organizer": "123X Labs"
-      },
-      "sources": [
-        {
-          "title": "活动行：长沙 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/8884982998100",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-10-30T20:52:17.412Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 10,
-      "isNew": false
-    },
-    {
-      "id": "live-event-5ne9it",
-      "kind": "event",
-      "name": "智涌鹭岛 货通全球 —— AI 赋能跨境电商卖家私享会",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：厦门 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E5%8E%A6%E9%97%A8&tag=AI",
-      "url": "https://www.huodongxing.com/event/1884100859300",
-      "publishedAt": "11/12 周四 14:30（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
-      "summary": "活动行 厦门 AI 公开目录收录。主办方：Nativex；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/12 周四 14:30（活动行列表页，年份待核验）",
-        "location": "福建厦门",
-        "mode": "线下 / 待核验",
-        "organizer": "Nativex"
-      },
-      "sources": [
-        {
-          "title": "活动行：厦门 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/1884100859300",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-10-23T13:33:04.297Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 31,
-      "isNew": false
-    },
-    {
-      "id": "live-event-exh7v8",
-      "kind": "event",
-      "name": "青岛市《视播时代企业短视频+AI获客》总裁班",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：青岛 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E9%9D%92%E5%B2%9B&tag=AI",
-      "url": "https://www.huodongxing.com/event/2885551560711",
-      "publishedAt": "11/24 周二 ~ 11/26 周四（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
-      "summary": "活动行 青岛 AI 公开目录收录。主办方：重庆东方紫荆国际教育有限公司；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/24 周二 ~ 11/26 周四（活动行列表页，年份待核验）",
-        "location": "山东青岛",
-        "mode": "线下 / 待核验",
-        "organizer": "重庆东方紫荆国际教育有限公司"
-      },
-      "sources": [
-        {
-          "title": "活动行：青岛 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/2885551560711",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-11-02T18:30:17.818Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 2,
-      "isNew": false
-    },
-    {
-      "id": "live-event-t2vct9",
-      "kind": "event",
-      "name": "青岛站《企业短视频+AI获客策略精华班》开课通知",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：青岛 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E9%9D%92%E5%B2%9B&tag=AI",
-      "url": "https://www.huodongxing.com/event/9885410330211",
-      "publishedAt": "11/24 周二 ~ 11/26 周四（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
-      "summary": "活动行 青岛 AI 公开目录收录。主办方：博君企业管理咨询集团股份有限公司；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/24 周二 ~ 11/26 周四（活动行列表页，年份待核验）",
-        "location": "山东青岛",
-        "mode": "线下 / 待核验",
-        "organizer": "博君企业管理咨询集团股份有限公司"
-      },
-      "sources": [
-        {
-          "title": "活动行：青岛 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/9885410330211",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-11-02T06:21:27.900Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 3,
-      "isNew": false
-    },
-    {
       "id": "live-event-1ms16v0",
       "kind": "event",
       "name": "“星启梁溪·智造未来”2026梁溪科技城机器人产业发展与项目对接会",
@@ -6442,50 +7062,6 @@
       "firstCollectedAt": "2026-10-16T13:18:56.705Z",
       "lastSeenAt": "2026-11-03T02:24:51.847Z",
       "seenCount": 30,
-      "isNew": false
-    },
-    {
-      "id": "live-event-5o25hw",
-      "kind": "event",
-      "name": "第三期AI公益夜校：办公提效与图文创作",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：郑州 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E9%83%91%E5%B7%9E&tag=AI",
-      "url": "https://www.huodongxing.com/event/1883974965000",
-      "publishedAt": "11/03 周二 ~ 11/06 周五（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-03T02:24:51.847Z",
-      "summary": "活动行 郑州 AI 公开目录收录。主办方：凹瓶科技；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/03 周二 ~ 11/06 周五（活动行列表页，年份待核验）",
-        "location": "河南郑州",
-        "mode": "线下 / 待核验",
-        "organizer": "凹瓶科技"
-      },
-      "sources": [
-        {
-          "title": "活动行：郑州 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/1883974965000",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-10-24T04:45:46.585Z",
-      "lastSeenAt": "2026-11-03T02:24:51.847Z",
-      "seenCount": 11,
       "isNew": false
     },
     {
@@ -6753,50 +7329,6 @@
       "isNew": false
     },
     {
-      "id": "live-event-aa0ybc",
-      "kind": "event",
-      "name": "Google Cloud 游戏出海“AI补给站\"巡回系列",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：厦门 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E5%8E%A6%E9%97%A8&tag=AI",
-      "url": "https://www.huodongxing.com/event/5884949386600",
-      "publishedAt": "11/26 周四 13:30（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-02T18:30:17.818Z",
-      "summary": "活动行 厦门 AI 公开目录收录。主办方：NeWave|新舟岛；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/26 周四 13:30（活动行列表页，年份待核验）",
-        "location": "福建厦门",
-        "mode": "线下 / 待核验",
-        "organizer": "NeWave|新舟岛"
-      },
-      "sources": [
-        {
-          "title": "活动行：厦门 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/5884949386600",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-10-29T15:16:21.039Z",
-      "lastSeenAt": "2026-11-02T18:30:17.818Z",
-      "seenCount": 11,
-      "isNew": false
-    },
-    {
       "id": "live-event-18phhww",
       "kind": "event",
       "name": "长三角AI应用OPC共创社区开放日",
@@ -6970,138 +7502,6 @@
       "firstCollectedAt": "2026-10-15T04:50:09.842Z",
       "lastSeenAt": "2026-11-02T06:21:27.900Z",
       "seenCount": 11,
-      "isNew": false
-    },
-    {
-      "id": "live-event-10xyeja",
-      "kind": "event",
-      "name": "（11.17/杭州站）爱搜GEO主题沙龙：AI全域获客增长（右滑解锁更多城市→）",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：杭州 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E6%9D%AD%E5%B7%9E&tag=AI",
-      "url": "https://www.huodongxing.com/event/3883937419111",
-      "publishedAt": "11/17 周二 13:00（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-02T06:21:27.900Z",
-      "summary": "活动行 杭州 AI 公开目录收录。主办方：AIDSO爱搜；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/17 周二 13:00（活动行列表页，年份待核验）",
-        "location": "浙江杭州",
-        "mode": "线下 / 待核验",
-        "organizer": "AIDSO爱搜"
-      },
-      "sources": [
-        {
-          "title": "活动行：杭州 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/3883937419111",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-10-25T13:13:25.062Z",
-      "lastSeenAt": "2026-11-02T06:21:27.900Z",
-      "seenCount": 6,
-      "isNew": false
-    },
-    {
-      "id": "live-event-zh2ir8",
-      "kind": "event",
-      "name": "（11.19/广州站）爱搜GEO主题沙龙：AI全域获客增长（右滑解锁更多城市→）",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：广州 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E5%B9%BF%E5%B7%9E&tag=AI",
-      "url": "https://www.huodongxing.com/event/3883937684511",
-      "publishedAt": "11/19 周四 13:00（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-02T06:21:27.900Z",
-      "summary": "活动行 广州 AI 公开目录收录。主办方：AIDSO爱搜；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/19 周四 13:00（活动行列表页，年份待核验）",
-        "location": "广东广州",
-        "mode": "线下 / 待核验",
-        "organizer": "AIDSO爱搜"
-      },
-      "sources": [
-        {
-          "title": "活动行：广州 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/3883937684511",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-10-25T13:13:25.062Z",
-      "lastSeenAt": "2026-11-02T06:21:27.900Z",
-      "seenCount": 4,
-      "isNew": false
-    },
-    {
-      "id": "live-event-1qaeqrf",
-      "kind": "event",
-      "name": "（11.16/武汉站）爱搜GEO主题沙龙：AI全域获客增长（右滑解锁更多城市→）",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：武汉 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E6%AD%A6%E6%B1%89&tag=AI",
-      "url": "https://www.huodongxing.com/event/7883936616411",
-      "publishedAt": "11/16 周一 13:00（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-02T06:21:27.900Z",
-      "summary": "活动行 武汉 AI 公开目录收录。主办方：AIDSO爱搜；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/16 周一 13:00（活动行列表页，年份待核验）",
-        "location": "湖北武汉",
-        "mode": "线下 / 待核验",
-        "organizer": "AIDSO爱搜"
-      },
-      "sources": [
-        {
-          "title": "活动行：武汉 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/7883936616411",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-10-25T13:13:25.062Z",
-      "lastSeenAt": "2026-11-02T06:21:27.900Z",
-      "seenCount": 22,
       "isNew": false
     },
     {
@@ -8057,50 +8457,6 @@
         {
           "title": "活动行：北京 AI 活动目录",
           "url": "https://www.huodongxing.com/event/9879646835500",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-11-01T06:20:26.761Z",
-      "lastSeenAt": "2026-11-01T06:20:26.761Z",
-      "seenCount": 1,
-      "isNew": false
-    },
-    {
-      "id": "live-event-a5u6ep",
-      "kind": "event",
-      "name": "FDE企业AI落地工作坊-3小时实操",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：上海 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E4%B8%8A%E6%B5%B7&tag=AI",
-      "url": "https://www.huodongxing.com/event/5881419782200",
-      "publishedAt": "11/08 周日 14:00（活动行列表页，年份待核验）",
-      "collectedAt": "2026-11-01T06:20:26.761Z",
-      "summary": "活动行 上海 AI 公开目录收录。主办方：玄果AI商学院；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/08 周日 14:00（活动行列表页，年份待核验）",
-        "location": "上海青浦",
-        "mode": "线下 / 待核验",
-        "organizer": "玄果AI商学院"
-      },
-      "sources": [
-        {
-          "title": "活动行：上海 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/5881419782200",
           "type": "公开活动目录"
         }
       ],
@@ -10050,358 +10406,6 @@
       "firstCollectedAt": "2026-10-15T19:55:09.188Z",
       "lastSeenAt": "2026-10-28T21:09:45.250Z",
       "seenCount": 9,
-      "isNew": false
-    },
-    {
-      "id": "live-event-rcmhdp",
-      "kind": "event",
-      "name": "【广州】2026跨境电商领航者峰会——AI 赋能营销全链路，破局跨境新增长",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：广州 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E5%B9%BF%E5%B7%9E&tag=AI",
-      "url": "https://www.huodongxing.com/event/2880519805911",
-      "publishedAt": "今天 13:00（活动行列表页，年份待核验）",
-      "collectedAt": "2026-10-28T21:09:45.250Z",
-      "summary": "活动行 广州 AI 公开目录收录。主办方：品牌方舟BrandArk；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "今天 13:00（活动行列表页，年份待核验）",
-        "location": "广东广州",
-        "mode": "线下 / 待核验",
-        "organizer": "品牌方舟BrandArk"
-      },
-      "sources": [
-        {
-          "title": "活动行：广州 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/2880519805911",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-10-20T04:59:05.423Z",
-      "lastSeenAt": "2026-10-28T21:09:45.250Z",
-      "seenCount": 6,
-      "isNew": false
-    },
-    {
-      "id": "live-event-xnz98a",
-      "kind": "event",
-      "name": "司马阅FDE实战营：把企业AI落地做成一门长期事业 | 企业AI落地人才计划（成都班）",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：成都 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E6%88%90%E9%83%BD&tag=AI",
-      "url": "https://www.huodongxing.com/event/8878751517300",
-      "publishedAt": "10/31 周六 ~ 11/01 周日（活动行列表页，年份待核验）",
-      "collectedAt": "2026-10-28T21:09:45.250Z",
-      "summary": "活动行 成都 AI 公开目录收录。主办方：贝叶斯AI学院；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "10/31 周六 ~ 11/01 周日（活动行列表页，年份待核验）",
-        "location": "四川成都",
-        "mode": "线下 / 待核验",
-        "organizer": "贝叶斯AI学院"
-      },
-      "sources": [
-        {
-          "title": "活动行：成都 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/8878751517300",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-09-18T13:00:02.413Z",
-      "lastSeenAt": "2026-10-28T21:09:45.250Z",
-      "seenCount": 88,
-      "isNew": false
-    },
-    {
-      "id": "live-event-joy3p1",
-      "kind": "event",
-      "name": "泛微·300+AI应用场景体验大会—11月13日宁波站",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：宁波 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E5%AE%81%E6%B3%A2&tag=AI",
-      "url": "https://www.huodongxing.com/event/5884537646700",
-      "publishedAt": "11/13 周五 13:00（活动行列表页，年份待核验）",
-      "collectedAt": "2026-10-28T21:09:45.250Z",
-      "summary": "活动行 宁波 AI 公开目录收录。主办方：泛微网络科技股份有限公司；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/13 周五 13:00（活动行列表页，年份待核验）",
-        "location": "浙江宁波",
-        "mode": "线下 / 待核验",
-        "organizer": "泛微网络科技股份有限公司"
-      },
-      "sources": [
-        {
-          "title": "活动行：宁波 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/5884537646700",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-10-27T05:14:25.502Z",
-      "lastSeenAt": "2026-10-28T21:09:45.250Z",
-      "seenCount": 6,
-      "isNew": false
-    },
-    {
-      "id": "live-event-dm2xdf",
-      "kind": "event",
-      "name": "FDE实操AI工作坊-2小时实战演练",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：上海 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E4%B8%8A%E6%B5%B7&tag=AI",
-      "url": "https://www.huodongxing.com/event/7884525580900",
-      "publishedAt": "11/01 周日 14:00（活动行列表页，年份待核验）",
-      "collectedAt": "2026-10-28T15:10:57.052Z",
-      "summary": "活动行 上海 AI 公开目录收录。主办方：玄果AI商学院；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/01 周日 14:00（活动行列表页，年份待核验）",
-        "location": "上海青浦",
-        "mode": "线下 / 待核验",
-        "organizer": "玄果AI商学院"
-      },
-      "sources": [
-        {
-          "title": "活动行：上海 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/7884525580900",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-10-26T15:15:40.783Z",
-      "lastSeenAt": "2026-10-28T15:10:57.052Z",
-      "seenCount": 3,
-      "isNew": false
-    },
-    {
-      "id": "live-event-1epnpp4",
-      "kind": "event",
-      "name": "餐饮企业AI落地路径",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：重庆 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E9%87%8D%E5%BA%86&tag=AI",
-      "url": "https://www.huodongxing.com/event/2882124923100",
-      "publishedAt": "11/21 周六 14:00（活动行列表页，年份待核验）",
-      "collectedAt": "2026-10-28T05:52:51.162Z",
-      "summary": "活动行 重庆 AI 公开目录收录。主办方：一线数智；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/21 周六 14:00（活动行列表页，年份待核验）",
-        "location": "重庆沙坪坝",
-        "mode": "线下 / 待核验",
-        "organizer": "一线数智"
-      },
-      "sources": [
-        {
-          "title": "活动行：重庆 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/2882124923100",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-10-20T20:01:20.303Z",
-      "lastSeenAt": "2026-10-28T05:52:51.162Z",
-      "seenCount": 29,
-      "isNew": false
-    },
-    {
-      "id": "live-event-1e2uavs",
-      "kind": "event",
-      "name": "【Filmora.TV】品牌视频AI创作实战沙龙·长沙",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：长沙 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E9%95%BF%E6%B2%99&tag=AI",
-      "url": "https://www.huodongxing.com/event/3883939349300",
-      "publishedAt": "后天 14:00（活动行列表页，年份待核验）",
-      "collectedAt": "2026-10-28T05:52:51.162Z",
-      "summary": "活动行 长沙 AI 公开目录收录。主办方：万兴科技；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "后天 14:00（活动行列表页，年份待核验）",
-        "location": "湖南长沙",
-        "mode": "线下 / 待核验",
-        "organizer": "万兴科技"
-      },
-      "sources": [
-        {
-          "title": "活动行：长沙 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/3883939349300",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-10-23T05:00:48.399Z",
-      "lastSeenAt": "2026-10-28T05:52:51.162Z",
-      "seenCount": 8,
-      "isNew": false
-    },
-    {
-      "id": "live-event-1jb7qf3",
-      "kind": "event",
-      "name": "10月31日 |【企业竞争力必修课｜WorkBuddy实战工坊】AI解放团队双手，跑赢同行不落后",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：长沙 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E9%95%BF%E6%B2%99&tag=AI",
-      "url": "https://www.huodongxing.com/event/9883103144011",
-      "publishedAt": "10/31 周六 14:30（活动行列表页，年份待核验）",
-      "collectedAt": "2026-10-28T05:52:51.162Z",
-      "summary": "活动行 长沙 AI 公开目录收录。主办方：王雅琴(violet)-黄金时代培训提升；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "10/31 周六 14:30（活动行列表页，年份待核验）",
-        "location": "湖南长沙",
-        "mode": "线下 / 待核验",
-        "organizer": "王雅琴(violet)-黄金时代培训提升"
-      },
-      "sources": [
-        {
-          "title": "活动行：长沙 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/9883103144011",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-10-22T20:11:30.987Z",
-      "lastSeenAt": "2026-10-28T05:52:51.162Z",
-      "seenCount": 5,
-      "isNew": false
-    },
-    {
-      "id": "live-event-lk2vy6",
-      "kind": "event",
-      "name": "EVOLVE2026——大模型与智能体产业创新峰会",
-      "category": "国内 AI 活动待核验",
-      "sourceName": "活动行：北京 AI 活动目录",
-      "sourceUrl": "https://www.huodongxing.com/events?city=%E5%8C%97%E4%BA%AC&tag=AI",
-      "url": "https://www.huodongxing.com/event/5884130860500",
-      "publishedAt": "11/18 周三 09:00（活动行列表页，年份待核验）",
-      "collectedAt": "2026-10-27T20:45:36.466Z",
-      "summary": "活动行 北京 AI 公开目录收录。主办方：中关村科金；具体议程、嘉宾与项目展示需打开活动页核验。",
-      "confidence": "待核验",
-      "reasoning": "规则命中：国内优先公开源、AI 相关关键词、国内 AI 活动目录；活动质量、嘉宾、主办方和项目发现价值均未由 Agent 自动确认。",
-      "unknowns": [
-        "主办方、嘉宾和实际参与人群：待核验",
-        "活动质量与项目发现价值：待人工筛选",
-        "公开联系入口：请以来源页为准"
-      ],
-      "nextAction": "打开活动页，确认日期、主办方、嘉宾与是否存在创业者交流或项目展示机制。",
-      "eventMeta": {
-        "startDate": "11/18 周三 09:00（活动行列表页，年份待核验）",
-        "location": "北京朝阳",
-        "mode": "线下 / 待核验",
-        "organizer": "中关村科金"
-      },
-      "sources": [
-        {
-          "title": "活动行：北京 AI 活动目录",
-          "url": "https://www.huodongxing.com/event/5884130860500",
-          "type": "公开活动目录"
-        }
-      ],
-      "score": {
-        "novelty": 5,
-        "source": 3,
-        "relevance": 4,
-        "completeness": 2,
-        "followup": 4
-      },
-      "firstCollectedAt": "2026-10-26T15:15:40.783Z",
-      "lastSeenAt": "2026-10-27T20:45:36.466Z",
-      "seenCount": 5,
       "isNew": false
     }
   ]
